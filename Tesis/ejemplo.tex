@@ -1,0 +1,152 @@
+% !TEX root = tesis.tex
+
+% arara: lualatex: { draft: yes }
+% arara: biber if changed (toFile('refs.bib'))
+% arara: --> || found ('log', 'Please \\(re\\)run Biber')
+% arara: makeindex: { files: [ ejemplo.idx, names.idx ] }
+% arara: --> if changed ('idx') || missing ('ind')
+% arara: lualatex until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
+% arara: --> { synctex: on }
+
+\documentclass{tesisFC}
+
+%PAQUETES
+%para los ejemplos
+\usepackage{lipsum}%texto de demostración
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{csquotes}%recomendado para usar junto con biblatex
+\usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}%debe estar después del paquete de idiomas
+
+%este es recomendado, pero debe ser el último en casi todos los casos
+\usepackage[colorlinks]{hyperref}
+%para quitar el color de los links sustituir colorlinks por hidelinks
+
+
+%BIBLIOGRAFÍA
+\addbibresource{refs.bib}
+
+
+%ÍNDICES Y GLOSARIOS
+\makeindex
+\makeindex[names]
+%\makeglossary[acro]
+%\makeglossary[simb]
+
+
+%FLOTANTES
+%subfloats en ambiente figura
+\newsubfloat{figure}
+%un nuevo flotante para diagramas
+\newcommand{\diagramname}{Diagrama}
+\newcommand{\listdiagramname}{Índice de Diagramas}
+\newlistof{listofdiagrams}{dgm}{\listdiagramname}
+\newfloat{diagram}{dgm}{\diagramname}
+\newlistentry{diagram}{dgm}{0}
+\newsubfloat{diagram}
+
+
+%NUEVOS OPERADORES Y DELIMITADORES
+\DeclareMathOperator{\id}{Idem}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\providecommand\given{}%por si no está definido
+\newcommand\SetSymbol[1][]{%
+  \nonscript\:#1\vert%
+  \allowbreak%
+  \nonscript\:
+  \mathopen{}}
+\DeclarePairedDelimiterX\Set[1]\{\}{%
+  \renewcommand\given{\SetSymbol[\delimsize]}#1}
+
+%NUEVO ESTILO PARA ''TEOREMAS''
+%estilo y "teoremas" adicionales
+\newtheoremstyle{axioma}% nombre del estilo
+{3pt}% espacio arriba
+{3pt}% espacio abajo
+{\itshape}% fuente del cuerpo
+{0pt}% sangrado
+{\bfseries}% fuente del nombre del teorema
+{\newline}% puntuación después del nombre
+{.5em}% espacio después del nombre
+{\thmname{#1}\thmnote{ #3}}%
+
+\theoremstyle{axioma}
+\newtheorem{axioma}{Axioma}
+
+
+%LIBRERIAS Y CONFIGURACIÓN DE TIKZ Y PGF
+\usetikzlibrary{cd,calc,shadings,decorations.fractals,lindenmayersystems,math,datavisualization,datavisualization.formats.functions}
+\pgfplotsset{width=6cm,compat=1.17}
+
+
+%AMBIENTES
+\setmathfont{GFS Neohellenic Math}[version=sansmath]
+\setsansfont{GFS Neohellenic}
+
+\newcounter{sans}
+\newenvironment{sans}[1][]% environment name
+{% begin code
+  \par\vspace{\baselineskip}\sffamily\mathversion{sansmath}\noindent
+  \refstepcounter{sans}%
+  \textbf{Este texto está en sans \thesans\ #1}\ignorespaces%
+}%
+{% end code
+  \par\vspace{\baselineskip}%
+  \noindent\ignorespacesafterend%
+}
+
+
+%Información para la portada
+\facultad{Ciencias}
+\grado{Grado a obtener}
+\tipo{tesis}
+\tutor{Grado y nombre}
+\logouni{unam}
+\logofac{fc}
+
+
+\begin{document}
+
+\frontmatter%
+\portadatesis%
+
+%CONTENIDOS
+\tableofcontents*
+\clearpage
+\listoffigures%
+\clearpage
+\listofdiagrams%
+
+
+\mainmatter%
+\include{memoir}
+\include{fuentes}
+\include{otros}
+\include{tikz}
+\include{comp}
+
+%BIBLIOGRAFÍA
+\backmatter%
+\printbibliography%
+
+%GLOSARIOS
+\clearpage
+\renewcommand{\preindexhook}{Se puede escribir algo antes de las entradas del índice}
+\printindex
+
+\clearpage
+\renewcommand{\indexname}{Índice de nombres}
+\renewcommand{\preindexhook}{}%Para que no ponga lo mismo que en el anterior
+\printindex[names]
+
+%\clearpage
+%\renewcommand{\glossaryname}{Acrónimos}
+%\printglossary[acro]
+%
+%\clearpage
+%\renewcommand{\glossaryname}{Lista de símbolos}
+%\printglossary[simb]
+
+
+\end{document}

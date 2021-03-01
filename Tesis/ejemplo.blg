@@ -1,0 +1,14 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'ejemplo.blg'
+[90] biber-darwin:340> INFO - === Mon Mar  1, 2021, 10:58:07
+[120] Biber.pm:415> INFO - Reading 'ejemplo.bcf'
+[224] Biber.pm:949> INFO - Using all citekeys in bib section 0
+[242] Biber.pm:4340> INFO - Processing section 0
+[254] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
+[256] bibtex.pm:1689> INFO - LaTeX decoding ...
+[287] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'
+[506] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[506] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[506] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'es-ES'
+[550] bbl.pm:654> INFO - Writing 'ejemplo.bbl' with encoding 'UTF-8'
+[569] bbl.pm:757> INFO - Output to ejemplo.bbl

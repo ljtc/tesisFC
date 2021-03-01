@@ -1,0 +1,321 @@
+% !TEX root = tesis.tex
+
+\chapter{Algunos paquetes}
+
+\section{amsmath y mathtools}
+Aunque en el título de la sección se menciona \texttt{amsmath} en el archivo
+principal sólo se carga el paquete \texttt{mathtools}. Esto se debe a que
+\texttt{mathtools} carga al paquete \texttt{amsmath}, así lo podemos pensar
+como una extensión. De manera más precisa \texttt{mathtools} es resultado de
+corregir algunos ``bugs'' de \texttt{amsmath} y añadir algunas otras funciones.
+
+Un ejemplo específico de estos paquetes es la creación de operadores. Por
+ejemplo, para escribir el supremo del conjunto \(A\) se debe escribir
+\verb|\sup A| y su resultado es \(\sup A\), de donde es claro que los
+operadores están en letras \textit{upright}. Ya están definidos los
+operadores más comunes, pero si se quisiera definir uno nuevo se escribe en
+el preámbulo \verb|\DeclareMathOperator{\id}{Idem}| para definir los
+idempotentes de un anillo, por ejemplo \verb|\id(R)| genera \(\id(R)\).
+
+Además de esto están los ambientes matemáticos como \texttt{align},
+\texttt{gather}, \texttt{cases}, etc.
+
+Una función de \texttt{mathtools} que no tiene \texttt{amsmath} es la creación
+de delimitadores que se pueden ajustar al tamaño del contenido, por ejemplo
+para hacer un delimitador para el valor absoluto se escribe
+\verb|\DeclarePairedDelimiter\abs{\lvert}{\rvert}| este
+tiene un argumento más que el operador ya que hay que decir qué símbolo
+``abre'' y que símbolo ``cierra''. La deferencia de este comando se puede
+apreciar con el código \verb!|\sum_{i=1}^{n}a_1|!,
+\verb|\lvert\sum_{i=1}^{n}a_1\rvert|, \verb|\abs{\sum_{i=1}^{n}a_1}| y
+\verb|\abs*{\sum_{i=1}^{n}a_1}|, que su salida es, respectivamente,
+\[
+  |\sum_{i=1}^{n}a_1| \quad \lvert\sum_{i=1}^{n}a_1\rvert \quad
+  \abs{\sum_{i=1}^{n}a_1} \quad \abs*{\sum_{i=1}^{n}a_1}
+\]
+
+También podemos hacer conjuntos con delimitadores y la línea de ``tal que''
+que crezcan correctamente
+\[
+  \Set*{ x \in X \given \frac{\sqrt{x}}{x^2+1} > 1 }
+\]
+
+
+\section{amsthm}
+Este paquete provee mejoras útiles para las definiciones de teoremas
+(\LaTeX{} puede crea teoremas sin necesidad de paquetes) y
+define un ambiente de demostración (esto no lo hace \LaTeX{} solo). Con este
+paquete se pueden usar y definir estilos de teoremas de forma fácil. En el
+preámbulo de este documento está la definición para hacer teoremas con sus
+respectivos estilos.
+
+\begin{definicion}
+  Una función \(f\colon X\to Y\) es continua si para cualquier abierto
+  \(V\subseteq Y\) se tiene que \(f^{-1}(V)\subseteq X\) es abierto.
+\end{definicion}
+
+\begin{teorema}[Fermat]%
+\label{teo:fa}
+  La ecuación \(x^n + y^n = z^n\) con \(n\geq 3\) no tiene soluciones no triviales en \(\symbb{Z}\).
+\end{teorema}
+\begin{proof}
+  He descubierto una demostración maravillosa de esto, que este margen es
+  demasiado estrecho para contener.
+\end{proof}
+
+Nuestra redefinición del ambiente de demostración tiene lo necesario para
+comportarse bien con el símbolo \(\qed\). Es decir, cuando se termina una
+demostración con una ecuación u otro tipo de ambiente habrá un espacio
+vertical indeseado entre el final del texto y el símbolo de fin de la
+demostración. Este espacio se evita con el comando \verb|\qedhere|, pero si
+el ambiente no cuenta con la definición correcta seguirá apareciendo este
+espacio vertical. Un ejemplo de cómo funciona \verb|\qedhere|, para mostrar
+la diferencia se han hecho dos demostraciones iguales
+
+\begin{teorema}
+  Un resultado importante.
+\end{teorema}
+\begin{proof}
+  Se sigue de la siguiente ecuación
+  \[
+    \sum_{n\geq 1}\frac{1}{n}=-\frac{1}{12}.
+  \]
+\end{proof}
+\begin{proof}[¿Es realmente otra demostración?]
+  Se sigue de la siguiente ecuación
+  \[
+    \sum_{n\geq 1}\frac{1}{n}=-\frac{1}{12}. \qedhere
+  \]
+\end{proof}
+
+Cada ``teorema'' nuevo crea un contador. En este ejemplo la cuenta de
+teoremas se reiniciará al iniciar un nuevo capítulo, este es el efecto del
+comando opcional \texttt{[chapter]} en la definición de \texttt{teorema}.
+Además, el contador de las definiciones será el mismo que el de los teoremas
+(notar que aparece definición 4.1, teorema 4.2), esto lo hace el comando
+\texttt{[teorema]} en la definición de \texttt{definicion}. Esta cuenta de
+teoremas sirve para hacer referencia a resultados o definiciones en el
+futuro. Al teorema le pusimos una etiqueta con el comando
+\verb|\label{teo:fa}| que luego se puede hacer referencia con
+\verb|\ref{{teo:fa}}|. Una buena práctica es separar la referencia de la
+palabra anterior con un espacio irrompible \verb|~|, de esta forma cuando
+escribimos ``por el teorema~\ref{teo:fa}'' \LaTeX{} no podrá romper un
+renglón dejando la palabra ``teorema'' en un renglón y el número ``4.2'' en
+otro.
+
+Nota que el estilo \texttt{plain} pone el cuerpo del teorema en itálicas
+mientras que el estilo \texttt{definition} no.
+
+La salida original de la palabra ``Demostración'' es en itálicas. En este
+ejemplo hice que apareciera en negritas redefiniendo el ambiente. Otra forma
+de hacerlo sería parchando el ambiente \texttt{proof}, pero para no usar
+paquetes adicionas no se hizo así.
+
+En el preámbulo está un ejemplo de cómo crear un estilo nuevo de
+``teorema''. En este se creó un ambiente para los axiomas usando un estilo
+diferente que llevará una cuenta independiente de las  definiciones
+anteriores, pues no aparece la opción \texttt{[teorema]} en su definición.
+
+\begin{axioma}
+  Para toda \(f\colon D\to R\) existe una y sólo una \(b\in R\) tal que para
+  cualquier \(d\in D\)
+  \[
+    f(d)=f(0)+d\cdot b.
+  \]
+\end{axioma}
+
+Adicionalmente, se podría hacer las definiciones de estos ambientes de
+teorema y demostración como un nuevo ambiente. El ejemplo con tipo de letra
+sans en~\ref{textosans} tiene lo necesario para crear un ambiente y contador
+con las características como las de los ambientes de \texttt{amsthm}.
+
+Finalmente, otro paquete común para el manejo de teoremas y demostraciones
+es \texttt{ntheorem}. Cada uno tiene sus ventajas y desventajas y no es
+fácil elegir uno sobre otro. En este documento se eligió \texttt{amsthm}
+porque es (posiblemente) el más común.
+
+
+\section{babel}
+Para el soporte de idiomas escogí \texttt{babel} con las opciones
+\texttt{spanish} y \texttt{mexico}. La opción \texttt{mexico} hace una
+localización más similar a la que se usa en México, como su nombre lo indica.
+Entre las cosas que hace podemos mencionar que cambia el nombre ``cuadro''
+por ``tabla'', prioriza comillas y usa el punto decimal en lugar de la coma
+como puede verse \(\pi=3.141592\ldots \)
+
+Al usar el idioma español \texttt{babel} se encargará de traducir todo, por ejemplo la palabra ``capítulo'' o ``figura'' como se puede ver en el documento. También traduce y acentúa los operadores, por ejemplo \(\max A\) o \(\lim f\), pero en algunos casos se decidió crear un comando nuevo como en el caso del seno:
+\[
+  \sin(\alpha)\ne\sen(\alpha)
+\]
+
+Otra opción para el manejo de idiomas en Xe\LaTeX{} o Lua\LaTeX{} es
+\texttt{polyglossia}. Este paquete se creó cuando \texttt{babel} había
+dejado de tener mantenimiento con el objetivo de simplificar su trabajo en
+estos motores. Si se elige usar \texttt{polyglossia} este paquete también
+tiene una variante \texttt{mexico}, además de que se puede elegir un poco
+más el comportamiento de los operadores con las opciones:
+\begin{description}
+  \item[\texttt{accented}] para acentuar los operadores como \texttt{babel}.
+  \item[\texttt{spaced}] para dar un espacio corto entre el operador y el objeto al que se le aplica, de nuevo, como \texttt{babel}.
+  \item[\texttt{all}] para hacer las dos anteriores más la localización de \verb|\sin| \verb|\tan| \verb|\sinh| y \verb|\tanh|.
+  \item[\texttt{none}] para no hacer ninguna localización.
+\end{description}
+De esta forma podríamos usar \texttt{polyglossia} con la siguiente
+configuración
+\begin{flushleft}
+  \verb|\usepackage{polyglossia}| \\
+  \verb|\setdefaultlanguage[spanishoperators=all]{spanish}|
+\end{flushleft}
+
+Tanto \texttt{babel} como \texttt{polyglossia} son buenas opciones para el
+manejo de idiomas y es difícil elegir uno sobre el otro. En este caso elegí
+\texttt{babel} por ser más conocido (lleva mucho más tiempo existiendo) y
+por ser el más estable (\texttt{polyglossia} está en desarrollo, aunque lo
+he usado en la mayoría de mis documentos y no he tenido problemas con la
+configuración como la de arriba).
+
+
+\section{microtype}
+Este paquete habilita los aspectos micro-tipográficos del documento. Algunos
+de ellos ya son hechos por \TeX{} como justificación y la separación
+silábica (cortes de palabra). En general las opciones que se le pasaron a
+este paquete sirven para calcular la expansión de letras, palabras y
+permitir que algunos caracteres, como el guión de un corte de palabra,
+salgan del margen. Algunas de estas mejoras se pueden hacer con
+\texttt{fontspec}, por ejemplo poniendo la opción \texttt{LetterSpacing} al
+cargar una fuente, pero hay que calcular las cosas manualmente. En cambio
+\texttt{microtype} toma todas estas decisiones por nosotros y lo hace
+de acuerdo al idioma que se la haya pasado a \texttt{babel}. El resultado es
+un pdf que luce tipográficamente mejor.
+
+
+\section{biblatex}%
+\label{sec:bib}
+En este texto de ejemplo usaré \texttt{biblatex} para formar la bibliografía.
+Hay otros paquetes para formar la bibliografía de un texto, por ejemplo
+\texttt{natbib} o \texttt{cite}.
+
+Mientras que \texttt{natbib} y \texttt{cite} son muy parecidos, sólo cambian
+algunos capacidades y \texttt{natbib} puede hacer técnicamente todo lo que
+hace \texttt{cite} más algunas cuantas cosas; \texttt{biblatex} es muy
+diferente a estos dos paquetes.
+
+Como este es un texto ``local'' en el sentido que su código fuente no debe
+cumplir los requerimientos de ningún \textit{journal} o editorial, entonces
+es posible usar los paquetes que cada quien considere necesario. La
+motivación principal para mostrar este ejemplo con \texttt{biblatex} está
+en el siguiente link \url{https://tex.stackexchange.com/a/25702/140456},
+donde se explican las ventajas de biber sobre bibtex.
+
+La construcción de la base de datos de referencias es básicamente la misma
+para cualquier paquete de los anteriores. Hay herramientas gráficas útiles
+para hacer esto como JabRef o Zotero.
+
+\texttt{biblatex} puede manejar muchos tipos de entrada. En el manual se
+describe el uso de los siguientes
+\autocols{c}{5}{l}{%
+  article, book, mvbook, inbook, bookinbook, suppbook, booklet, collection, mvcollection, incollection, suppcollection, dataset, manual, misc, online, patent, periodical, suppperiodical, proceedings, mvproceedings, inproceedings, reference, mvreference, inreference, report, set, software, thesis, unpublished, xdata, custom[a-f], conference, masterthesis, pdhthesis, techreport, www, artwork, audio, bibnote, commentary, image, jurisdiction, legislation, legal, letter, movie, music, performance, review, standard, video
+  }
+Son demasiados para dar una descripción breve, pero en el manual de
+\texttt{biblatex} no sólo se describe para qué se usa cada una sino que
+también algunos campos recomendados para algunas de ellas.
+
+La lista de campos que se pueden usar en las entradas es demasiado grado para
+listarla aquí. De nuevo, en el manual se dan los campos disponibles junto con
+una descripción breve.
+
+También tiene una lista grade de formas de citación, las más comunes son
+\verb|\cite{...}|, \verb|\parencite{...}|, \verb|\textcite{...}| y
+\verb|\footcite{...}|. El estilo de las entradas bibliográficas y de la
+citación se hacen mediante opciones del paquete. Como la lista de opciones
+también es amplia haré referencia a la siguiente liga
+\url{http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf}
+para tener una guía rápida de \texttt{biblatex}.
+
+En este ejemplo hice un archivo \texttt{refs.bib} como base de datos de la
+bibliografía. Para ``cargarlo'' hay que usar el comando
+\verb|\addbibresource{refs.bib}|. Este comando sólo acepta un archivo, pero
+se pueden cargar más escribiendo todo el comando con cada archivo
+\texttt{.bib} que se quiera usar. Para imprimir la bibliografía se pone el
+comando \verb|\printbibliography| donde se quiera tener la bibliografía. Por
+ejemplo se puede imprimir una bibliografía por capitulo, por tipo
+(artículo, libro, etc.), por alguna palabra clave, etc.
+
+En principio sólo imprime las entradas que fueron citadas en el texto, si se
+quiere imprimir una entrada que no fue citada se usa el comando
+\verb|\nocite{label1,label2,...}| o si se quiere imprimir todas las entradas
+del archivo \texttt{.bib} se usa \verb|\nocite{*}|.
+
+Por último es recomendable usar el paquete \texttt{csquotes} junto con
+\texttt{biblatex} para tener algunas facilidades en citas y ajustar las
+comillas al idioma que se quiera.
+
+Ahora algunos ejemplos de bibliografía. Primero todas las entradas donde
+Lawvere es autor, en el archivo \texttt{.bib} use el campo \texttt{keywords}
+para lograr esto
+\nocite{*}
+\printbibliography[keyword=Lawvere,heading=subbibliography,title=Lawvere]
+
+Use \texttt{heading=subbibliography} para que el título de la bibliografía
+aparezca un nivel más bajo que ``el nivel principal'' en este caso el nivel
+principal es capítulo, así que el título será impreso como una sección sin
+número.
+
+Para imprimir una bibliografía con todos los libros que están en
+\texttt{refs.bib} hacemos lo siguiente:
+\printbibliography[type=book,heading=subbibliography,title=Libros]
+
+Como puse el ejemplo con muchos tipos de bibliografía y al final pondré toda
+la bibliografía usaré el estilo bibliográfico \texttt{alphabetic}.
+Otros estilos son \texttt{authoryear-icomp}, \texttt{numeric} (este es común
+en matemáticas) \texttt{author-title}, etc. Además de estos y las variantes
+ya definidas para apa, chicago, mla, etc. Es mucho más fácil definir o
+modificar un estilo usando \texttt{biblatex} (ya que se hace con comandos de
+\LaTeX{} comunes al estilo \verb|\renewcommand|) que usando \texttt{natbib}
+o \texttt{cite} donde se requiere editar un archivo \texttt{.bst} con un
+lenguaje, en principio, muy diferente a \LaTeX.
+
+En el ejemplo de bibliografías múltiples con el estilo \texttt{numeric}
+sería ideal usar la opción \texttt{resetnumbers} para que cada bibliografía
+empiece en [1], pero esto creará inconsistencias en la numeración de la
+bibliografía que pondré al final del documento.
+
+Una nota final es que el proceso de compilación ahora debe ser el siguiente
+\begin{flushleft}
+\verb|lualatex MiDocumento.tex|\\
+\verb|biber MiDocumento|\\
+\verb|lualatex MiDocumento.tex|\\
+\verb|lualatex MiDocumento.tex|
+\end{flushleft}
+
+
+\section{siunitx}
+Este paquete tiene como objetivo implementar la escritura de cantidades
+físicas de acuerdo con las reglas del sistema internacional de medidas
+\url{https://www.bipm.org/en/measurement-units/}. Aunque hay un desacuerdo con la forma de espaciar las cantidades y las unidades debido a la mala traducción del francés (idioma de la versión oficial del manual del sistema internacional de medidas) al inglés (idioma de donde se basaron para la creación del paquete). En el francés dice que deberían separase con un espacio y en el inglés dice que se separan con un \textit{thin space}. Así, el espaciado no es el correcto pero todo lo demás está bien.
+\begin{center}
+  \begin{tabular}{lc}
+    Comando & Resultado \\ \toprule
+    \verb|\ang{1;2;3}| & \ang{1;2;3}\\
+    \verb|\si{\gram\per\cubic\centi\metre}| & \si{\gram\per\cubic\centi\metre}\\
+    \verb|\si{kg.m/s^2}| & \si{kg.m/s^2}\\
+    \verb|\SI{.23e7}{\candela}| & \SI{.23e7}{\candela} \\
+    \verb|\SI[mode=text]{1.23}{J.mol^{-1}.K^{-1}}| & \SI[mode=text]{1.23}{J.mol^{-1}.K^{-1}} \\
+    \verb|\SI[per-mode=symbol]{1.99}[\$]{\per\kilogram}| & \SI[per-mode=symbol]{1.99}[\$]{\per\kilogram} \\
+    \verb|\SI[per-mode=fraction]{1,345}{\coulomb\per\mole}| & \SI[per-mode=fraction]{1,345}{\coulomb\per\mole} \\
+  \end{tabular}
+\end{center}
+
+
+\section{Posibles pendientes}
+\begin{enumerate}
+  \item Poner ejemplos de como hacer enlaces y moléculas con
+  \texttt{chemfig}
+  \item Escribir código con \texttt{listings}.
+  \item Escribir algoritmos, no sé cuál es la mejor opción
+  \texttt{¿algorithmicx}?
+  \item Dibujar diagramas de Feynman con \texttt{tikz-feynman}
+  \item ¿Máquinas de Turing y circuitos eléctricos?
+  \item Animaciones con \texttt{animate} (necesita un visor de pdf específico)
+  \item ¿Alguna otra\ldots?
+\end{enumerate}

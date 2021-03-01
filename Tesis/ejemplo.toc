@@ -1,0 +1,28 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {spanish}{}
+\contentsline {chapter}{Índice de figuras}{\es@scroman {iii}}{section*.2}%
+\contentsline {chapter}{Índice de Diagramas}{\es@scroman {iv}}{section*.3}%
+\contentsline {chapter}{\chapternumberline {1}Un poco de memoir}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Lo básico}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Un poco más}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Falta desarrollar mejor}{4}{section.1.3}%
+\contentsline {chapter}{\chapternumberline {2}Fuentes}{5}{chapter.2}%
+\contentsline {chapter}{\chapternumberline {3}Algunos paquetes}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}amsmath y mathtools}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}amsthm}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}babel}{11}{section.3.3}%
+\contentsline {section}{\numberline {3.4}microtype}{12}{section.3.4}%
+\contentsline {section}{\numberline {3.5}biblatex}{12}{section.3.5}%
+\contentsline {section}{Lawvere}{13}{section*.5}%
+\contentsline {section}{Libros}{13}{section*.7}%
+\contentsline {section}{\numberline {3.6}siunitx}{14}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Posibles pendientes}{15}{section.3.7}%
+\contentsline {chapter}{\chapternumberline {4}Tikz}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Nodos y líneas}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Diagramas conmutativos}{19}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Visualización de datos}{20}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Fractales}{20}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Compilación y arara}{23}{chapter.5}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{27}{section*.9}%
+\contentsline {chapter}{Índice alfabético}{29}{section*.10}%
+\contentsline {chapter}{Índice de nombres}{31}{section*.11}%
