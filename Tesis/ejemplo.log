@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2021.2.26)  1 MAR 2021 10:58
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2021.2.26)  5 MAR 2021 18:59
  restricted system commands enabled.
 **ejemplo.tex
 (./ejemplo.tex
@@ -799,12 +799,12 @@ cp;"
 mcp;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/STIXTwoText(1)/m/n on input line 26.
+(Font)                  OT1/cmr/m/n --> TU/STIXTwoText(1)/m/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/STIXTwoText(1)/m/it on input line 26
+(Font)                  OT1/cmr/m/it --> TU/STIXTwoText(1)/m/it on input line 25
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/STIXTwoText(1)/b/n on input line 26.
+(Font)                  OT1/cmr/bx/n --> TU/STIXTwoText(1)/b/n on input line 25.
 
 
 Package fontspec Info: Could not resolve font "STIXTwoMath/B" (it probably
@@ -852,13 +852,13 @@ woMath:mode=base;script=math;language=dflt;+ssty=1;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 27.
+(Font)              `operators' in the math version `normal' on input line 26.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/STIXTwoMath(1)/m/n on input line 27.
+(Font)                  OT1/cmr/m/n --> TU/STIXTwoMath(1)/m/n on input line 26.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 27.
+(Font)              `operators' in the math version `bold' on input line 26.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/STIXTwoMath(1)/b/n on input line 27.
+(Font)                  OT1/cmr/bx/n --> TU/STIXTwoMath(1)/b/n on input line 26.
 
 
 Package fontspec Info: STIXTwoMath scale = 1.0001.
@@ -919,14 +919,14 @@ sty=0;"<-6.25>s*[1.0001]"STIXTwoMath:mode=base;script=math;language=dflt;+ssty=1
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 27.
+(Font)              `symbols' in the math version `normal' on input line 26.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/STIXTwoMath(2)/m/n on input line 27.
+(Font)                  OMS/cmsy/m/n --> TU/STIXTwoMath(2)/m/n on input line 26.
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 27.
+(Font)              `symbols' in the math version `bold' on input line 26.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/STIXTwoMath(2)/b/n on input line 27.
+(Font)                  OMS/cmsy/b/n --> TU/STIXTwoMath(2)/b/n on input line 26.
 
 
 Package fontspec Info: STIXTwoMath scale = 0.9999.
@@ -975,28 +975,28 @@ sty=0;"<-6.25>s*[0.9999]"STIXTwoMath:mode=base;script=math;language=dflt;+ssty=1
 (fontspec)             13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 27
+(Font)              `largesymbols' in the math version `normal' on input line 26
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/STIXTwoMath(3)/m/n on input line 27.
+(Font)                  OMX/cmex/m/n --> TU/STIXTwoMath(3)/m/n on input line 26.
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 27.
+(Font)              `largesymbols' in the math version `bold' on input line 26.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/STIXTwoMath(3)/b/n on input line 27.
+(Font)                  OMX/cmex/m/n --> TU/STIXTwoMath(3)/b/n on input line 26.
 
 LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 27.
+(Font)              scaled to size 10.00107pt on input line 26.
 LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 27.
+(Font)              scaled to size 7.00075pt on input line 26.
 LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
-(Font)              scaled to size 5.50058pt on input line 27.
+(Font)              scaled to size 5.50058pt on input line 26.
 LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 27.
+(Font)              scaled to size 9.99893pt on input line 26.
 LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 27.
+(Font)              scaled to size 6.99925pt on input line 26.
 LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
-(Font)              scaled to size 5.4994pt on input line 27.
+(Font)              scaled to size 5.4994pt on input line 26.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1063,7 +1063,7 @@ Upper and lower margins: 113.81102pt and 119.15897pt
 Headheight and headsep: 12pt and 24pt
 Footskip: 24pt
 Columnsep and columnseprule: 10pt and 0pt
-Marginparsep and marginparwidth: 17pt and 51pt
+Marginparsep and marginparwidth: 17pt and 86pt
 Sidecapsep and sidecapwidth: 7pt and 128pt
 Sidebarhsep and sidebarwidth: 7pt and 128pt
 Sidebarvsep and sidebartopsep: 12pt and 0pt
@@ -1519,7 +1519,9 @@ Package csquotes Info: ... configuration file loaded successfully.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-))
+)
+Package csquotes Info: Enabling multilingual quotes.
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
 
@@ -2237,8 +2239,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 \c@sans=\count539
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-Package csquotes Info: Adjusting default style.
-Package csquotes Info: Redefining alias 'default' -> 'spanish'.
  (./ejemplo.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
@@ -2246,26 +2246,26 @@ LaTeX Info: Redefining \% on input line 26.
 (./memoir.aux) (./fuentes.aux) (./otros.aux) (./tikz.aux) (./comp.aux))
 \openout1 = ejemplo.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
@@ -2274,12 +2274,12 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 onary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 109.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 112.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 109.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 112.
 
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
@@ -2299,14 +2299,14 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 (unicode-math)                colon-like commands, using them will lead to
 (unicode-math)                inconsistencies.
 
-LaTeX Info: Redefining \microtypecontext on input line 109.
+LaTeX Info: Redefining \microtypecontext on input line 112.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 109.
+LaTeX Info: Redefining \showhyphens on input line 112.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: No adjustment of spacing.
@@ -2365,9 +2365,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ejemplo.bbl' found.
 
 (./ejemplo.bbl)
-Package biblatex Info: Reference section=0 on input line 109.
-Package biblatex Info: Reference segment=0 on input line 109.
-Package hyperref Info: Link coloring ON on input line 109.
+Package biblatex Info: Reference section=0 on input line 112.
+Package biblatex Info: Reference segment=0 on input line 112.
+Package hyperref Info: Link coloring ON on input line 112.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -2383,10 +2383,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 109.
-LaTeX Info: Redefining \ref on input line 109.
-LaTeX Info: Redefining \pageref on input line 109.
-LaTeX Info: Redefining \nameref on input line 109.
+LaTeX Info: Redefining \nameref on input line 112.
+LaTeX Info: Redefining \ref on input line 112.
+LaTeX Info: Redefining \pageref on input line 112.
+LaTeX Info: Redefining \nameref on input line 112.
 (./ejemplo.out) (./ejemplo.out)
 \@outlinefile=\write8
 
@@ -2403,24 +2403,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<unam.pdf, id=111, 1027.84pt x 1155.31625pt>
+<unam.pdf, id=107, 1027.84pt x 1155.31625pt>
 File: unam.pdf Graphic file (type pdf)
 <use unam.pdf>
-Package luatex.def Info: unam.pdf  used on input line 112.
+Package luatex.def Info: unam.pdf  used on input line 115.
 (luatex.def)             Requested size: 68.78807pt x 77.33466pt.
-<fc.pdf, id=112, 1027.84pt x 1155.31625pt>
+<fc.pdf, id=108, 1027.84pt x 1155.31625pt>
 File: fc.pdf Graphic file (type pdf)
 <use fc.pdf>
-Package luatex.def Info: fc.pdf  used on input line 112.
+Package luatex.def Info: fc.pdf  used on input line 115.
 (luatex.def)             Requested size: 68.78807pt x 77.33466pt.
 Inserting `luaotfload.letterspace' at position 2 in `pre_linebreak_filter'.
 Inserting `luaotfload.letterspace' at position 3 in `hpack_filter'.
-Underfull \hbox (badness 10000) detected at line 112
+Underfull \hbox (badness 10000) detected at line 115
 \TU/STIXTwoText(0)/m/n/17.28 T E S I S
  []
 
 
-Underfull \hbox (badness 10000) detected at line 112
+Underfull \hbox (badness 10000) detected at line 115
 \TU/STIXTwoText(0)/m/n/10 P R E S E N T A :
  []
 
@@ -2435,17 +2435,17 @@ f><./fc.pdf>] [2
 ]
 
 LaTeX Font Warning: Font shape `TU/GFSNeohellenic(0)/b/sc' undefined
-(Font)              using `TU/GFSNeohellenic(0)/b/n' instead on input line 115.
+(Font)              using `TU/GFSNeohellenic(0)/b/n' instead on input line 118.
 
 (./ejemplo.toc
 LaTeX Info: Redefining \sptext on input line 2.
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
-
+)
 warning  (pdf backend): ignoring duplicate destination with the name 'page.I'
-[1])
-LaTeX Info: Redefining \. on input line 116.
-LaTeX Info: Redefining \% on input line 116.
+[1]
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.II'
 [2] (./ejemplo.lof
@@ -2458,50 +2458,40 @@ LaTeX Info: Redefining \% on input line 2.
 
 ]
 \openout2 = memoir.aux
- (./memoir.tex [1
+ (./memoir.tex
+Underfull \vbox (badness 1199) has occurred while \output is active []
+
+ [1
 
 
 
 ]
-<example-image-a.pdf, id=201, 321.2pt x 240.9pt>
+<example-image-a.pdf, id=194, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package luatex.def Info: example-image-a.pdf  used on input line 113.
+Package luatex.def Info: example-image-a.pdf  used on input line 95.
 (luatex.def)             Requested size: 118.80121pt x 89.09851pt.
-<example-image-b.pdf, id=202, 321.2pt x 240.9pt>
+<example-image-b.pdf, id=195, 321.2pt x 240.9pt>
 File: example-image-b.pdf Graphic file (type pdf)
 <use example-image-b.pdf>
-Package luatex.def Info: example-image-b.pdf  used on input line 115.
+Package luatex.def Info: example-image-b.pdf  used on input line 97.
 (luatex.def)             Requested size: 118.80121pt x 89.09851pt.
-<example-image-c.pdf, id=203, 321.2pt x 240.9pt>
+<example-image-c.pdf, id=196, 321.2pt x 240.9pt>
 File: example-image-c.pdf Graphic file (type pdf)
 <use example-image-c.pdf>
-Package luatex.def Info: example-image-c.pdf  used on input line 117.
+Package luatex.def Info: example-image-c.pdf  used on input line 99.
 (luatex.def)             Requested size: 118.80121pt x 89.09851pt.
-LaTeX Info: Redefining \. on input line 127.
-LaTeX Info: Redefining \% on input line 127.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
-[]\TU/STIXTwoText(0)/m/n/10 Fi-gu-ra 1.2:
- []
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
-[]\TU/STIXTwoText(0)/m/n/10 Un circu-lo
- []
-
-
-Underfull \hbox (badness 6032) in paragraph at lines 162--162
-\TU/STIXTwoText(0)/m/n/10 en el mar-
- []
-
-LaTeX Info: Redefining \. on input line 178.
-LaTeX Info: Redefining \% on input line 178.
-[3</usr/local/texlive/2020/texmf-dist/tex/latex/mwe/example-image-a.pdf></usr/lo
-cal/texlive/2020/texmf-dist/tex/latex/mwe/example-image-b.pdf></usr/local/texliv
-e/2020/texmf-dist/tex/latex/mwe/example-image-c.pdf>])
-LaTeX Info: Redefining \. on input line 123.
-LaTeX Info: Redefining \% on input line 123.
+[2]
+LaTeX Info: Redefining \. on input line 163.
+LaTeX Info: Redefining \% on input line 163.
+ [3</usr/local/texlive/2020/texmf-dist/tex/latex/mwe/example-image-a.pdf></usr/l
+ocal/texlive/2020/texmf-dist/tex/latex/mwe/example-image-b.pdf></usr/local/texli
+ve/2020/texmf-dist/tex/latex/mwe/example-image-c.pdf>])
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
  [4]
 \openout2 = fuentes.aux
  (./fuentes.tex
@@ -2522,7 +2512,6 @@ LaTeX Font Info:    Font shape `TU/GFSNeohellenicMath(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/GFSNeohellenicMath(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 36.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5
@@ -2531,8 +2520,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ])
-LaTeX Info: Redefining \. on input line 124.
-LaTeX Info: Redefining \% on input line 124.
+LaTeX Info: Redefining \. on input line 127.
+LaTeX Info: Redefining \% on input line 127.
  [6] [7]
 \openout2 = otros.aux
  (./otros.tex [8
@@ -2548,35 +2537,37 @@ n/10 \abs*{\sum_{i=1}^{n}a_1}\TU/STIXTwoText(0)/m/n/10 ,
  []
 
 [9]
-LaTeX Info: Redefining \. on input line 124.
-LaTeX Info: Redefining \% on input line 124.
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
  [10]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 158.
-LaTeX Info: Redefining \. on input line 190.
-LaTeX Info: Redefining \% on input line 190.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 154.
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
  [11]
-Overfull \hbox (38.58665pt too wide) in paragraph at lines 218--218
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 190.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 190.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 190.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 190.
+LaTeX Info: Redefining \. on input line 228.
+LaTeX Info: Redefining \% on input line 228.
+ [12]
+Overfull \hbox (38.58665pt too wide) in paragraph at lines 233--233
   [][][][][][] 
  []
 
-LaTeX Info: Redefining \. on input line 234.
-LaTeX Info: Redefining \% on input line 234.
-[12]
-LaTeX Info: Redefining \. on input line 266.
-LaTeX Info: Redefining \% on input line 266.
- [13]
-Overfull \hbox (32.63647pt too wide) in paragraph at lines 293--296
-\TU/STIXTwoText(0)/m/n/10 con las re-glas del sis-te-ma in-ter-na-cio-nal de me-
-di-das [][]$\TU/lmtt/m/n/10 https://www.bipm.org/en/measurement-[]units/$[][]\T
-U/STIXTwoText(0)/m/n/10 .
- []
-
-LaTeX Info: Redefining \. on input line 307.
-LaTeX Info: Redefining \% on input line 307.
-[14])
-LaTeX Info: Redefining \. on input line 125.
-LaTeX Info: Redefining \% on input line 125.
+LaTeX Info: Redefining \. on input line 279.
+LaTeX Info: Redefining \% on input line 279.
+[13]
+LaTeX Info: Redefining \. on input line 302.
+LaTeX Info: Redefining \% on input line 302.
+ [14])
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
  [15]
 \openout2 = tikz.aux
  (./tikz.tex [16
@@ -2585,20 +2576,29 @@ LaTeX Info: Redefining \% on input line 125.
 
 
 ] [17]
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
+Underfull \vbox (badness 5622) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
  [18]
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
+Underfull \vbox (badness 1939) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
  [19]
-LaTeX Info: Redefining \. on input line 268.
-LaTeX Info: Redefining \% on input line 268.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 256.
+LaTeX Info: Redefining \% on input line 256.
  [20]
 \c@cumulArea=\count547
-)
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
- [21
+LaTeX Info: Redefining \. on input line 346.
+LaTeX Info: Redefining \% on input line 346.
+
+[21])
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
+ [22
 Missing character: There is no . (U+002E) in font nullfont!
 Missing character: There is no 6 (U+0036) in font nullfont!
 Missing character: There is no 1 (U+0031) in font nullfont!
@@ -5179,36 +5179,37 @@ Missing character: There is no 2 (U+0032) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
 ]
 \openout2 = comp.aux
- (./comp.tex [22
+ (./comp.tex [23
 
-
-
-
-] [23]
-<primera.png, id=392, 845.1575pt x 580.1675pt>
-File: primera.png Graphic file (type png)
-<use primera.png>
-Package luatex.def Info: primera.png  used on input line 57.
-(luatex.def)             Requested size: 253.54921pt x 174.05157pt.
-<segunda.png, id=393, 845.1575pt x 580.1675pt>
-File: segunda.png Graphic file (type png)
-<use segunda.png>
-Package luatex.def Info: segunda.png  used on input line 62.
-(luatex.def)             Requested size: 253.54921pt x 174.05157pt.
-
-Overfull \hbox (22.09706pt too wide) in paragraph at lines 66--68
-[]\TU/STIXTwoText(0)/m/n/10 Pa-ra con-󰀉󰀋-gu-rar-lo en TeX-Ma-ker hay que 
-se-guir las ins-truc-cio-nes en [][]$\TU/lmtt/m/n/10 https://tex.stackexchange.
- []
-
-LaTeX Info: Redefining \. on input line 71.
-LaTeX Info: Redefining \% on input line 71.
-[24<./primera.png><./segunda.png>]) [25] [26
 
 
 
 ]
-Overfull \hbox (23.64342pt too wide) in paragraph at lines 132--132
+Overfull \hbox (22.09706pt too wide) in paragraph at lines 68--70
+[]\TU/STIXTwoText(0)/m/n/10 Pa-ra con-󰀉󰀋-gu-rar-lo en TeX-Ma-ker hay que 
+se-guir las ins-truc-cio-nes en [][]$\TU/lmtt/m/n/10 https://tex.stackexchange.
+ []
+
+LaTeX Info: Redefining \. on input line 75.
+LaTeX Info: Redefining \% on input line 75.
+[24]
+<primera.png, id=389, 845.1575pt x 580.1675pt>
+File: primera.png Graphic file (type png)
+<use primera.png>
+Package luatex.def Info: primera.png  used on input line 79.
+(luatex.def)             Requested size: 253.54921pt x 174.05157pt.
+<segunda.png, id=390, 845.1575pt x 580.1675pt>
+File: segunda.png Graphic file (type png)
+<use segunda.png>
+Package luatex.def Info: segunda.png  used on input line 85.
+(luatex.def)             Requested size: 253.54921pt x 174.05157pt.
+) [25<./primera.png><./segunda.png>] [26
+
+
+
+
+]
+Overfull \hbox (23.64342pt too wide) in paragraph at lines 136--136
 []\TU/STIXTwoText(0)/m/n/10 A. Jo-yal y M. Tier-ney. \TU/STIXTwoText(0)/m/it/10
  No-tes on sim-pli-cial ho-mo-topy theory\TU/STIXTwoText(0)/m/n/10 . http://mat.
 uab.cat/ kock/crm/ho-
@@ -5217,8 +5218,8 @@ uab.cat/ kock/crm/ho-
 [27
 
 ]
-LaTeX Info: Redefining \. on input line 134.
-LaTeX Info: Redefining \% on input line 134.
+LaTeX Info: Redefining \. on input line 138.
+LaTeX Info: Redefining \% on input line 138.
  [28] (./ejemplo.ind [29
 
 
@@ -5251,43 +5252,43 @@ LaTeX Info: Redefining \% on input line 26.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `ejemplo.out' has not changed.
-(rerunfilecheck)             Checksum: E909BE3E53B1698D72D26DD4C6C23131;3132.
+(rerunfilecheck)             Checksum: 7D6AD578DE05C9C67B719594B028BC61;3089.
 Package logreq Info: Writing requests to 'ejemplo.run.xml'.
 
 \openout1 = ejemplo.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 62271 strings out of 478543
- 244505,2848258 words of node,token memory allocated
- 2566 words of node memory still in use:
-   22 hlist, 5 vlist, 3 rule, 4 disc, 3 local_par, 1 dir, 2 math, 33 glue, 8 ker
-n, 8 penalty, 2 margin_kern, 36 glyph, 126 attribute, 220 glue_spec, 65 attribut
-e_list, 5 write, 19 pdf_literal, 1 pdf_dest, 4 pdf_action, 2 pdf_colorstack node
-s
-   avail lists: 1:10,2:26535,3:11418,4:125,5:907,6:106,7:12916,8:79,9:1051,10:18
-,11:874
- 80264 multiletter control sequences out of 65536+600000
- 155 fonts using 58360643 bytes
- 97i,17n,129p,1151b,2625s stack positions out of 5000i,500n,10000p,200000b,200000s
-</usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.otf
-></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText
--Regular.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/gfsneohel
-lenicmath/GFSNeohellenicMath.otf></usr/local/texlive/2020/texmf-dist/fonts/opent
-ype/public/gfsneohellenicmath/GFSNeohellenicMath.otf></usr/local/texlive/2020/te
-xmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></usr/local/tex
-live/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></u
-sr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><
-/usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-I
-talic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/gfsneohellen
-ic/GFSNeohellenic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/
-stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/opentyp
-e/public/gfsneohellenic/GFSNeohellenicBold.otf></usr/local/texlive/2020/texmf-di
-st/fonts/opentype/public/stix2-otf/STIXTwoText-Regular.otf>
-Output written on ejemplo.pdf (37 pages, 1191679 bytes).
+ 62262 strings out of 478543
+ 244498,2848258 words of node,token memory allocated
+ 2519 words of node memory still in use:
+   20 hlist, 5 vlist, 3 rule, 4 disc, 3 local_par, 2 math, 32 glue, 8 kern, 8 pe
+nalty, 1 margin_kern, 35 glyph, 126 attribute, 220 glue_spec, 65 attribute_list,
+ 5 write, 19 pdf_literal, 1 pdf_dest, 3 pdf_action, 2 pdf_colorstack nodes
+   avail lists: 1:12,2:35826,3:10214,4:144,5:863,6:106,7:12906,8:79,9:1253,10:19
+,11:864
+ 80262 multiletter control sequences out of 65536+600000
+ 155 fonts using 58360395 bytes
+ 97i,17n,129p,1151b,2170s stack positions out of 5000i,500n,10000p,200000b,200000s
+</usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf
+></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.ot
+f></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoTex
+t-Regular.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/gfsneohe
+llenicmath/GFSNeohellenicMath.otf></usr/local/texlive/2020/texmf-dist/fonts/open
+type/public/gfsneohellenicmath/GFSNeohellenicMath.otf></usr/local/texlive/2020/t
+exmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></usr/local/te
+xlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoMath-Regular.otf></
+usr/local/texlive/2020/texmf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-It
+alic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono10-r
+egular.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/gfsneohelle
+nic/GFSNeohellenic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public
+/stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/openty
+pe/public/gfsneohellenic/GFSNeohellenicBold.otf></usr/local/texlive/2020/texmf-d
+ist/fonts/opentype/public/stix2-otf/STIXTwoText-Regular.otf>
+Output written on ejemplo.pdf (37 pages, 1196272 bytes).
 
-PDF statistics: 534 PDF objects out of 1000 (max. 8388607)
- 434 compressed objects within 5 object streams
- 113 named destinations out of 1000 (max. 131072)
- 279 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 527 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
+ 106 named destinations out of 1000 (max. 131072)
+ 271 words of extra memory for PDF output out of 10000 (max. 100000000)
 

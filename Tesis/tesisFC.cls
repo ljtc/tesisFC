@@ -17,7 +17,6 @@
 
 
 %Revisar el tipo de compilación para cargar paquetes y fuentes
-\RequirePackage{iftex}
 \ifluatex
   \RequirePackage{fontspec}
   \RequirePackage{unicode-math}
@@ -91,7 +90,7 @@
 	    \vspace{0.75cm}
 	    {\large\scshape Facultad de \the\facultad\unskip\strut\par}
 	    \vspace{2.5cm}
-	    {\large\scshape Hola mundo\par}%%
+	    {\large\scshape\thetitle\par}
 	    \vspace{2.5cm}
 	    \begin{minipage}{8cm}
 	    \centering
@@ -100,13 +99,13 @@
 	    \makebox[7cm][c]{QUE PARA OBTENER EL T\'ITULO DE:}\\[0.8cm]
 	    {\scshape\the\grado}\\[1.3cm]
 	    \makebox[7cm][s]{P R E S E N T A :}\\[0.8cm]
-	    {\scshape Yo mero}\par %%
+	    {\scshape\theauthor}\par
 	    \vspace{1.2cm}
 	    { TUTOR\\[0.8cm]
 	    {\scshape\the\tutor}}
 	    \vfill
 
-	    {\scshape hoy}%%
+	    {\scshape\thedate}
 	    \vspace{.1cm}
 
 	\end{center}
@@ -119,7 +118,7 @@
 \settypeblocksize{7.75in}{33pc}{*}
 \setulmargins{4cm}{*}{*}
 \setlrmargins{1.25in}{*}{*}
-\setmarginnotes{17pt}{51pt}{\onelineskip}
+\setmarginnotes{17pt}{86pt}{\onelineskip}
 \setheadfoot{\onelineskip}{2\onelineskip}
 \setheaderspaces{*}{2\onelineskip}{*}
 \checkandfixthelayout
@@ -147,6 +146,7 @@
 
 \theoremstyle{definition}
 \newtheorem{definicion}[teorema]{Definición}
+\newtheorem{observación}[teorema]{Observación}
 
 %Ambiente de demostración
 \renewenvironment{proof}[1][\proofname] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}

@@ -1,5 +1,13 @@
 \chapter{Compilación y arara}
-Para generar los índices la compilación debe ser:
+En este momento la compilación se ha vuelto algo complicada y por tanto puede que tome algo de tiempo. Por ejemplo para generar la tabla de contenidos es necesaria la siguiente cadena
+\begin{flushleft}
+  \verb|lualatex MiDocumento.tex|\\
+  \verb|lualatex MiDocumento.tex|
+\end{flushleft}
+
+En la sección~\ref{sec:babel} ya se había mencionado cuál es la cadena de
+compilación para obtener la bibliografía. Finalmente, para generar los
+índices la compilación debe ser:
 \begin{flushleft}
   \verb|lualatex MiDocumento.tex|\\
   \verb|makeindex MiDocumento.idx|\\
@@ -11,9 +19,7 @@ se haya creado. En nuestro documento debería ser en el documento principal,
 como arriba, para formar al índice alfabético y en \texttt{names.idx} para
 formar el índice de nombres.
 
-Si se considera la cadena de compilación que se generará cuando se tomé en
-cuenta la de la sección~\ref{sec:bib} para generar la bibliografía ahora
-resulta en
+Si ponemos todos los pasos necesarios para obtener un pdf a partir de nuestros archivos tex, entonces obtenemos algo así:
 \begin{flushleft}
   \verb|lualatex MiDocumento.tex|\\
   \verb|biber MiDocumento|\\
@@ -21,13 +27,19 @@ resulta en
   \verb|lualatex MiDocumento.tex|\\
   \verb|lualatex MiDocumento.tex|
 \end{flushleft}
-Como claramente tiene más pasos puede que haga el proceso algo lento. Para
-hacer más rápida la compilación hay que evitar los pasos innecesarios. Las
-primeras líneas del archivo principal son de la forma
+donde, de nuevo, \texttt{makeindex} se debe correr en cada índice que se haya
+creado. Como claramente tiene más pasos puede que haga el proceso algo lento.
+Para hacer más rápida la compilación hay que evitar los pasos innecesarios.
+Esto es, una vez que se ha compilado la primera vez se han creado los
+archivos necesarios para componer bibliografía, ídices, tabla de contenidos y
+otros. Si no hay modificaciones a la bibliografía o índices, no es necesario
+correr los pasos intermedios de arriba, ni tampoco correr tantas veces
+\texttt{lualatex}. Para hacer esta compilación condicional escribimos
+en las primeras líneas del archivo principal algo como lo siguiene
 \begin{flushleft}
   \verb|% arara: ...|
 \end{flushleft}
-las uso para compilar con \texttt{arara} ya que se pueden agregar
+se usan para compilar con \texttt{arara} ya que se pueden agregar
 condicionales de manera sencilla. Al menos mucho más simple que crear un
 \texttt{latexmk} o un \texttt{makefile}. Aunque seguramente su instalación
 local sí debe incluir \texttt{arara}, desgraciadamente overleaf no incluye
@@ -52,16 +64,6 @@ latex se configura como \textit{custom toolchain} y el toolchain es:
 \begin{flushleft}
   \verb|arara %DOC -v|
 \end{flushleft}
-como se explica en \url{https://github.com/ashthespy/Atom-LaTeX}.
-\begin{figure}
-  \includegraphics[scale=0.3]{primera}
-  \caption{Primera compilación}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[scale=0.3]{segunda}
-  \caption{Segunda compilación}
-\end{figure}
 
 Para configurarlo en TeXMaker hay que seguir las instrucciones en
 \url{https://tex.stackexchange.com/a/107995}.
@@ -69,3 +71,17 @@ Para configurarlo en TeXMaker hay que seguir las instrucciones en
 En TeXWorks: \url{https://tex.stackexchange.com/a/98795}.
 
 En TeXShop: \url{https://tex.stackexchange.com/a/175673}.
+
+\clearpage
+
+\begin{figure}
+\centering
+  \includegraphics[scale=0.3]{primera}
+  \caption{Primera compilación}
+\end{figure}
+
+\begin{figure}
+\centering
+  \includegraphics[scale=0.3]{segunda}
+  \caption{Segunda compilación}
+\end{figure}

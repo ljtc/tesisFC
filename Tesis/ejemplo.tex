@@ -16,7 +16,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\usepackage{csquotes}%recomendado para usar junto con biblatex
+\usepackage[autostyle]{csquotes}%recomendado para usar junto con biblatex
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}%debe estar después del paquete de idiomas
 
 %este es recomendado, pero debe ser el último en casi todos los casos
@@ -98,6 +98,9 @@
 
 
 %Información para la portada
+\title{Título del trabajo}
+\author{Nombre del alumno}
+\date{2021}
 \facultad{Ciencias}
 \grado{Grado a obtener}
 \tipo{tesis}
@@ -128,6 +131,7 @@
 
 %BIBLIOGRAFÍA
 \backmatter%
+\nocite{*}
 \printbibliography%
 
 %GLOSARIOS

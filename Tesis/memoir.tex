@@ -4,28 +4,19 @@
 
 
 \section{Lo básico}
-Memoir es una clase configurable, es decir, no hace falta cargar paquetes
-adicionales para hacer un diseño completo de cómo se verá nuestro documento.
-Además puede servir tanto para \textit{book} como para \textit{article} la
-opción por defecto es una salida estilo \textit{book}, para cambiar al
-diseño estilo \textit{article} basta poner la opción \texttt{article} como
-opción a la clase. A diferencia de las clases estándar donde hacer un cambio
-de \textit{book} a \textit{article} seguramente causará problemas (por
-ejemplo \verb|\chapter{...}| no está definido en article), en
-\textit{memoir} no existe ese problema. Otra ventaja inmediata es que el
-ambiente \texttt{abstract} estará definido para \textit{book}.
+La clase \texttt{tesisFC} tiene como base a \textit{memoir}. La motivación es poder configurar de manera fácil los ascpectos del documento sin tener que usar paquetería adicional. Así, cuando el usuario cargue un paquete es poco probable que cause alguna incompatibilidad.¡
 
-Para ver algunas cosas básicas para la construcción de un texto usando
-\textit{memoir} revisa el archivo principal de este documento. Recuerda que
-lo que está en este documento debe ser usado como ejemplo y que la
-configuración final debe ser decisión del usuario.
+\textit{Memoir} es una clase configurable, es decir, no hace falta cargar paquetes adicionales para hacer un diseño completo de cómo se verá nuestro
+documento. Además puede servir tanto para \textit{book} como para \textit{article} la opción por defecto es una salida estilo \textit{book}, para cambiar al diseño estilo \textit{article} basta poner la opción \texttt{article} como opción a la clase. A diferencia de las clases
+estándar donde hacer un cambio de \textit{book} a \textit{article} seguramente causará problemas (por ejemplo \verb|\chapter{...}| no está
+definido en article), en \textit{memoir} no existe ese problema. Otra ventaja inmediata es que el ambiente \texttt{abstract} estará definido para \textit{book}.
 
 La tabla de contenidos esta formada por el comando
 \verb|\tableofcontents*|. Esta versión con estrella es única de memoir y su
 utilidad es que no aparezca una entrada para la tabla de contenidos en la
 tabla de contenidos.
 
-Otra ventaja de memoir es que no hace falta redefinir
+Otra ventaja de \textit{memoir} es que no hace falta redefinir
 \verb|\cleardoublepage| para que las páginas pares ``vacías'' antes de un
 nuevo capítulo estén en blanco. La clase ya lo hace por defecto. Además, la
 clase tiene las opciones \texttt{openright} para que los capítulos empiecen
@@ -33,20 +24,11 @@ en las paginas impares, \texttt{openleft} para que empiecen en las pares y
 \texttt{openany} para que empiecen en la siguiente página sin importar su
 paridad.
 
-Modifiqué el estilo de salida de los capítulos de tal forma que fuera
-evidente su cambio y que se vea cómo hacer un diseño desde cero. Memoir tiene
+Memoir tiene predefinidos muchos estilos de capítulo, em este documento se está usando \texttt{madsen}. Memoir tiene
 definidos muchos más estilos de salida por defecto, estos pueden verse en
 \url{http://www.ebookation.com/wp-content/uploads/2010/03/memoirchapstyles.pdf}
 
-Con el mismo propósito modifique los márgenes del documento. Hice un margen
-muy sencillo para la portada y luego usé un truco para hacer un cambio en
-la geometría del resto del documento. Cambié la geometría en el resto del
-texto por varias razones, una de ellas es que una página no debería tener
-una línea de texto tan grande. Una especie de ideal es 66 caracteres por
-línea. En este texto use el inverso multiplicativo de la relación áurea
-\(\varphi \) para crear la caja de texto. Lo común es usar \(\varphi \)
-directamente, pero esto parece ser mejor en papel tamaño A4, o uno donde
-la relación alto ancho sea mayor.
+Modifique el tamaño y la posición de la caja de texto para obtener una linea de texto suficientemente grande como evitar tantos cortes de palabra, pero no ta grande como para que sea difícil pasar de una lína a otra.
 
 Si notan como está formado un libro, el bloque de texto no está centrado
 en la página. Comúnmente el margen de la espina (donde se juntan las
@@ -56,9 +38,9 @@ superior es más chico que el inferior. Tomamos en cuenta estos detalles en
 la formación de este documento.
 
 También cambié cabeceras y pies, esta vez fue mínimo pero aún así es
-suficiente para ver como cambiar cabeceras y pies.
+suficiente para ver cómo cambiar cabeceras y pies (ver archivo \texttt{.cls}).
 
-Menciono de nuevo que memoir es una clase configurable y tiene de
+Menciono de nuevo que \textit{memoir} es una clase configurable y tiene de
 manera nativa capacidades mayores o iguales a
 las de los siguientes paquetes
 \begin{center}
@@ -75,7 +57,7 @@ Por último, la clase carga los siguientes paquetes
 Así que no hace falta cargar ninguno de estos, de esta manera es más fácil
 tener compatibilidad de paquetes.
 
-Memoir puede crear índices de manera relativamente sencilla, en este ejemplo
+\textit{Memoir} puede crear índices de manera relativamente sencilla, en este ejemplo
 haremos uno de términos o alfabético y uno de nombres. Para esto se escribió
 en el preámbulo
 \begin{flushleft}
@@ -152,7 +134,6 @@ similar a la de figura.
 \end{tikzpicture}
 \caption{¡Pentagonator!}
 \end{diagram}
-
 También es posible aprovechar el espacio del margen como apoyo para las figuras.
 \begin{marginfigure}
 \centering
@@ -164,12 +145,12 @@ También es posible aprovechar el espacio del margen como apoyo para las figuras
 
 Por último en el código de este documento se puede ver que todas las
 figuras tienen inmediatamente después del inicio del ambiente el comando
-\verb|\centering|, debe se este y no usar el ambiente \texttt{centering}
+\verb|\centering|, debe ser este y no usar el ambiente \texttt{center}
 para evitar espacios verticales no deseados. Además, como esto se hizo en
 cada figura pudo haberse configurado en el preámbulo con el siguiente
 comando
 \begin{flushleft}
-  \setfloatadjustment{figure}{\centering}
+  \verb|\setfloatadjustment{figure}{\centering}|
 \end{flushleft}
 que también se puede usar en tablas, figuras al margen y los flotantes que
 se hayan creado.

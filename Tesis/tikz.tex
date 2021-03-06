@@ -3,11 +3,13 @@
 \chapter{Tikz}
 Tikz es un paquete muy amplio y es bastante difícil describir todas sus
 capacidades. Por ejemplo el manual, que hace precisamente eso, es de mas de
-1000 páginas. Por esta razón sólo veremos lo más básico de este paquete
+\num{1000} páginas. Por esta razón sólo veremos lo más básico de este paquete
 
 \section{Nodos y líneas}%
 \label{sec:basic}
-Algunos nodos y líneas
+Tikz crea un plano cartesiano en la página. Así para poner contenido se
+específica una coordenada o bien una recta entre dos puntos del plano, como
+en el siguiente ejemplo.
 \begin{center}
 \begin{tikzpicture}
 \node (x) at (0,0) {Hola};
@@ -25,30 +27,33 @@ opciones de posición son \texttt{above}, \texttt{below}, \texttt{left} y
 start}, \texttt{near end}, \texttt{center} (la opción por defecto) o una más
 granular \texttt{pos=x}, donde \texttt{x} es un número entre 0 y 1.
 
-Algunas figuras ya están definidas en la base de tikz. Hay muchas más en la
-librería \texttt{shapes} o \texttt{shapes.geometric}.
+Algunas figuras ya están definidas en la base de tikz. Algunas de ellas son:
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) rectangle (2,1);
 \draw (3,0) circle [radius=5mm];
-\draw (4,0) ellipse [x radius=5mm, y radius=7mm];
+\draw (4.3,0) ellipse [x radius=5mm, y radius=7mm];
 \draw (6,0) arc [start angle= 40, end angle=190, radius=6mm];
 \draw (8,0) arc [start angle= 40, end angle=190, x radius=5mm, y radius=7mm];
 \end{tikzpicture}
 \end{center}
+Hay muchas más en la librería \texttt{shapes} o \texttt{shapes.geometric}.
 
 También se pueden hacer curvas ``jalando'' una línea en dos puntos
 \begin{center}
 \begin{tikzpicture}
-\node at (0,0) {\(\circ\)}; % nodo de referencia
-\node at (1,1) {\(\circ\)}; % nodo de referencia
-\node at (2,1) {\(\circ\)}; % nodo de referencia
-\node at (2,0) {\(\circ\)}; % nodo de referencia
+\draw (0,0) circle (1pt); % nodo de referencia
+\draw (1,1) circle (1pt); % nodo de referencia
+\draw (2,1) circle (1pt); % nodo de referencia
+\draw (2,0) circle (1pt); % nodo de referencia
 \draw (0,0) .. controls (1,1) and (2,1) .. (2,0);
 \end{tikzpicture}
 \end{center}
+donde los puntos de arriba sólo fueron puestos para hacer referencia de qué
+puntos se ``jalo'' la recta.
 
-Ahora vamos a colorear figuras
+Colorear figuras también es fácil, además de que se pueden hacer muchos
+estilos de coloreado.
 \begin{center}
 \begin{tikzpicture}
 \fill[blue!50,rounded corners] (0,0) rectangle (1,1);
@@ -87,10 +92,12 @@ Una aplicación de \texttt{arc} puede ser dibujar un cilindro
 \end{tikzpicture}
 \end{center}
 
-Estas formas básicas de usar Tikz pueden tener muchas posibilidades si se
-combinan entre ellas.
+A pesar de que esto es lo más básico de Tikz se pueden tener muchas posibilidades combinando estas reglas básicas entre ellas.
 
-Ahora a graficar. En las funciones trigonométricas se debe especificar como se hacen los cálculos: radianes, grados, etc. Para obtener el seno como queremos se escribe \verb|sin((\y)r)|.
+Otra función de Tikz es graficar funciones. En el siguiente ejemplo
+graficamos una parábola y el seno. En las funciones trigonométricas se debe
+especificar como se hacen los cálculos: radianes, grados, etc. Para obtener
+el seno como queremos se escribe \verb|sin((\y)r)|.
 \begin{center}
 \begin{tikzpicture}
 \draw[->] (-3,0) -- (3,0)node[right] {\(x\)};
@@ -99,8 +106,23 @@ Ahora a graficar. En las funciones trigonométricas se debe especificar como se 
 \draw[domain=-4:4,variable=\y,blue,smooth] plot ({\y},{sin((\y)r)});
 \end{tikzpicture}
 \end{center}
+Esta forma simple es bastante efectiva y su única posible desventaja es que
+se debe tener cuidado con las dimensiones de la grafica para que no haya
+algunas muy grandes y otras muy chicas, generando una inconsistencia
+indeseada.
 
-Otra opción para graficar es usar el paquete \texttt{pgfplots} que usará el motor de \texttt{pgf} para hacer gráficas. Es importante notar que use \verb|\pgfplotsset{width=6cm,compat=1.17}| en el preámbulo. La parte de \texttt{width} es para que todas las gráficas tengan el mismo tamaño y así tener uniformidad en el texto. La parte de \texttt{compat} es la versión del motor que se usará, diferentes versiones podrían generar diferentes salidas con el mismo código.
+Tikz es la capa superior de \texttt{pgf} así los métodos de Tikz serán muy
+similares a los de \texttt{pgf}. Por esta razón otro método para gráficar es
+usar el paquete \texttt{pgfplots} que usará el motor de \texttt{pgf} para
+hacer gráficas. Es importante notar que se escribió
+\verb|\pgfplotsset{width=6cm,compat=1.17}| en el preámbulo. La parte de
+\texttt{width} es para que todas las gráficas tengan el mismo tamaño y así
+tener uniformidad en el texto. La parte de \texttt{compat} es la versión del
+motor que se usará, diferentes versiones podrían generar diferentes salidas
+con el mismo código. Para usar la versión más actual siempre se escribe
+\texttt{compat=newest}, aunque esta opción no es recomendada ya que es como
+trabajar con una versión beta de pgf y como se mencionó antes la salida del
+mismo código podría cambiar.
 \begin{center}
 \begin{tikzpicture}
 \begin{axis}[
@@ -125,13 +147,13 @@ Otra opción para graficar es usar el paquete \texttt{pgfplots} que usará el mo
 Una aplicación que seguramente tendrá mayor uso en la carrera de matemáticas
 es dibujar diagramas conmutativos. En la sección~\ref{sec:basic} ya hicimos
 una flecha entre dos objetos con un nombre sobre dicha flecha. Con la misma
-técnica se pueden hacer diagramas conmutativos, pero aquí veremos como se
-hacen usando \verb|\usetikzlibrary{cd}| o su equivalente
+técnica se pueden hacer diagramas conmutativos. Aquí veremos como se
+hacen usando \verb|\usetikzlibrary{cd}| o equivalentemente
 \verb|\usepackage{tikz-cd}|.
 \begin{center}
 \begin{tikzcd}
-T\ar[bend left=20]{rrd}{h_{1}}\ar[bend right=20]{rdd}[swap]{h_{2}}\ar[dashed]{rd}[description]{h}\\[-4mm]
-&[-3mm] P\ar{r}{p_{1}}\ar{d}{p_{2}} & A\ar{d}{f}\\
+T\ar[bend left=30]{rrd}{h_{1}}\ar[bend right=30]{rdd}[swap]{h_{2}}\ar[dashed]{rd}[description]{h}\\[-3mm]
+&[-2mm] P\ar{r}{p_{1}}\ar{d}{p_{2}} & A\ar{d}{f}\\
 & B\ar{r}[swap]{g} & C
 \end{tikzcd}
 \end{center}
@@ -234,7 +256,7 @@ Aún así va un intento de ejemplos. Para esto voy a usar las librerías
 \end{center}
 
 
-\section{Fractales}
+\section{Por diversión, Fractales}
 Con \verb|\usetikzlibrary{decorations.fractals}|
 \begin{center}
 \begin{tikzpicture}[decoration=Koch curve type 1]
