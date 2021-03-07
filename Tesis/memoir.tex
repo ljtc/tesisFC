@@ -4,7 +4,7 @@
 
 
 \section{Lo básico}
-La clase \texttt{tesisFC} tiene como base a \textit{memoir}. La motivación es poder configurar de manera fácil los ascpectos del documento sin tener que usar paquetería adicional. Así, cuando el usuario cargue un paquete es poco probable que cause alguna incompatibilidad.¡
+La clase \texttt{tesisFC} tiene como base a \textit{memoir}. La motivación es poder configurar de manera fácil los ascpectos del documento sin tener que usar paquetería adicional. Así, cuando el usuario cargue un paquete es poco probable que cause alguna incompatibilidad.
 
 \textit{Memoir} es una clase configurable, es decir, no hace falta cargar paquetes adicionales para hacer un diseño completo de cómo se verá nuestro
 documento. Además puede servir tanto para \textit{book} como para \textit{article} la opción por defecto es una salida estilo \textit{book}, para cambiar al diseño estilo \textit{article} basta poner la opción \texttt{article} como opción a la clase. A diferencia de las clases
@@ -24,7 +24,7 @@ en las paginas impares, \texttt{openleft} para que empiecen en las pares y
 \texttt{openany} para que empiecen en la siguiente página sin importar su
 paridad.
 
-Memoir tiene predefinidos muchos estilos de capítulo, em este documento se está usando \texttt{madsen}. Memoir tiene
+\textit{Memoir} tiene predefinidos muchos estilos de capítulo, en este documento se está usando \texttt{madsen}. Memoir tiene
 definidos muchos más estilos de salida por defecto, estos pueden verse en
 \url{http://www.ebookation.com/wp-content/uploads/2010/03/memoirchapstyles.pdf}
 
@@ -156,17 +156,26 @@ que también se puede usar en tablas, figuras al margen y los flotantes que
 se hayan creado.
 
 
-\section{Falta desarrollar mejor}
-Memoir puede crear glosarios de una forma muy similar a los índices. En este
-documento se crearon una lista de acrónimos y una de símbolos para
-ejemplificar cómo se hacen. En el preámbulo se escribió
+\section{Me falta desarrollar mejor}
+Memoir puede crear glosarios de una forma muy similar a los índices. Se puede crear, por ejemplo, una lista de acrónimos y una de símbolos para
+ejemplificar cómo se hacen. En el preámbulo se escribe
 \begin{flushleft}
   \verb|\makeglossary[acro]|\\
   \verb|\makeglossary[simb]|
 \end{flushleft}
-Luego un acrónimo HTML\glossary[acro]{HTML}{⟨HyperText Markup Language} y un
-símbolo \(c\)\glossary[simb]{\(c\)}{Una constante importante}. Por último,
-al finas del documento principal verás como se imprimió cada uno.
+Luego un acrónimo \verb|\glossary[acro]{HTML}{⟨HyperText Markup Language}| y un
+símbolo \verb|\glossary[simb]{\(c\)}{Una constante importante}|. Por último,
+en el lugar del documento donde vayan a ir los glosarios se escribe
+\begin{flushleft}
+  \verb|\clearpage %para crear una página nueva|
+  \verb|\printglossary[acro]|
+  \verb|\clearpage|
+  \verb|\printglossary[simb]|
+\end{flushleft}
+Para cambiar el nombre del glosario, de la misma manera que en los índices, se usa
+\begin{flushleft}
+  \verb|\renewcommand{\glossaryname}{Un glosario}|
+\end{flushleft}
 
 La dificultad que encuentro en la creación de glosarios es la compilación.
 Para esto también se usará \textit{makeindex}, pero si se intenta correr
@@ -176,7 +185,7 @@ este programa en alguno de los archivos para crear glosarios, por ejemplo
 \end{flushleft}
 se generaran muchos errores. Entonces, para lograr hacer estos glosarios se
 necesita un archivo de configuración \texttt{basic.gst} que encontrarás en
-los archivos de este proyecto y con esto la cadena de compilación que se uso para los glosarios de este documento es
+los archivos de este proyecto y con esto la cadena de compilación que se usa para los glosarios es
 \begin{flushleft}
   \verb|...|\\
   \verb|makeindex -s basic.gst -o acro.gls acro.glo|\\

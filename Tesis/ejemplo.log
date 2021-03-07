@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2021.2.26)  5 MAR 2021 18:59
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2021.2.26)  7 MAR 2021 12:55
  restricted system commands enabled.
 **ejemplo.tex
 (./ejemplo.tex
@@ -2485,14 +2485,16 @@ LaTeX Info: Redefining \. on input line 112.
 LaTeX Info: Redefining \% on input line 112.
 
 [2]
-LaTeX Info: Redefining \. on input line 163.
-LaTeX Info: Redefining \% on input line 163.
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
  [3</usr/local/texlive/2020/texmf-dist/tex/latex/mwe/example-image-a.pdf></usr/l
 ocal/texlive/2020/texmf-dist/tex/latex/mwe/example-image-b.pdf></usr/local/texli
 ve/2020/texmf-dist/tex/latex/mwe/example-image-c.pdf>])
 LaTeX Info: Redefining \. on input line 126.
 LaTeX Info: Redefining \% on input line 126.
- [4]
+ [4
+Missing character: There is no ⟨ (U+27E8) in font [lmmono10-regular]:!
+]
 \openout2 = fuentes.aux
  (./fuentes.tex
 Package microtype Info: Loading generic protrusion settings for font family
@@ -5252,22 +5254,22 @@ LaTeX Info: Redefining \% on input line 26.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `ejemplo.out' has not changed.
-(rerunfilecheck)             Checksum: 7D6AD578DE05C9C67B719594B028BC61;3089.
+(rerunfilecheck)             Checksum: 96A15E152B66384DA50CE5BD8DC65046;3107.
 Package logreq Info: Writing requests to 'ejemplo.run.xml'.
 
 \openout1 = ejemplo.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 62262 strings out of 478543
+ 62427 strings out of 478543
  244498,2848258 words of node,token memory allocated
  2519 words of node memory still in use:
    20 hlist, 5 vlist, 3 rule, 4 disc, 3 local_par, 2 math, 32 glue, 8 kern, 8 pe
 nalty, 1 margin_kern, 35 glyph, 126 attribute, 220 glue_spec, 65 attribute_list,
  5 write, 19 pdf_literal, 1 pdf_dest, 3 pdf_action, 2 pdf_colorstack nodes
-   avail lists: 1:12,2:35826,3:10214,4:144,5:863,6:106,7:12906,8:79,9:1253,10:19
+   avail lists: 1:12,2:35826,3:10227,4:144,5:863,6:106,7:12994,8:79,9:1253,10:19
 ,11:864
- 80262 multiletter control sequences out of 65536+600000
+ 80427 multiletter control sequences out of 65536+600000
  155 fonts using 58360395 bytes
  97i,17n,129p,1151b,2170s stack positions out of 5000i,500n,10000p,200000b,200000s
 </usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf
@@ -5285,7 +5287,7 @@ nic/GFSNeohellenic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/public
 /stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/openty
 pe/public/gfsneohellenic/GFSNeohellenicBold.otf></usr/local/texlive/2020/texmf-d
 ist/fonts/opentype/public/stix2-otf/STIXTwoText-Regular.otf>
-Output written on ejemplo.pdf (37 pages, 1196272 bytes).
+Output written on ejemplo.pdf (37 pages, 1199097 bytes).
 
 PDF statistics: 527 PDF objects out of 1000 (max. 8388607)
  424 compressed objects within 5 object streams

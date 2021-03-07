@@ -344,3 +344,27 @@ Girasol de \url{https://www.texample.net}
 }
 \end{tikzpicture}
 \end{center}
+
+Uno más usando la librería \texttt{math}
+\begin{center}
+\begin{tikzpicture}[line cap=round, x=2cm,y=2cm, line join=round]
+\tikzmath{%
+  int \n;
+  \b = 0; \d = 1;
+  for \n in {1,...,10}{
+    \l = (\n == 10 && 10 > 1) ? "red" : "black";
+    \e = (\n == 1) ? " -- cycle" : "";
+    {
+      \path [rotate=\b, draw=\l] (0,0) -- (\d,1) -- (\d,0)
+        node [\l, midway, anchor=\b+180] {1}
+        \e (\d/2, 0)  node [fill=white] {$\sqrt{\n}$};
+      \path [draw=\l, rotate=\b] (\d-.1,0) |- ++(.1,.1);
+    };
+    \d = sqrt(1+(\d)^2); \b = \b + asin(1/\d);
+  };
+  {
+    \path [rotate=\b, \l] (\d/2, 0) node [fill=white] {$\sqrt x$};
+  };
+}
+\end{tikzpicture}
+\end{center}
