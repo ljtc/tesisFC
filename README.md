@@ -50,8 +50,8 @@ Para facilitar la escritura la clase carga por defecto algunos paquetes que son 
 En el ejemplo adjunto con la clase se encuentra una breve descripción de la utilidad de cada uno de ellos. Además también hay ejemplos de algunos otros paquetes que pueden ser útiles para la creación de una tesis.
 
 ## Posibles pendientes
-- [] Poner ejemplos de enlaces y moléculas con `chemfig`
-- [] Escribir código y pseudocódigo con `listings`
-- [] Dibujar diagramas de Feynman con `tikz-feynman`
-- [] ¿Máquinas de Turing y circuitos eléctricos?
-- [] Animaciones con `animate` (aunque se requiere un visor de pdf específico)
+- [ ] Poner ejemplos de enlaces y moléculas con `chemfig`
+- [ ] Escribir código y pseudocódigo con `listings`
+- [ ] Dibujar diagramas de Feynman con `tikz-feynman`
+- [ ] ¿Máquinas de Turing y circuitos eléctricos?
+- [ ] Animaciones con `animate` (aunque se requiere un visor de pdf específico)
