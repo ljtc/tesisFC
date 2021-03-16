@@ -8,6 +8,28 @@
 \DeclareOption{imp}{\isimptrue}
 \ProcessOptions\relax
 
+%Geometría
+\ifisimp
+\setstocksize{279mm}{216mm}
+\settrimmedsize{224mm}{170mm}{*}
+\settypeblocksize{*}{130mm}{1.3}
+\setulmargins{30mm}{*}{*}
+\setlrmargins{*}{*}{2}
+\setmarginnotes{17pt}{86pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
+\else
+\settypeblocksize{7.75in}{33pc}{*}
+\setulmargins{4cm}{*}{*}
+\setlrmargins{1.25in}{*}{*}
+\setmarginnotes{17pt}{86pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
+\fi
+
+
 \RequirePackage{mathtools}
 \RequirePackage{amsthm}
 \RequirePackage{siunitx}
@@ -42,11 +64,6 @@
 \newtoks\tutor
 \newtoks\logouni
 \newtoks\logofac
-
-%Geometría
-\setlrmarginsandblock{1.5in}{*}{1}%espina frente radio
-\setulmarginsandblock{1in}{*}{1}%superior inferior radio
-\checkandfixthelayout%implementa los cambios
 
 %Modificación del código proporcionado por la facultad hace algunos años
 \newcommand*{\portadatesis}{%
@@ -113,16 +130,6 @@
 \end{titlingpage}
 }
 
-%Nueva geometría
-\twocolumn
-\settypeblocksize{7.75in}{33pc}{*}
-\setulmargins{4cm}{*}{*}
-\setlrmargins{1.25in}{*}{*}
-\setmarginnotes{17pt}{86pt}{\onelineskip}
-\setheadfoot{\onelineskip}{2\onelineskip}
-\setheaderspaces{*}{2\onelineskip}{*}
-\checkandfixthelayout
-\onecolumn
 
 %Estilo de capítulos
 \chapterstyle{madsen}
