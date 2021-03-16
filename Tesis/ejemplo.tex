@@ -8,7 +8,7 @@
 % arara: lualatex until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
 % arara: --> { synctex: on }
 
-\documentclass[showtrims,imp]{tesisFC}
+\documentclass{tesisFC}
 
 %PAQUETES
 %para los ejemplos
@@ -18,6 +18,12 @@
 \usepackage{pgfplots}
 \usepackage[autostyle]{csquotes}%recomendado para usar junto con biblatex
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}%debe estar después del paquete de idiomas
+
+
+%este no es recomendado sólo se carga para un ejemplo que muestra porqué
+\ifpdftex
+\usepackage[all,cmtip]{xy}
+\fi
 
 %este es recomendado, pero debe ser el último en casi todos los casos
 \usepackage[colorlinks]{hyperref}
@@ -80,10 +86,11 @@
 \pgfplotsset{width=6cm,compat=1.17}
 
 
-%AMBIENTES
+%AMBIENTES (con luaLaTeX)
+\ifluatex%
 \setmathfont{GFS Neohellenic Math}[version=sansmath]
 \setsansfont{GFS Neohellenic}
-
+\setmathfont{XITS Math}[range=scr]
 \newcounter{sans}
 \newenvironment{sans}[1][]% environment name
 {% begin code
@@ -95,7 +102,7 @@
   \par\vspace{\baselineskip}%
   \noindent\ignorespacesafterend%
 }
-
+\fi
 
 %Información para la portada
 \title{Título del trabajo}

@@ -3,8 +3,8 @@
 \chapter{Paquetes en la clase}
 
 \section{amsmath y mathtools}
-Aunque en el título de la sección se menciona \texttt{amsmath} en el archivo
-principal sólo se carga el paquete \texttt{mathtools}. Esto se debe a que
+Aunque en el título de la sección se menciona \texttt{amsmath} en la clase
+sólo se carga el paquete \texttt{mathtools}. Esto se debe a que
 \texttt{mathtools} carga al paquete \texttt{amsmath}, así lo podemos pensar
 como una extensión. De manera más precisa \texttt{mathtools} es resultado de
 corregir algunos ``bugs'' de \texttt{amsmath} y añadir algunas otras funciones.
@@ -16,7 +16,6 @@ operadores están en letras \textit{upright}. Ya están definidos los
 operadores más comunes, pero si se quisiera definir uno nuevo se escribe en
 el preámbulo \verb|\DeclareMathOperator{\id}{Idem}| para definir los
 idempotentes de un anillo, por ejemplo \verb|\id(R)| genera \(\id(R)\).
-
 Además de esto están los ambientes matemáticos como \texttt{align},
 \texttt{gather}, \texttt{cases}, etc.
 
@@ -58,7 +57,7 @@ Con la salida esperada del nombre del ambiente.
 
 \begin{teorema}[Fermat]%
 \label{teo:fermat}
-  La ecuación \(x^n + y^n = z^n\) con \(n\geq 3\) no tiene soluciones no triviales en \(\symbb{Z}\).
+  La ecuación \(x^n + y^n = z^n\) con \(n\geq 3\) no tiene soluciones no triviales en \(\mathbb{Z}\).
 \end{teorema}
 \begin{proof}
   He descubierto una demostración maravillosa de esto, que este margen es
@@ -66,7 +65,7 @@ Con la salida esperada del nombre del ambiente.
 \end{proof}
 
 Se modificó el estilo del ambiente demostración para que su salida sea similara a la de los resultados —Una demostración es tan importante como el
-enunciado—. Nuestra redefinición del ambiente de demostración tiene lo necesario para comportarse bien con el símbolo \(\qed \). Es decir, cuando se termina una demostración con una ecuación u otro tipo de ambiente habrá
+enunciado—. Nuestra redefinición del ambiente de demostración tiene lo necesario para comportarse bien con el símbolo\(\qed \). Es decir, cuando se termina una demostración con una ecuación u otro tipo de ambiente habrá
 un espacio vertical indeseado entre el final del texto y el símbolo de fin de la demostración. Este espacio se evita con el comando \verb|\qedhere|, pero si el ambiente no cuenta con la definición correcta seguirá
 apareciendo este espacio vertical. Un ejemplo de cómo funciona \verb|\qedhere|, para mostrar la diferencia se han hecho dos demostraciones iguales
 
@@ -79,7 +78,7 @@ apareciendo este espacio vertical. Un ejemplo de cómo funciona \verb|\qedhere|,
     \sum_{n\geq 1}\frac{1}{n}=-\frac{1}{12}.
   \]
 \end{proof}
-\begin{proof}[¿Es realmente otra demostración?]
+\begin{proof}[¿Es otra demostración?]
   Se sigue de la siguiente ecuación (usando \verb|\qedhere|)
   \[
     \sum_{n\geq 1}\frac{1}{n}=-\frac{1}{12}. \qedhere
@@ -120,9 +119,10 @@ definición.
 \end{axioma}
 
 Adicionalmente, se podría hacer las definiciones de estos ambientes de
-teorema y demostración como un nuevo ambiente. El ejemplo con tipo de letra
-sans en~\ref{textosans} tiene lo necesario para crear un ambiente y contador
-con las características como las de los ambientes de \texttt{amsthm}.
+teorema y demostración como un nuevo ambiente. El ejemplo, compilando con
+Lua\LaTeX, con tipo de letra sans en~\ref{textosans} tiene lo necesario para
+crear un ambiente y contador con las características como las de los
+ambientes de \texttt{amsthm}.
 
 Finalmente, otro paquete común para el manejo de teoremas y demostraciones
 es \texttt{ntheorem}. Cada uno tiene sus ventajas y desventajas y no es
@@ -130,33 +130,40 @@ fácil elegir uno sobre otro. En este documento se eligió \texttt{amsthm}
 porque es (posiblemente) el más común.
 
 
-\section{babel}%
+\section{babel y polygossia}%
 \label{sec:babel}
-Para el soporte de idiomas elegimos \texttt{babel} con las opciones
-\texttt{spanish} y \texttt{mexico}. La opción \texttt{mexico} hace una
-localización más similar a la que se usa en México, como su nombre lo indica.
-Entre las cosas que hace podemos mencionar que cambia el nombre ``cuadro''
-por ``tabla'', prioriza comillas y usa el punto decimal en lugar de la coma
-como puede verse \(\pi=3.141592\ldots \)
+Para el soporte de idiomas elegimos \texttt{polygossia} en caso de compilar
+con Lua\LaTeX{} y \texttt{babel} en caso de compilar con pdf\LaTeX.
 
-Al usar el idioma español \texttt{babel} se encargará de traducir todo, por ejemplo la palabra ``capítulo'' o ``figura'' como se puede ver en el documento. También traduce y acentúa los operadores, por ejemplo \(\max A\) o \(\lim f\), pero en algunos casos se decidió crear un comando nuevo como en el caso del seno:
+En el caso de \texttt{babel} se carga con las opciones \texttt{spanish} y
+\texttt{mexico}. La opción \texttt{mexico} hace una localización más similar
+a la que se usa en México, como su nombre lo indica. Entre las cosas que
+hace podemos mencionar que cambia el nombre ``cuadro'' por ``tabla'',
+prioriza comillas y usa el punto decimal en lugar de la coma como puede
+verse \(\pi=3.141592\ldots \)
+
+Al usar el idioma español \texttt{babel} se encargará de traducir todo, por ejemplo la palabra ``capítulo'' o ``figura'' como se puede ver en el documento. También traduce y acentúa los operadores, por ejemplo \(\max A\) o \(\lim f\).%
+\ifpdftex%
+Pero en algunos casos se decidió crear un comando nuevo como en el caso del
+seno:
 \[
   \sin(\alpha)\ne\sen(\alpha)
 \]
+\fi
 
 Otra opción para el manejo de idiomas en Xe\LaTeX{} o Lua\LaTeX{} es
 \texttt{polyglossia}. Este paquete se creó cuando \texttt{babel} había
 dejado de tener mantenimiento con el objetivo de simplificar su trabajo en
-estos motores. Si se elige usar \texttt{polyglossia} este paquete también
-tiene una variante \texttt{mexico}, además de que se puede elegir un poco
-más el comportamiento de los operadores con las opciones:
+estos motores. Este paquete también tiene una variante \texttt{mexico},
+además de que se puede elegir un poco más el comportamiento de los
+operadores con las opciones:
 \begin{description}
   \item[\texttt{accented}] para acentuar los operadores como \texttt{babel}.
   \item[\texttt{spaced}] para dar un espacio corto entre el operador y el objeto al que se le aplica, de nuevo, como \texttt{babel}.
   \item[\texttt{all}] para hacer las dos anteriores más la localización de \verb|\sin| \verb|\tan| \verb|\sinh| y \verb|\tanh|.
   \item[\texttt{none}] para no hacer ninguna localización.
 \end{description}
-De esta forma podríamos usar \texttt{polyglossia} con la siguiente
+De esta forma se cargó polyglossia \texttt{polyglossia} con la siguiente
 configuración
 \begin{flushleft}
   \verb|\usepackage{polyglossia}| \\
@@ -164,11 +171,20 @@ configuración
 \end{flushleft}
 
 Tanto \texttt{babel} como \texttt{polyglossia} son buenas opciones para el
-manejo de idiomas y es difícil elegir uno sobre el otro. En este caso elegí
-\texttt{babel} por ser más conocido (lleva mucho más tiempo existiendo) y
-por ser el más estable (\texttt{polyglossia} está en desarrollo, aunque lo
-he usado en la mayoría de mis documentos y no he tenido problemas con la
-configuración como la de arriba).
+manejo de idiomas y es difícil elegir uno sobre el otro. En el caso de
+compilar con Lua\LaTeX{} se decidió usar \texttt{polygossia} ya que es fácil
+ajustar el sangrado de los párrafos. Esto es, en español el primer párrafo
+despues del título de un capítulo, sección, etc. no debería estar sangrado.
+\LaTeX{} toma esto en cuenta, pero \texttt{babel} sobreescribe este
+comportamiento y sangra este primer párrafo (compilar este documento con
+pdf\LaTeX{} para ver la diferencia). Aunque \texttt{polygossia} hace lo
+mismo es fácil evitar esto con el comando
+\begin{flushleft}
+  \verb|\PolyglossiaSetup{spanish}{indentfirst=false}|
+\end{flushleft}
+En \texttt{babel} usando español se supone que sí existe la posibilidad de
+corregir esto (en otros idiomas no es posible), pero el manual no menciona
+nada al respecto.
 
 
 \section{microtype}
@@ -226,8 +242,8 @@ La construcción de la base de datos de referencias es básicamente la misma
 para cualquier paquete de los anteriores. Hay herramientas gráficas útiles
 para hacer esto como JabRef o Zotero.
 
-\texttt{biblatex} puede manejar muchos tipos de entrada. En el manual se
-describe el uso de los siguientes
+El paquete \texttt{biblatex} puede manejar muchos tipos de entrada. En el
+manual se describe el uso de los siguientes
 \autocols{c}{5}{l}{%
   article, book, mvbook, inbook, bookinbook, suppbook, booklet, collection, mvcollection, incollection, suppcollection, dataset, manual, misc, online, patent, periodical, suppperiodical, proceedings, mvproceedings, inproceedings, reference, mvreference, inreference, report, set, software, thesis, unpublished, xdata, custom[a-f], conference, masterthesis, pdhthesis, techreport, www, artwork, audio, bibnote, commentary, image, jurisdiction, legislation, legal, letter, movie, music, performance, review, standard, video
   }

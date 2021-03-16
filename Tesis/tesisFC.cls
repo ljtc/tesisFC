@@ -34,24 +34,25 @@
 \RequirePackage{amsthm}
 \RequirePackage{siunitx}
 
-%Idioma español
-\RequirePackage[spanish,mexico,es-noshorthands,shorthands=off]{babel}
-
 
 %Revisar el tipo de compilación para cargar paquetes y fuentes
 \ifluatex
   \RequirePackage{fontspec}
   \RequirePackage{unicode-math}
-  \RequirePackage[babel,tracking=true,protrusion=true]{microtype}
+  \RequirePackage[tracking=true,protrusion=true]{microtype}
+  \RequirePackage{polyglossia}
+  \setdefaultlanguage[spanishoperators=all]{spanish}
+  \PolyglossiaSetup{spanish}{indentfirst=false}
   \setmainfont{STIX Two Text}
   \setmathfont{STIX Two Math}
-\else
-  \ifpdftex
+\fi
+
+\ifpdftex
     \RequirePackage[T1]{fontenc}
     \RequirePackage[utf8]{inputenc}
+    \RequirePackage[spanish,mexico,es-noshorthands,shorthands=off]{babel}
     \RequirePackage{stix2}
     \RequirePackage[tracking=true,spacing=true,kerning=true,protrusion=true]{microtype}
-  \fi
 \fi
 
 %Portada

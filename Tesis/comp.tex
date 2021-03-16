@@ -1,5 +1,13 @@
 \chapter{Compilación y arara}
-En este momento la compilación se ha vuelto algo complicada y por tanto puede que tome algo de tiempo. Por ejemplo para generar la tabla de contenidos es necesaria la siguiente cadena
+Como este documento puede ser compilado con Lua\LaTeX{} o pdf\LaTeX{} y, por
+los ejemplos, el pdf de salida depende de qué tipo de compilación se usó,
+entonces lo recomendable es que se si compila con un método y luedo el otro
+sea una compilación ``nueva'', es decir, que antes de cambiar de método se
+eliminen los archivos auxiliares para evitar posibles conflictos.
+
+En este momento la compilación se ha vuelto algo complicada y por tanto puede
+que tome algo de tiempo. Por ejemplo para generar la tabla de contenidos es
+necesaria la siguiente cadena
 \begin{flushleft}
   \verb|lualatex MiDocumento.tex|\\
   \verb|lualatex MiDocumento.tex|

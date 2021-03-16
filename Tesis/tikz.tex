@@ -30,7 +30,7 @@ granular \texttt{pos=x}, donde \texttt{x} es un número entre 0 y 1.
 Algunas figuras ya están definidas en la base de tikz. Algunas de ellas son:
 \begin{center}
 \begin{tikzpicture}
-\draw (0,0) rectangle (2,1);
+\draw (0,-0.5) rectangle (2,0.5);
 \draw (3,0) circle [radius=5mm];
 \draw (4.3,0) ellipse [x radius=5mm, y radius=7mm];
 \draw (6,0) arc [start angle= 40, end angle=190, radius=6mm];
@@ -92,7 +92,8 @@ Una aplicación de \texttt{arc} puede ser dibujar un cilindro
 \end{tikzpicture}
 \end{center}
 
-A pesar de que esto es lo más básico de Tikz se pueden tener muchas posibilidades combinando estas reglas básicas entre ellas.
+A pesar de que esto es lo más básico de Tikz se pueden tener muchas
+posibilidades combinando estas reglas básicas entre ellas.
 
 Otra función de Tikz es graficar funciones. En el siguiente ejemplo
 graficamos una parábola y el seno. En las funciones trigonométricas se debe
@@ -158,17 +159,6 @@ T\ar[bend left=30]{rrd}{h_{1}}\ar[bend right=30]{rdd}[swap]{h_{2}}\ar[dashed]{rd
 \end{tikzcd}
 \end{center}
 
-Hay otros paquetes para hacer diagramas conmutativos, uno que aún es muy
-común es \texttt{xy-pic}. También tiene una versión de su sintaxis similar
-a la de \texttt{tikzpicture} de arriba y una versión de matriz como la de
-\texttt{tikzcd}. A pesar de ser común en estos días creo que el paquete que
-debería usarse es \texttt{tikz} ya que \texttt{xy-pic} tiene cosas que
-están mal medidas y tiene muchos años que no tiene mantenimiento. Tiene
-tantos años sin mantenimiento que se quedo sin soportar la compilación con
-Lua\LaTeX, por lo que no es posible mostrar aquí un ejemplo, pero basta
-hacer un monomorfismo o una inclusión, sobretodo vertical, para ver que
-quedan demasiado cerca del dominio.
-
 Esta forma de hacer diagramas por medio de matrices podría parecer limitada
 respecto a la de coordenadas con \texttt{tikzpicture}, pero los métodos de
 tikz son suficientemente robustos como para hacer el siguiente diagrama con
@@ -226,6 +216,44 @@ matrices (este usa la librería \texttt{calc} para mover fácilmente la flecha
 \arrow[Rightarrow,from=e1, to=1s,shorten >=3mm,shorten <=2mm]{}[swap]{\varepsilon}
 \end{tikzcd}
 \end{center}
+
+Hay otros paquetes para hacer diagramas conmutativos, uno que aún es muy
+común es \texttt{xy-pic}. También tiene una versión de su sintaxis similar
+a la de \texttt{tikzpicture} de arriba y una versión de matriz como la de
+\texttt{tikzcd}. A pesar de ser común en estos días creo que el paquete que
+debería usarse es \texttt{tikz} ya que \texttt{xy-pic} tiene cosas que
+están mal medidas y tiene muchos años que no tiene mantenimiento. Tiene
+tantos años sin mantenimiento que se quedo sin soportar la compilación con
+Lua\LaTeX, por lo que no es posible mostrar un ejemplo con este método de
+compilación. En la compilación con pdf\LaTeX{} se puede ver que al dibujar
+un monomorfismo o una inclusión, las flechas quedan demasiado cerca del
+dominio.
+\ifpdftex
+\begin{minipage}{0.45\linewidth}
+\centering
+Con \texttt{xy-pic}
+  \[
+  \begin{xy}
+    (0,0) *+{C} = "c1",
+    (0,-10) *+{D} = "d1",
+    (10,0) *+{C} = "c2",
+    (10,-10) *+{D} = "d2",
+    \POS "c1" \ar@{>->} "d1",
+    \POS "c2" \ar@{^{(}->} "d2",
+  \end{xy}
+  \]
+\end{minipage}%
+\begin{minipage}{0.45\linewidth}
+\centering
+Con \texttt{tikz-cd}
+  \begin{center}
+    \begin{tikzcd}
+      C\ar[tail]{d} & C\ar[hook]{d}\\
+        D & D
+    \end{tikzcd}
+    \end{center}
+\end{minipage}
+\fi
 
 
 \section{Visualización de datos}
