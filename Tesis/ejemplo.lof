@@ -1,0 +1,17 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\selectlanguage *[spanishoperators=all]{spanish}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Muchas figuras}}{3}{figure.1.1}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces Primera}}{3}{figure.1.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces Segunda}}{3}{figure.1.1}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces Tercera}}{3}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Un circulo en el margen}}{3}{figure.1.2}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \sffamily Operaciones con vectores}}{6}{figure.2.1}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces \sffamily Suma de vectores}}{6}{figure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces \sffamily Resta de vectores}}{6}{figure.2.1}%
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Primera compilación}}{25}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Segunda compilación}}{25}{figure.5.2}%
