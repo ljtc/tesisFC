@@ -43,7 +43,7 @@ Para facilitar la escritura la clase carga por defecto algunos paquetes que son 
 |                | `unicode-math` |
 |`fontenc[T1]`   | `fontspec`     |
 |`inputenc[utf8]`|                |
-|`babel[mexico]` | `babel[mexico]`|
+|`babel[mexico]` | `polyglossia`  |
 |`microtype`     | `microtype`    |
 |`siunitx`       | `siunitx`      |
 
