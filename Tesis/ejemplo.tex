@@ -6,7 +6,7 @@
 % arara: makeindex: { files: [ ejemplo.idx, names.idx ] }
 % arara: --> if changed ('idx') || missing ('ind')
 % arara: lualatex until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
-% arara: --> { synctex: on }
+% arara: --> { synctex: yes }
 
 \documentclass{tesisFC}
 
@@ -21,7 +21,7 @@
 
 
 %este no es recomendado sólo se carga para un ejemplo que muestra porqué
-\ifpdftex
+\ifpdftex%
 \usepackage[all,cmtip]{xy}
 \fi
 

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2021.3.15)  16 MAR 2021 16:22
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2021.3.15)  17 MAR 2021 08:55
  restricted system commands enabled.
 **ejemplo.tex
 (./ejemplo.tex
@@ -735,12 +735,12 @@ braces):
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
 Module polyglossia Info: Language data for spanish
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            patterns	hyph-es.pat.txt
+(polyglossia)            synonyms	espanol
 (polyglossia)            loader	loadhyph-es.tex
-(polyglossia)            righthyphenmin	2
 (polyglossia)            hyphenation	
-(polyglossia)            synonyms	espanol on input line 13
+(polyglossia)            patterns	hyph-es.pat.txt
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            righthyphenmin	2 on input line 13
 Module polyglossia Info: Language spanish was not yet loaded; created with id 2 
 on input line 13
 Package polyglossia Info: Option: spanish, variant=spanish.
@@ -5299,7 +5299,7 @@ Missing character: There is no ; (U+003B) in font nullfont!
 
 
 ]
-Overfull \hbox (22.09706pt too wide) in paragraph at lines 76--78
+Overfull \hbox (22.09706pt too wide) in paragraph at lines 78--80
 []\TU/STIXTwoText(0)/m/n/10 Para con-fi-gu-rar-lo en TeX-Ma-ker hay que se-guir las ins-truc-cio-nes en [][]$\TU/lmtt/m/n/10 https://tex.stackexchange.
  []
 
@@ -5307,12 +5307,12 @@ Overfull \hbox (22.09706pt too wide) in paragraph at lines 76--78
 <primera.png, id=390, 845.1575pt x 580.1675pt>
 File: primera.png Graphic file (type png)
 <use primera.png>
-Package luatex.def Info: primera.png  used on input line 87.
+Package luatex.def Info: primera.png  used on input line 89.
 (luatex.def)             Requested size: 253.54921pt x 174.05157pt.
 <segunda.png, id=391, 845.1575pt x 580.1675pt>
 File: segunda.png Graphic file (type png)
 <use segunda.png>
-Package luatex.def Info: segunda.png  used on input line 93.
+Package luatex.def Info: segunda.png  used on input line 95.
 (luatex.def)             Requested size: 253.54921pt x 174.05157pt.
 ) [25<./primera.png><./segunda.png>] [26
 
@@ -5428,16 +5428,16 @@ Package logreq Info: Writing requests to 'ejemplo.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 62614 strings out of 478542
- 244504,2848258 words of node,token memory allocated
+ 62611 strings out of 478542
+ 195598,2848258 words of node,token memory allocated
  2361 words of node memory still in use:
    19 hlist, 5 vlist, 3 rule, 4 disc, 3 local_par, 2 math, 30 glue, 7 kern, 8 pe
 nalty, 1 margin_kern, 35 glyph, 63 attribute, 220 glue_spec, 63 attribute_list, 
 5 write, 19 pdf_literal, 1 pdf_dest, 3 pdf_action, 2 pdf_colorstack nodes
-   avail lists: 1:6,2:23897,3:10215,4:150,5:504,6:106,7:12982,8:79,9:1257,10:19,
-11:788
- 80591 multiletter control sequences out of 65536+600000
- 163 fonts using 74143271 bytes
+   avail lists: 1:7,2:14608,3:7751,4:150,5:504,6:106,7:12982,8:79,9:1257,10:19,1
+1:788
+ 80588 multiletter control sequences out of 65536+600000
+ 163 fonts using 74143111 bytes
  97i,17n,129p,1151b,2766s stack positions out of 5000i,500n,10000p,200000b,200000s
 </usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf
 ></usr/local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.ot
@@ -5455,7 +5455,7 @@ ellenic/GFSNeohellenic.otf></usr/local/texlive/2020/texmf-dist/fonts/opentype/pu
 blic/stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2020/texmf-dist/fonts/op
 entype/public/gfsneohellenic/GFSNeohellenicBold.otf></usr/local/texlive/2020/tex
 mf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Regular.otf>
-Output written on ejemplo.pdf (37 pages, 1202143 bytes).
+Output written on ejemplo.pdf (37 pages, 1195502 bytes).
 
 PDF statistics: 537 PDF objects out of 1000 (max. 8388607)
  428 compressed objects within 5 object streams
