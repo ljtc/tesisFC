@@ -124,6 +124,12 @@ Lua\LaTeX, con tipo de letra sans en~\ref{textosans} tiene lo necesario para
 crear un ambiente y contador con las características como las de los
 ambientes de \texttt{amsthm}.
 
+Además, junto con \texttt{amsthm} se podría usar el paquete
+\texttt{thmtools} que permite hacer estilos de teoremas, repetirlos, hacer
+una lista de teoremas, entre otros. La documentación de \texttt{thmtools} es
+fácil de leer ya que consta de ejemplos, así es posible ver la salida de los
+comandos que define.
+
 Finalmente, otro paquete común para el manejo de teoremas y demostraciones
 es \texttt{ntheorem}. Cada uno tiene sus ventajas y desventajas y no es
 fácil elegir uno sobre otro. En este documento se eligió \texttt{amsthm}
@@ -140,9 +146,17 @@ En el caso de \texttt{babel} se carga con las opciones \texttt{spanish} y
 a la que se usa en México, como su nombre lo indica. Entre las cosas que
 hace podemos mencionar que cambia el nombre ``cuadro'' por ``tabla'',
 prioriza comillas y usa el punto decimal en lugar de la coma como puede
-verse \(\pi=3.141592\ldots \)
+verse en la compilación con pdf\LaTeX{} y \(\pi=3.141592\ldots \). Además se
+cargó la opción \texttt{es-noindentfirst} para evitar el sangrado en el
+primer párrafo después de un título, como se hace en textos en español. Por
+último se deshabilitaron los \texttt{shorthands} o taquigrafías para evitar
+algunos conflictos con la sintáxis de otros paquetes, por ejemplo las
+comillas en \texttt{xy-pi} o en \texttt{tikzcd}.
 
-Al usar el idioma español \texttt{babel} se encargará de traducir todo, por ejemplo la palabra ``capítulo'' o ``figura'' como se puede ver en el documento. También traduce y acentúa los operadores, por ejemplo \(\max A\) o \(\lim f\).%
+Al usar el idioma español \texttt{babel} se encargará de traducir todo, por
+ejemplo la palabra ``capítulo'' o ``figura'' como se puede ver en el
+documento. También traduce y acentúa los operadores, por ejemplo \(\max A\)
+o \(\lim f\).%
 \ifpdftex%
 Pero en algunos casos se decidió crear un comando nuevo como en el caso del
 seno:
@@ -153,38 +167,32 @@ seno:
 
 Otra opción para el manejo de idiomas en Xe\LaTeX{} o Lua\LaTeX{} es
 \texttt{polyglossia}. Este paquete se creó cuando \texttt{babel} había
-dejado de tener mantenimiento con el objetivo de simplificar su trabajo en
-estos motores. Este paquete también tiene una variante \texttt{mexico},
-además de que se puede elegir un poco más el comportamiento de los
-operadores con las opciones:
+dejado de tener mantenimiento y uno de sus objetivoe es simplificar su
+trabajo en estos motores. Este paquete también tiene una variante
+\texttt{mexico}, además de que se puede elegir un poco más el comportamiento
+de los operadores con las opciones:
 \begin{description}
   \item[\texttt{accented}] para acentuar los operadores como \texttt{babel}.
   \item[\texttt{spaced}] para dar un espacio corto entre el operador y el objeto al que se le aplica, de nuevo, como \texttt{babel}.
   \item[\texttt{all}] para hacer las dos anteriores más la localización de \verb|\sin| \verb|\tan| \verb|\sinh| y \verb|\tanh|.
   \item[\texttt{none}] para no hacer ninguna localización.
 \end{description}
-De esta forma se cargó polyglossia \texttt{polyglossia} con la siguiente
-configuración
+De esta forma, para la compilación con Lua\LaTeX{} se cargó
+\texttt{polyglossia} con la siguiente configuración
 \begin{flushleft}
   \verb|\usepackage{polyglossia}| \\
   \verb|\setdefaultlanguage[spanishoperators=all]{spanish}|
 \end{flushleft}
 
-Tanto \texttt{babel} como \texttt{polyglossia} son buenas opciones para el
-manejo de idiomas y es difícil elegir uno sobre el otro. En el caso de
-compilar con Lua\LaTeX{} se decidió usar \texttt{polygossia} ya que es fácil
-ajustar el sangrado de los párrafos. Esto es, en español el primer párrafo
-despues del título de un capítulo, sección, etc. no debería estar sangrado.
-\LaTeX{} toma esto en cuenta, pero \texttt{babel} sobreescribe este
-comportamiento y sangra este primer párrafo (compilar este documento con
-pdf\LaTeX{} para ver la diferencia). Aunque \texttt{polygossia} hace lo
-mismo es fácil evitar esto con el comando
+De nuevo, para evitar el sangrado del primer párrafo después de un título
+se añadió el comando
 \begin{flushleft}
   \verb|\PolyglossiaSetup{spanish}{indentfirst=false}|
 \end{flushleft}
-En \texttt{babel} usando español se supone que sí existe la posibilidad de
-corregir esto (en otros idiomas no es posible), pero el manual no menciona
-nada al respecto.
+
+Tanto \texttt{babel} como \texttt{polyglossia} son buenas opciones para el
+manejo de idiomas y es difícil elegir uno sobre otro. Ambos tienen ventajas
+y desventajas en algunos aspectos sobre el otro.
 
 
 \section{microtype}

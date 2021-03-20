@@ -48,11 +48,11 @@
 \fi
 
 \ifpdftex
-    \RequirePackage[T1]{fontenc}
-    \RequirePackage[utf8]{inputenc}
-    \RequirePackage[spanish,mexico,es-noshorthands,shorthands=off]{babel}
-    \RequirePackage{stix2}
-    \RequirePackage[tracking=true,spacing=true,kerning=true,protrusion=true]{microtype}
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage[spanish,mexico,es-noshorthands,es-noindentfirst]{babel}
+  \RequirePackage{stix2}
+  \RequirePackage[tracking=true,spacing=true,kerning=true,protrusion=true]{microtype}
 \fi
 
 %Portada

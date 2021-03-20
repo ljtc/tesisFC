@@ -1,4 +1,4 @@
-% !TEX root: ejemplo.tex
+% !TEX root = ejemplo.tex
 
 \chapter{Compilación y arara}
 Como este documento puede ser compilado con Lua\LaTeX{} o pdf\LaTeX{} y, por
@@ -82,7 +82,13 @@ En TeXWorks: \url{https://tex.stackexchange.com/a/98795}.
 
 En TeXShop: \url{https://tex.stackexchange.com/a/175673}.
 
-\clearpage
+Un último comentario acerca del tiempo de compilación es que en el proceso
+de revisión y correcciones de la tesis, por ejemplo al revisar un capítulo
+específico donde no se requiera estar viendo los otros, se puede escribir en
+el preámbulo \verb|\includeonly{CapituloEnRevision}|. Una vez que ya haya
+sido compilado el documento completo el comando anterior hará que sólo se
+compile el capítulo en revisión con la paginación y las referencias a otros
+capítulos correctas. Esto podría mejorar mucho el tiempo de compilación.
 
 \begin{figure}
 \centering

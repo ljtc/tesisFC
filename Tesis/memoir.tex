@@ -142,6 +142,11 @@ También es posible aprovechar el espacio del margen como apoyo para las figuras
   \end{tikzpicture}
   \caption{Un circulo en el margen}
 \end{marginfigure}
+\begin{nota}
+En la versión para imprimir la tesis como un libro el margen se
+reduce para permitir una caja de texto más grande, así las cosas que estén
+en el margen podrían verse muy ``apretadas''.
+\end{nota}
 
 Por último en el código de este documento se puede ver que todas las
 figuras tienen inmediatamente después del inicio del ambiente el comando
@@ -167,9 +172,9 @@ Luego un acrónimo \verb|\glossary[acro]{HTML}{⟨HyperText Markup Language}| y 
 símbolo \verb|\glossary[simb]{\(c\)}{Una constante importante}|. Por último,
 en el lugar del documento donde vayan a ir los glosarios se escribe
 \begin{flushleft}
-  \verb|\clearpage %para crear una página nueva|
-  \verb|\printglossary[acro]|
-  \verb|\clearpage|
+  \verb|\clearpage %para crear una página nueva|\\
+  \verb|\printglossary[acro]|\\
+  \verb|\clearpage|\\
   \verb|\printglossary[simb]|
 \end{flushleft}
 Para cambiar el nombre del glosario, de la misma manera que en los índices, se usa
@@ -195,10 +200,14 @@ los archivos de este proyecto y con esto la cadena de compilación que se usa pa
 como no estoy seguro como llamar un archivo de configuración externo en
 \texttt{arara} tuve que correr los dos \texttt{makeindex} en la terminal.
 
-Acabo de hacer una prueba en overleaf y tristemente no soporta esta
-construcción  de glosarios. Por lo tanto sugeriré el paquete
-\texttt{glossaries} o su versión extendida \texttt{glossaries-extra}. La
-versión extendida tiene muchas capacidades con el método \texttt{bib2gls} pero
-tampoco es soportado por overleaf. Por lo que para hacer glosarios en overleaf
-hay que usar la versión simple de \texttt{glossaries} que debería ser
-suficiente para una tesis.
+En overleaf (que usa \texttt{latemk}, pueden ver el archivo que usa para
+compilar en \url{https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F}) tampoco funciona por defecto la
+compilación de glosarios con el método de \textit{memoir}, aunque debería
+ser posible configurarlo (me hace falta saber más de los archivos
+\texttt{latexmkrc}). Por lo tanto sugeriré el paquete \texttt{glossaries} o
+su versión extendida \texttt{glossaries-extra}. La versión extendida tiene
+muchas capacidades con el método \texttt{bib2gls} pero tampoco es soportado
+por overleaf, en este caso no será soportado por ningún método ya que usa
+java y overleaf no soporta java (¿una implementación antigua de \LaTeX?).
+Por lo que para hacer glosarios en overleaf hay que usar la versión simple
+de \texttt{glossaries} que debería ser suficiente para una tesis.
