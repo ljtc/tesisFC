@@ -108,12 +108,12 @@ el seno como queremos se escribe \verb|sin((\y)r)|.
 \end{tikzpicture}
 \end{center}
 Esta forma simple es bastante efectiva y su única posible desventaja es que
-se debe tener cuidado con las dimensiones de la gráfica para que no haya
+se debe tener cuidado con las dimensiones de la grafica para que no haya
 algunas muy grandes y otras muy chicas, generando una inconsistencia
 indeseada.
 
 Tikz es la capa superior de \texttt{pgf} así los métodos de Tikz serán muy
-similares a los de \texttt{pgf}. Por esta razón otro método para graficar es
+similares a los de \texttt{pgf}. Por esta razón otro método para gráficar es
 usar el paquete \texttt{pgfplots} que usará el motor de \texttt{pgf} para
 hacer gráficas. Es importante notar que se escribió
 \verb|\pgfplotsset{width=6cm,compat=1.17}| en el preámbulo. La parte de

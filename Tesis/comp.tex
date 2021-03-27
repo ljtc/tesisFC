@@ -3,7 +3,7 @@
 \chapter{Compilación y arara}
 Como este documento puede ser compilado con Lua\LaTeX{} o pdf\LaTeX{} y, por
 los ejemplos, el pdf de salida depende de qué tipo de compilación se usó,
-entonces lo recomendable es que se si compila con un método y luedo el otro
+entonces lo recomendable es que se si compila con un método y luego el otro
 sea una compilación ``nueva'', es decir, que antes de cambiar de método se
 eliminen los archivos auxiliares para evitar posibles conflictos.
 
@@ -41,11 +41,11 @@ donde, de nuevo, \texttt{makeindex} se debe correr en cada índice que se haya
 creado. Como claramente tiene más pasos puede que haga el proceso algo lento.
 Para hacer más rápida la compilación hay que evitar los pasos innecesarios.
 Esto es, una vez que se ha compilado la primera vez se han creado los
-archivos necesarios para componer bibliografía, ídices, tabla de contenidos y
+archivos necesarios para componer bibliografía, índices, tabla de contenidos y
 otros. Si no hay modificaciones a la bibliografía o índices, no es necesario
 correr los pasos intermedios de arriba, ni tampoco correr tantas veces
 \texttt{lualatex}. Para hacer esta compilación condicional escribimos
-en las primeras líneas del archivo principal algo como lo siguiene
+en las primeras líneas del archivo principal algo como lo siguiente
 \begin{flushleft}
   \verb|% arara: ...|
 \end{flushleft}
