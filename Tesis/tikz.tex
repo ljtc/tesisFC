@@ -19,7 +19,7 @@ en el siguiente ejemplo.
 \end{tikzpicture}
 \end{center}
 La sintaxis \verb|\node (x) at (0,0) {Hola};| crea un nodo con el contenido
-``Hola'' en la posición \((0,0)\) y le pone una etiqueta ``(x)'' para futuras
+\enquote{Hola} en la posición \((0,0)\) y le pone una etiqueta \enquote{(x)} para futuras
 referencias. En la flecha de (x) a (y) se puso un nodo sobre la flecha con
 el comando \verb|\draw[->] (x) --node[above] {\(g\circ f\)} (y);|. Las
 opciones de posición son \texttt{above}, \texttt{below}, \texttt{left} y
@@ -39,7 +39,7 @@ Algunas figuras ya están definidas en la base de tikz. Algunas de ellas son:
 \end{center}
 Hay muchas más en la librería \texttt{shapes} o \texttt{shapes.geometric}.
 
-También se pueden hacer curvas ``jalando'' una línea en dos puntos
+También se pueden hacer curvas \enquote{jalando} una línea en dos puntos
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) circle (1pt); % nodo de referencia
@@ -50,7 +50,7 @@ También se pueden hacer curvas ``jalando'' una línea en dos puntos
 \end{tikzpicture}
 \end{center}
 donde los puntos de arriba sólo fueron puestos para hacer referencia de qué
-puntos se ``jalo'' la recta.
+puntos se \enquote{jalo} la recta.
 
 Colorear figuras también es fácil, además de que se pueden hacer muchos
 estilos de coloreado.
@@ -372,7 +372,7 @@ Girasol de \url{https://www.texample.net}
 }
 \end{tikzpicture}
 \end{center}
-
+\iffalse
 Uno más usando la librería \texttt{math}
 \begin{center}
 \begin{tikzpicture}[line cap=round, x=2cm,y=2cm, line join=round]
@@ -396,3 +396,4 @@ Uno más usando la librería \texttt{math}
 }
 \end{tikzpicture}
 \end{center}
+\fi

@@ -138,7 +138,7 @@ ejemplo.}
 Como no está pensado para que así sea la salida de todas las figuras no se
 hizo la definición en el preámbulo. Para dicho cambio se debe escribir
 \verb|\captionnamefont{\sffamily}| para cambiar el tipo de fuente de la
-palabra ``Figura'' y su número. Para cambiar el delimitador, que en este caso
+palabra \enquote{Figura} y su número. Para cambiar el delimitador, que en este caso
 son dos puntos se usa \verb|\captiondelim{: }|. Para cambiar el tipo de
 fuente del título de las figuras se usa \verb|\captiontitlefont{\sffamily}|.
 Con esto es fácil hacer una configuración de la salida de los títulos de
@@ -146,7 +146,7 @@ figuras y tablas, también se podría cambiar el tamaño de la fuente o poner
 alguna palabra en específico.
 
 Otra ventaja del manejo de fuentes de Xe\LaTeX{} y Lua\LaTeX{} es que las
-fuentes instaladas en nuestra sistema estarán disponibles para su uso en
+fuentes instaladas en nuestro sistema estarán disponibles para su uso en
 documentos de \LaTeX{}. Por ejemplo si quisiéramos que nuestro documento
 estuviera escrito en Arial simplemente hay que escribir
 \begin{flushleft}
@@ -162,7 +162,7 @@ Seguramente en tu sistema habrá un conjunto de fuentes disponibles grande.
 \ifluatex%
 Un comentario acerca de \texttt{unicode-math} es que permite usar una
 fuente específica para cada alfabeto. El ejemplo en este texto es cambiar la
-fuente script, que tanto en \textit{Stix two} como muchas otra fuentes es
+fuente script, que tanto en \textit{Stix two} como muchas otras fuentes es
 igual a la caligráfica. Con \texttt{unicode-math} es suficiente cargar una
 fuente con el alfabeto que nos guste, sólo para el rango que la queremos.
 Aún cuando en un principio no es necesario tener tantos alfabetos matemáticos
@@ -175,10 +175,10 @@ especiales como topos se denotan con letras script como \(\symscr{E}\).
 
 En el código se puede notar que se han usado diferentes sintaxis para los
 alfabetos, que \texttt{unicode-math} se encargará de mapear al símbolo
-correcto. Por ejemplo, las formas de obtener la letra ``A'' en negritas es
+correcto. Por ejemplo, las formas de obtener la letra \enquote{A} en negritas es
 como símbolo definido por un alfabeto \verb|\mbfA|, como comando de
 \texttt{unicode-math} (es la forma recomendada) \verb|\symbf{A}| o como en
-la forma ``tradicional'' \verb|\mathbf{A}|.
+la forma \enquote{tradicional} \verb|\mathbf{A}|.
 \ifpdftex%
 \begin{center}
   \textcolor{red}{Este párrafo usa comandos específicos de \texttt{unicode-math} y mandará errores si se compila con pdf\LaTeX.}

@@ -9,26 +9,24 @@ La clase \texttt{tesisFC} tiene como base a \textit{memoir}. La motivación es p
 \textit{Memoir} es una clase configurable, es decir, no hace falta cargar paquetes adicionales para hacer un diseño completo de cómo se verá nuestro
 documento. Además puede servir tanto para \textit{book} como para \textit{article} la opción por defecto es una salida estilo \textit{book}, para cambiar al diseño estilo \textit{article} basta poner la opción \texttt{article} como opción a la clase. A diferencia de las clases
 estándar donde hacer un cambio de \textit{book} a \textit{article} seguramente causará problemas (por ejemplo \verb|\chapter{...}| no está
-definido en article), en \textit{memoir} no existe ese problema. Otra ventaja inmediata es que el ambiente \texttt{abstract} estará definido para \textit{book}.
+definido en \textit{article}), en \textit{memoir} no existe ese problema. Otra ventaja inmediata es que el ambiente \texttt{abstract} estará definido para \textit{book}.
 
 La tabla de contenidos esta formada por el comando
-\verb|\tableofcontents*|. Esta versión con estrella es única de memoir y su
-utilidad es que no aparezca una entrada para la tabla de contenidos en la
-tabla de contenidos.
+\verb|\tableofcontents*|. Esta versión con estrella es única de \textit{memoir} y su utilidad es que no aparezca una entrada para la tabla de contenidos en la tabla de contenidos.
 
 Otra ventaja de \textit{memoir} es que no hace falta redefinir
-\verb|\cleardoublepage| para que las páginas pares ``vacías'' antes de un
+\verb|\cleardoublepage| para que las páginas pares \enquote{vacías} antes de un
 nuevo capítulo estén en blanco. La clase ya lo hace por defecto. Además, la
 clase tiene las opciones \texttt{openright} para que los capítulos empiecen
 en las paginas impares, \texttt{openleft} para que empiecen en las pares y
 \texttt{openany} para que empiecen en la siguiente página sin importar su
 paridad.
 
-\textit{Memoir} tiene predefinidos muchos estilos de capítulo, en este documento se está usando \texttt{madsen}. Memoir tiene
+\textit{Memoir} tiene predefinidos muchos estilos de capítulo, en este documento se está usando \texttt{madsen}. Además tiene
 definidos muchos más estilos de salida por defecto, estos pueden verse en
 \url{http://www.ebookation.com/wp-content/uploads/2010/03/memoirchapstyles.pdf}
 
-Modifique el tamaño y la posición de la caja de texto para obtener una linea de texto suficientemente grande como evitar tantos cortes de palabra, pero no ta grande como para que sea difícil pasar de una linea a otra.
+Modifique el tamaño y la posición de la caja de texto para obtener una linea de texto suficientemente grande como evitar tantos cortes de palabra, pero no tan grande como para que sea difícil pasar de una linea a otra.
 
 Si notan como está formado un libro, el bloque de texto no está centrado
 en la página. Comúnmente el margen de la espina (donde se juntan las
@@ -88,7 +86,7 @@ en el preámbulo. Este comando activará todo lo necesario para hacer
 subfiguras, por ejemplo en la figura~\ref{fig:vect} hay
 una forma de hacerlas usando el comando \verb|\subcaption{...}| para poner
 los subtítulos correspondientes. También es posible hacer como en el
-siguiente ejemplo
+ejemplo de la figura~\ref{fig:muchas}.
 \begin{figure}
   \centering
   \subbottom[Primera]{%
@@ -97,7 +95,8 @@ siguiente ejemplo
     \includegraphics[width=0.3\linewidth]{example-image-b}}
   \subbottom[Tercera]{%
     \includegraphics[width=0.3\linewidth]{example-image-c}}
-  \caption{Muchas figuras}
+  \caption{Muchas figuras}%
+  \label{fig:muchas}
 \end{figure}
 Nota que no hay archivos aparte para las figuras que usamos. Estas ya están
 instaladas con nuestra distribución y podemos usarlas como lo hicimos.
@@ -145,7 +144,7 @@ También es posible aprovechar el espacio del margen como apoyo para las figuras
 \begin{nota}
 En la versión para imprimir la tesis como un libro el margen se
 reduce para permitir una caja de texto más grande, así las cosas que estén
-en el margen podrían verse muy ``apretadas''.
+en el margen podrían verse muy \enquote{apretadas}.
 \end{nota}
 
 Por último en el código de este documento se puede ver que todas las
@@ -168,9 +167,7 @@ ejemplificar cómo se hacen. En el preámbulo se escribe
   \verb|\makeglossary[acro]|\\
   \verb|\makeglossary[simb]|
 \end{flushleft}
-Luego un acrónimo \verb|\glossary[acro]{HTML}{⟨HyperText Markup Language}| y un
-símbolo \verb|\glossary[simb]{\(c\)}{Una constante importante}|. Por último,
-en el lugar del documento donde vayan a ir los glosarios se escribe
+Luego un acrónimo \verb|\glossary[acro]{HTML}{⟨HyperText Markup Language}| y un símbolo \verb|\glossary[simb]{\(c\)}{Una constante importante}| en el texto. Por último, en el lugar del documento donde vayan a ir los glosarios se escribe
 \begin{flushleft}
   \verb|\clearpage %para crear una página nueva|\\
   \verb|\printglossary[acro]|\\

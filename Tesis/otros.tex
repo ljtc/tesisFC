@@ -7,7 +7,7 @@ Aunque en el título de la sección se menciona \texttt{amsmath} en la clase
 sólo se carga el paquete \texttt{mathtools}. Esto se debe a que
 \texttt{mathtools} carga al paquete \texttt{amsmath}, así lo podemos pensar
 como una extensión. De manera más precisa \texttt{mathtools} es resultado de
-corregir algunos ``bugs'' de \texttt{amsmath} y añadir algunas otras funciones.
+corregir algunos \enquote{bugs} de \texttt{amsmath} y añadir algunas otras funciones.
 
 Un ejemplo específico de estos paquetes es la creación de operadores. Por
 ejemplo, para escribir el supremo del conjunto \(A\) se debe escribir
@@ -24,7 +24,7 @@ de delimitadores que se pueden ajustar al tamaño del contenido, por ejemplo
 para hacer un delimitador para el valor absoluto se escribe
 \verb|\DeclarePairedDelimiter\abs{\lvert}{\rvert}| este
 tiene un argumento más que el operador ya que hay que decir qué símbolo
-``abre'' y que símbolo ``cierra''. La deferencia de este comando se puede
+\enquote{abre} y que símbolo \enquote{cierra}. La deferencia de este comando se puede
 apreciar con el código \verb!|\sum_{i=1}^{n}a_1|!,
 \verb|\lvert\sum_{i=1}^{n}a_1\rvert|, \verb|\abs{\sum_{i=1}^{n}a_1}| y
 \verb|\abs*{\sum_{i=1}^{n}a_1}|, que su salida es, respectivamente,
@@ -33,7 +33,7 @@ apreciar con el código \verb!|\sum_{i=1}^{n}a_1|!,
   \abs{\sum_{i=1}^{n}a_1} \quad \abs*{\sum_{i=1}^{n}a_1}
 \]
 
-También podemos hacer conjuntos con delimitadores y la línea de ``tal que''
+También podemos hacer conjuntos con delimitadores y la línea de \enquote{tal que}
 que crezcan correctamente (ver su definición en \texttt{ejemplo.tex})
 \[
   \Set*{ x \in X \given \frac{\sqrt{x}}{x^2+1} > 1 }
@@ -42,7 +42,7 @@ que crezcan correctamente (ver su definición en \texttt{ejemplo.tex})
 
 \section{amsthm}
 Este paquete provee mejoras útiles para las definiciones de teoremas
-(\LaTeX{} puede crea teoremas sin necesidad de paquetes) y
+(\LaTeX{} puede crear teoremas sin necesidad de paquetes) y
 define un ambiente de demostración (esto no lo hace \LaTeX{}). Con este
 paquete se pueden usar y definir estilos de teoremas de forma fácil. En la clase se definieron los siguientes ambientes:
 \begin{center}
@@ -85,7 +85,7 @@ apareciendo este espacio vertical. Un ejemplo de cómo funciona \verb|\qedhere|,
   \]
 \end{proof}
 
-Cada ``teorema'' nuevo crea un contador. En este ejemplo la cuenta de
+Cada \enquote{teorema} nuevo crea un contador. En este ejemplo la cuenta de
 teoremas se reiniciará al iniciar un nuevo capítulo, este es el efecto del
 comando opcional \texttt{[chapter]} en la definición de \texttt{teorema}.
 Además, el contador de las definiciones será el mismo que el de los teoremas
@@ -96,8 +96,8 @@ en el futuro. Al teorema le pusimos una etiqueta con el comando
 \verb|\label{teo:fermat}| que luego se puede hacer referencia con
 \verb|\ref{{teo:fermat}}|. Una buena práctica es separar la referencia de la
 palabra anterior con un espacio irrompible \verb|~|, de esta forma cuando
-escribimos ``por el teorema~\ref{teo:fermat}'' \LaTeX{} no podrá romper un
-renglón dejando la palabra ``teorema'' en un renglón y el número ``4.2'' en
+escribimos \enquote{por el teorema~\ref{teo:fermat}} \LaTeX{} no podrá romper un
+renglón dejando la palabra \enquote{teorema} en un renglón y el número \enquote{4.2} en
 otro.
 
 Nota que el estilo \texttt{plain} pone el cuerpo del teorema en itálicas
@@ -105,7 +105,7 @@ mientras que el estilo \texttt{definition} no, como puede verse en el
 enunciado de la definición y de los teoremas.
 
 En el preámbulo de \texttt{ejemplo.tex} está un ejemplo de cómo crear un
-estilo nuevo de ``teorema''. En este se creó un ambiente para los axiomas
+estilo nuevo de \enquote{teorema}. En este se creó un ambiente para los axiomas
 usando un estilo diferente que llevará una cuenta independiente de las
 definiciones anteriores, pues no aparece la opción \texttt{[teorema]} en su
 definición.
@@ -144,17 +144,17 @@ con Lua\LaTeX{} y \texttt{babel} en caso de compilar con pdf\LaTeX.
 En el caso de \texttt{babel} se carga con las opciones \texttt{spanish} y
 \texttt{mexico}. La opción \texttt{mexico} hace una localización más similar
 a la que se usa en México, como su nombre lo indica. Entre las cosas que
-hace podemos mencionar que cambia el nombre ``cuadro'' por ``tabla'',
+hace podemos mencionar que cambia el nombre \enquote{cuadro} por \enquote{tabla},
 prioriza comillas y usa el punto decimal en lugar de la coma como puede
 verse en la compilación con pdf\LaTeX{} y \(\pi=3.141592\ldots \). Además se
 cargó la opción \texttt{es-noindentfirst} para evitar el sangrado en el
 primer párrafo después de un título, como se hace en textos en español. Por
 último se deshabilitaron los \texttt{shorthands} o taquigrafías para evitar
 algunos conflictos con la sintaxis de otros paquetes, por ejemplo las
-comillas en \texttt{xy-pi} o en \texttt{tikzcd}.
+comillas en \texttt{xy-pic} o en \texttt{tikzcd}.
 
 Al usar el idioma español \texttt{babel} se encargará de traducir todo, por
-ejemplo la palabra ``capítulo'' o ``figura'' como se puede ver en el
+ejemplo la palabra \enquote{capítulo} o \enquote{figura} como se puede ver en el
 documento. También traduce y acentúa los operadores, por ejemplo \(\max A\)
 o \(\lim f\).%
 \ifpdftex%
@@ -205,8 +205,8 @@ salgan del margen. Algunas de estas mejoras se pueden hacer con
 \texttt{fontspec}, por ejemplo poniendo la opción \texttt{LetterSpacing} al
 cargar una fuente, pero hay que calcular las cosas manualmente. En cambio
 \texttt{microtype} toma todas estas decisiones por nosotros y lo hace
-de acuerdo al idioma que se la haya pasado a \texttt{babel}. El resultado es
-un pdf que luce tipográficamente mejor.
+de acuerdo al idioma que se la haya pasado a \texttt{babel} o
+\texttt{polyglossia}. El resultado es un pdf que luce tipográficamente mejor.
 
 
 \section{siunitx}
@@ -229,6 +229,29 @@ físicas de acuerdo con las reglas del sistema internacional de medidas\footnote
 \end{center}
 
 
+\section{csquotes}%
+\label{se:csq}
+Este paquete tampoco fue cargado por defecto en la clase pero es recomendado
+para la bibliografía, sobretodo si se usa \texttt{biblatex}, como en nuestro
+ejemplo.
+
+Este paquete provee algunas facilidades en citas y ajustar las
+comillas al idioma que se quiera. En este documento se uso junto con la
+opción \texttt{style=mexican} que carga el estilo de comillas del idioma
+español con la variante para México. También define comandos para poner
+comillas y hacer citas, por ejemplo \verb|\enquote{comillas}| resulta en
+\enquote{comillas}. Este comando se puede anidar para poner las comillas
+correctas dentro de otras comillas, por ejemplo
+\begin{flushleft}
+  \verb|\enquote{Lorem ipsum \enquote{dolor} sit amet}|
+\end{flushleft}
+resulta en \enquote{Lorem ipsum \enquote{dolor} sit amet}. Puede ser útil
+escribir comillas mediante un comando, ya que muchas veces no se usan las
+comillas correctas de \LaTeX, estas son \verb|``...''|. Además, da
+facilidades para poner citas textuales con el comando
+\verb|\textquote[⟨cita⟩][⟨puntuación⟩]{⟨texto⟩}|. También tiene un comando para citar un bloque de texto \verb|\blockquote[⟨cita⟩][⟨puntuación⟩]{⟨texto⟩}|. Todas estas funciones tiene una versión para citar en un idioma extrangero.
+
+
 \section{biblatex}%
 \label{sec:bib}
 En principio no se eligió ningún paquete para crear la bibliografía del documento, pero el que nos parece recomendable es \texttt{biblatex}. Hay otros paquetes para formar la bibliografía de un texto, por ejemplo
@@ -239,7 +262,7 @@ algunas capacidades y \texttt{natbib} puede hacer técnicamente todo lo que
 hace \texttt{cite} más algunas cuantas cosas; \texttt{biblatex} es muy
 diferente a estos dos paquetes.
 
-Como este es un texto ``local'' en el sentido que su código fuente no debe
+Como este es un texto \enquote{local} en el sentido que su código fuente no debe
 cumplir los requerimientos de ningún \textit{journal} o editorial, entonces
 es posible usar los paquetes que cada quien considere necesario. La
 motivación principal para hacer este ejemplo con \texttt{biblatex} está
@@ -272,7 +295,7 @@ también es amplia haré referencia a la siguiente liga
 para tener una guía rápida de \texttt{biblatex}.
 
 En este ejemplo hice un archivo \texttt{refs.bib} como base de datos de la
-bibliografía. Para ``cargarlo'' hay que usar el comando
+bibliografía. Para \enquote{cargarlo} hay que usar el comando
 \verb|\addbibresource{refs.bib}|. Este comando sólo acepta un archivo, pero
 se pueden cargar más escribiendo todo el comando con cada archivo
 \texttt{.bib} que se quiera usar. Para imprimir la bibliografía se pone el
@@ -285,25 +308,16 @@ quiere imprimir una entrada que no fue citada se usa el comando
 \verb|\nocite{label1,label2,...}| o si se quiere imprimir todas las entradas
 del archivo \texttt{.bib} se usa \verb|\nocite{*}|.
 
-Por último es recomendable usar el paquete \texttt{csquotes} junto con
-\texttt{biblatex} para tener algunas facilidades en citas y ajustar las
-comillas al idioma que se quiera. En este documento se uso junto con la
-opción \texttt{autostyle} que carga el estilo de comillas del idioma que se
-haya pasado a babel, es este caso español. Como puede verse en la
-bibliografía en México no usamos las comillas de México, más bien usamos las
-comillas inglesas. Para hacer el cambio a comillas inglesas se debe
-sustituir \texttt{autostyle} por \texttt{style=american}
-
 Ahora algunos ejemplos de bibliografía. Primero todas las entradas donde
 Lawvere es autor, en el archivo \texttt{.bib} use el campo \texttt{keywords}
-para lograr esto se usó el comando
+y para imprimirlas se usó el comando
 \begin{flushleft}
   \verb|\printbibliography[keyword=Lawvere,heading=subbibliography,title=Lawvere]|
 \end{flushleft}
 \printbibliography[keyword=Lawvere,heading=subbibliography,title=Lawvere]
 
 Usamos \texttt{heading=subbibliography} para que el título de la bibliografía
-aparezca un nivel más bajo que ``el nivel principal'' en este caso el nivel
+aparezca un nivel más bajo que \enquote{el nivel principal} en este caso el nivel
 principal es capítulo, así que el título será impreso como una sección sin
 número.
 

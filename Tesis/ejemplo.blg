@@ -1,14 +1,14 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'ejemplo.blg'
-[96] biber-darwin:340> INFO - === Tue Mar 16, 2021, 16:18:50
-[121] Biber.pm:415> INFO - Reading 'ejemplo.bcf'
-[225] Biber.pm:949> INFO - Using all citekeys in bib section 0
-[242] Biber.pm:4340> INFO - Processing section 0
-[254] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
-[256] bibtex.pm:1689> INFO - LaTeX decoding ...
-[282] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'
-[437] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[437] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[437] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'es-ES'
-[458] bbl.pm:654> INFO - Writing 'ejemplo.bbl' with encoding 'UTF-8'
-[468] bbl.pm:757> INFO - Output to ejemplo.bbl
+[123] biber-darwin:340> INFO - === Sat Mar 27, 2021, 09:34:23
+[148] Biber.pm:415> INFO - Reading 'ejemplo.bcf'
+[287] Biber.pm:949> INFO - Using all citekeys in bib section 0
+[312] Biber.pm:4340> INFO - Processing section 0
+[327] Biber.pm:4531> INFO - Looking for bibtex format file 'refs.bib' for section 0
+[328] bibtex.pm:1689> INFO - LaTeX decoding ...
+[362] bibtex.pm:1494> INFO - Found BibTeX data source 'refs.bib'
+[535] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[535] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[535] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'es-ES'
+[563] bbl.pm:654> INFO - Writing 'ejemplo.bbl' with encoding 'UTF-8'
+[575] bbl.pm:757> INFO - Output to ejemplo.bbl
