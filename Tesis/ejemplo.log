@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021)  (format=lualatex 2021.6.9)  16 JUN 2021 13:30
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021)  (format=lualatex 2021.6.9)  16 JUN 2021 13:55
  restricted system commands enabled.
 **ejemplo.tex
 (./ejemplo.tex
@@ -5344,7 +5344,7 @@ Package logreq Info: Writing requests to 'ejemplo.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 63885 strings out of 478087
+ 63889 strings out of 478087
  244497,2848258 words of node,token memory allocated
  2559 words of node memory still in use:
    20 hlist, 5 vlist, 3 rule, 4 disc, 3 local_par, 2 math, 34 glue, 10 kern, 8 p
@@ -5352,8 +5352,8 @@ enalty, 1 margin_kern, 35 glyph, 136 attribute, 216 glue_spec, 70 attribute_list
 , 5 write, 19 pdf_literal, 1 pdf_dest, 4 pdf_action, 2 pdf_colorstack nodes
    avail lists: 1:11,2:35889,3:10227,4:147,5:978,6:106,7:13011,8:79,9:1257,10:19
 ,11:912
- 82327 multiletter control sequences out of 65536+600000
- 157 fonts using 64125719 bytes
+ 82331 multiletter control sequences out of 65536+600000
+ 157 fonts using 64125079 bytes
  88i,14n,127p,1151b,2766s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf
 ></usr/local/texlive/2021/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.ot
@@ -5371,7 +5371,7 @@ ellenic/GFSNeohellenic.otf></usr/local/texlive/2021/texmf-dist/fonts/opentype/pu
 blic/stix2-otf/STIXTwoText-Bold.otf></usr/local/texlive/2021/texmf-dist/fonts/op
 entype/public/gfsneohellenic/GFSNeohellenicBold.otf></usr/local/texlive/2021/tex
 mf-dist/fonts/opentype/public/stix2-otf/STIXTwoText-Regular.otf>
-Output written on ejemplo.pdf (39 pages, 1202183 bytes).
+Output written on ejemplo.pdf (39 pages, 1202182 bytes).
 
 PDF statistics: 558 PDF objects out of 1000 (max. 8388607)
  450 compressed objects within 5 object streams

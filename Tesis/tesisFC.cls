@@ -20,9 +20,9 @@
 \setheaderspaces{*}{2\onelineskip}{*}
 \checkandfixthelayout
 \else
-\settypeblocksize{7.75in}{33pc}{*}
+\settypeblocksize{196.85mm}{33pc}{*}
 \setulmargins{4cm}{*}{*}
-\setlrmargins{1.25in}{*}{*}
+\setlrmargins{31.75mm}{*}{*}
 \setmarginnotes{17pt}{86pt}{\onelineskip}
 \setheadfoot{\onelineskip}{2\onelineskip}
 \setheaderspaces{*}{2\onelineskip}{*}
