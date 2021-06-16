@@ -7,34 +7,56 @@ Aunque en el título de la sección se menciona \texttt{amsmath} en la clase
 sólo se carga el paquete \texttt{mathtools}. Esto se debe a que
 \texttt{mathtools} carga al paquete \texttt{amsmath}, así lo podemos pensar
 como una extensión. De manera más precisa \texttt{mathtools} es resultado de
-corregir algunos \enquote{bugs} de \texttt{amsmath} y añadir algunas otras funciones.
+corregir algunos bugs de \texttt{amsmath} y añadir algunas otras funciones.
 
-Un ejemplo específico de estos paquetes es la creación de operadores. Por
-ejemplo, para escribir el supremo del conjunto \(A\) se debe escribir
+Un ejemplo específico de estos paquetes es la creación de operadores. En el
+modo matemático de \LaTeX{} una letra representa ua variable y dos variables
+juntas representa la multiplicación de estas. De esta manera \(xy\,a\)
+representa la multiplicación de las variables \(x\), \(y\) y \(a\), mientra
+que \(\operatorname{xy}a\) representa al operador \(\operatorname{xy}\)
+aplicado a la variable \(a\). En otras palabras, un cambio en el alfabeto
+debería implicar un cambio en el significado. Por esta razón deberíamos
+escribir operadores de una forma especial y no sólo escribiendo su nombre en
+modo matemático.
+
+Por ejemplo, para escribir el supremo del conjunto \(A\) se debe escribir
 \verb|\sup A| y su resultado es \(\sup A\), de donde es claro que los
-operadores están en letras \textit{upright}. Ya están definidos los
-operadores más comunes, pero si se quisiera definir uno nuevo se escribe en
-el preámbulo \verb|\DeclareMathOperator{\id}{Idem}| para definir los
-idempotentes de un anillo, por ejemplo \verb|\id(R)| genera \(\id(R)\).
-Además de esto están los ambientes matemáticos como \texttt{align},
-\texttt{gather}, \texttt{cases}, etc.
+operadores están en letras \textit{upright} (redondas en español). Ya están
+definidos los operadores más comunes, pero si se quisiera definir uno nuevo
+se escribe en el preámbulo \verb|\DeclareMathOperator{\idem}{Idem}| para
+definir, por ejemplo, los idempotentes de un anillo, así \verb|\idem(R)|
+genera \(\idem(R)\).
 
-Una función de \texttt{mathtools} que no tiene \texttt{amsmath} es la creación
-de delimitadores que se pueden ajustar al tamaño del contenido, por ejemplo
-para hacer un delimitador para el valor absoluto se escribe
+Además \texttt{amsmath} define ambientes matemáticos como
+\texttt{align}, \texttt{gather}, \texttt{cases}, \texttt{equation},
+\texttt{array}, las variantes de \texttt{matrix}, etc.\ y \texttt{mathtools}
+corrige algunos errores en ellos, por ejemplo en \texttt{gather} o añade
+algunas opciones, por ejemplo en los ambientes de matriz se puede
+especificar la alineación de las columnas de la misma manera que en
+\texttt{array}.
+
+Una función de \texttt{mathtools} que no tiene \texttt{amsmath} es la creación de delimitadores que se pueden ajustar al tamaño del contenido, por ejemplo para hacer un delimitador para el valor absoluto se escribe
 \verb|\DeclarePairedDelimiter\abs{\lvert}{\rvert}| este
 tiene un argumento más que el operador ya que hay que decir qué símbolo
-\enquote{abre} y que símbolo \enquote{cierra}. La deferencia de este comando se puede
-apreciar con el código \verb!|\sum_{i=1}^{n}a_1|!,
-\verb|\lvert\sum_{i=1}^{n}a_1\rvert|, \verb|\abs{\sum_{i=1}^{n}a_1}| y
-\verb|\abs*{\sum_{i=1}^{n}a_1}|, que su salida es, respectivamente,
-\[
-  |\sum_{i=1}^{n}a_1| \quad \lvert\sum_{i=1}^{n}a_1\rvert \quad
-  \abs{\sum_{i=1}^{n}a_1} \quad \abs*{\sum_{i=1}^{n}a_1}
-\]
+\enquote{abre} y que símbolo \enquote{cierra}. No es necesario que concuerde
+un símbolo que abre con su pareja de cierre, como los paréntesis. Por
+ejemplo se podría definir un delimitador para intervalos abiertos por la
+izquierda y cerrados por la derecha. La deferencia de estos delimitadores se
+puede apreciar con su versión con estrella y con el código
 
-También podemos hacer conjuntos con delimitadores y la línea de \enquote{tal que}
-que crezcan correctamente (ver su definición en \texttt{ejemplo.tex})
+\begin{tabular}{llll}
+  \verb!|\sum_{i=1}^{n}a_1|! & \(|\sum\limits_{i=1}^{n}a_1|\), &
+  \verb|\lvert\sum_{i=1}^{n}a_1\rvert| &
+  \(\lvert\sum\limits_{i=1}^{n}a_1\rvert \) \\[4ex]
+  \verb|\abs{\sum_{i=1}^{n}a_1}| & \(\abs{\sum\limits_{i=1}^{n}a_1}\), &
+  \verb|\abs*{\sum_{i=1}^{n}a_1}| & \(\abs*{\sum\limits_{i=1}^{n}a_1}\)
+\end{tabular}
+
+\verb|\DeclarePairedDelimiter| tiene una versión extendida para que pueda
+tomar argumentos, como \verb|\newcommand{}[]{}|. Esta versión extendida se
+escribe \verb|\DeclarePairedDelimiterX| y con ella podemos hacer, por
+ejemplo, conjuntos  con delimitadores y la línea de \enquote{tal que} que
+crezcan correctamente (ver su definición en \texttt{ejemplo.tex})
 \[
   \Set*{ x \in X \given \frac{\sqrt{x}}{x^2+1} > 1 }
 \]
@@ -48,7 +70,7 @@ paquete se pueden usar y definir estilos de teoremas de forma fácil. En la clas
 \begin{center}
   \autocols{c}{3}{l}{\texttt{definicion}, \texttt{lema}, \texttt{teorema}, \texttt{proposicion}, \texttt{corolario}, \texttt{observacion}}
 \end{center}
-Con la salida esperada del nombre del ambiente.
+Con la salida esperada del nombre del ambiente. Por ejemplo:
 
 \begin{definicion}
   Una función \(f\colon X\to Y\) es continua si para cualquier abierto
@@ -64,10 +86,17 @@ Con la salida esperada del nombre del ambiente.
   demasiado estrecho para contener.
 \end{proof}
 
-Se modificó el estilo del ambiente demostración para que su salida sea similar a la de los resultados —Una demostración es tan importante como el
-enunciado—. Nuestra redefinición del ambiente de demostración tiene lo necesario para comportarse bien con el símbolo\(\qed \). Es decir, cuando se termina una demostración con una ecuación u otro tipo de ambiente habrá
-un espacio vertical indeseado entre el final del texto y el símbolo de fin de la demostración. Este espacio se evita con el comando \verb|\qedhere|, pero si el ambiente no cuenta con la definición correcta seguirá
-apareciendo este espacio vertical. Un ejemplo de cómo funciona \verb|\qedhere|, para mostrar la diferencia se han hecho dos demostraciones iguales
+Se modificó el estilo del ambiente demostración para que su salida sea
+similar a la de los resultados, una demostración es tan importante como el
+enunciado. Nuestra redefinición del ambiente de demostración se basa en la
+definición de \texttt{amsthm} así tiene lo necesario para comportarse bien
+con el símbolo \(\qed \). Es decir, cuando se termina una demostración con
+una ecuación u otro tipo de ambiente habrá un espacio vertical no deseado
+entre el final del texto y el símbolo de fin de la demostración. Este
+espacio se evita con el comando \verb|\qedhere|, pero si el ambiente no
+cuenta con la definición correcta seguirá apareciendo este espacio vertical.
+Un ejemplo de cómo funciona \verb|\qedhere|, para mostrar la diferencia se
+han hecho dos demostraciones iguales
 
 \begin{teorema}
   Un resultado importante.
@@ -138,15 +167,14 @@ porque es (posiblemente) el más común.
 
 \section{babel y polygossia}%
 \label{sec:babel}
-Para el soporte de idiomas elegimos \texttt{polygossia} en caso de compilar
-con Lua\LaTeX{} y \texttt{babel} en caso de compilar con pdf\LaTeX.
+Para el soporte de idiomas elegimos \texttt{babel} ya que tiene mayor soporte que otros paquetes similares, como \texttt{polygossia}.
 
-En el caso de \texttt{babel} se carga con las opciones \texttt{spanish} y
+\texttt{babel} se carga con las opciones \texttt{spanish} y
 \texttt{mexico}. La opción \texttt{mexico} hace una localización más similar
 a la que se usa en México, como su nombre lo indica. Entre las cosas que
 hace podemos mencionar que cambia el nombre \enquote{cuadro} por \enquote{tabla},
 prioriza comillas y usa el punto decimal en lugar de la coma como puede
-verse en la compilación con pdf\LaTeX{} y \(\pi=3.141592\ldots \). Además se
+verse en la compilación con \(\pi=3.141592\ldots \) Además se
 cargó la opción \texttt{es-noindentfirst} para evitar el sangrado en el
 primer párrafo después de un título, como se hace en textos en español. Por
 último se deshabilitaron los \texttt{shorthands} o taquigrafías para evitar
@@ -154,45 +182,43 @@ algunos conflictos con la sintaxis de otros paquetes, por ejemplo las
 comillas en \texttt{xy-pic} o en \texttt{tikzcd}.
 
 Al usar el idioma español \texttt{babel} se encargará de traducir todo, por
-ejemplo la palabra \enquote{capítulo} o \enquote{figura} como se puede ver en el
-documento. También traduce y acentúa los operadores, por ejemplo \(\max A\)
-o \(\lim f\).%
-\ifpdftex%
-Pero en algunos casos se decidió crear un comando nuevo como en el caso del
-seno:
+ejemplo la palabra \enquote{capítulo} o \enquote{figura} como se puede ver
+en el documento. También traduce y acentúa los operadores, por ejemplo
+\(\max A\) o \(\lim f\). Pero en algunos casos se decidió crear un comando
+nuevo como en el caso del seno:
 \[
   \sin(\alpha)\ne\sen(\alpha)
 \]
-\fi
+
 
 Otra opción para el manejo de idiomas en Xe\LaTeX{} o Lua\LaTeX{} es
 \texttt{polyglossia}. Este paquete se creó cuando \texttt{babel} había
 dejado de tener mantenimiento y uno de sus objetivos es simplificar su
 trabajo en estos motores. Este paquete también tiene una variante
-\texttt{mexico}, además de que se puede elegir un poco más el comportamiento
-de los operadores con las opciones:
+\texttt{mexico} (no compatible con \texttt{biber}), además de que se puede
+elegir un poco más el comportamiento de los operadores con las opciones:
 \begin{description}
   \item[\texttt{accented}] para acentuar los operadores como \texttt{babel}.
   \item[\texttt{spaced}] para dar un espacio corto entre el operador y el objeto al que se le aplica, de nuevo, como \texttt{babel}.
   \item[\texttt{all}] para hacer las dos anteriores más la localización de \verb|\sin| \verb|\tan| \verb|\sinh| y \verb|\tanh|.
   \item[\texttt{none}] para no hacer ninguna localización.
 \end{description}
-De esta forma, para la compilación con Lua\LaTeX{} se cargó
-\texttt{polyglossia} con la siguiente configuración
+Con Lua\LaTeX{} se podría cargar \texttt{polygossia} con la siguiente
+configuración
 \begin{flushleft}
   \verb|\usepackage{polyglossia}| \\
   \verb|\setdefaultlanguage[spanishoperators=all]{spanish}|
 \end{flushleft}
 
 De nuevo, para evitar el sangrado del primer párrafo después de un título
-se añadió el comando
+se debería añadir el comando
 \begin{flushleft}
   \verb|\PolyglossiaSetup{spanish}{indentfirst=false}|
 \end{flushleft}
 
 Tanto \texttt{babel} como \texttt{polyglossia} son buenas opciones para el
-manejo de idiomas y es difícil elegir uno sobre otro. Ambos tienen ventajas
-y desventajas en algunos aspectos sobre el otro.
+manejo de idiomas y ambos tienen ventajas y desventajas en algunos aspectos
+sobre el otro. Aún así elegimos usar \texttt{babel} por ser más conocido y tener un mejor soporte.
 
 
 \section{microtype}
@@ -211,7 +237,7 @@ de acuerdo al idioma que se la haya pasado a \texttt{babel} o
 
 \section{siunitx}
 Este paquete tiene como objetivo implementar la escritura de cantidades
-físicas de acuerdo con las reglas del sistema internacional de medidas\footnote{\url{https://www.bipm.org/en/measurement-units/}}. Aunque hay un desacuerdo con la forma de espaciar las cantidades y las unidades debido a la mala traducción del francés (idioma de la versión oficial del manual del sistema internacional de medidas) al inglés (idioma de donde se basaron para la creación del paquete). En el francés dice que deberían separase con un espacio y en el inglés dice que se separan con un \textit{thin space}. Así, el espaciado no es el correcto pero el error puede ser productivo ya que un menor espaciado crea una relación más estrecha entre cantidad y unidad. Algunos ejemplos de este paquete están en la siguiente tabla:
+físicas de acuerdo con las reglas del sistema internacional de medidas.\footnote{\url{https://www.bipm.org/en/measurement-units/}} Aunque hay un desacuerdo con la forma de espaciar las cantidades y las unidades debido a la mala traducción del francés (idioma de la versión oficial del manual del sistema internacional de medidas) al inglés (idioma de donde se basaron para la creación del paquete). En el francés dice que deberían separase con un espacio y en el inglés dice que se separan con un \textit{thin space}. Así, el espaciado no es el correcto pero el error puede ser productivo ya que un menor espaciado crea una relación más estrecha entre cantidad y unidad. Algunos ejemplos de este paquete están en la siguiente tabla:
 \begin{center}
   \begin{tabular}{lc}
     \toprule
@@ -231,7 +257,7 @@ físicas de acuerdo con las reglas del sistema internacional de medidas\footnote
 
 \section{csquotes}%
 \label{se:csq}
-Este paquete tampoco fue cargado por defecto en la clase pero es recomendado
+Este paquete no fue cargado por defecto en la clase pero es recomendado
 para la bibliografía, sobretodo si se usa \texttt{biblatex}, como en nuestro
 ejemplo.
 
@@ -249,24 +275,30 @@ resulta en \enquote{Lorem ipsum \enquote{dolor} sit amet}. Puede ser útil
 escribir comillas mediante un comando, ya que muchas veces no se usan las
 comillas correctas de \LaTeX, estas son \verb|``...''|. Además, da
 facilidades para poner citas textuales con el comando
-\verb|\textquote[⟨cita⟩][⟨puntuación⟩]{⟨texto⟩}|. También tiene un comando para citar un bloque de texto \verb|\blockquote[⟨cita⟩][⟨puntuación⟩]{⟨texto⟩}|. Todas estas funciones tiene una versión para citar en un idioma extrangero.
+\verb|\textquote[⟨cita⟩][⟨puntuación⟩]{⟨texto⟩}|. También tiene un comando
+para citar un bloque de texto
+\verb|\blockquote[⟨cita⟩][⟨puntuación⟩]{⟨texto⟩}|. Todas estas funciones
+tienen una versión para citar en un idioma extranjero, este idioma también
+debe ser cargado en \texttt{babel} (o \texttt{polygossia}).
 
 
 \section{biblatex}%
 \label{sec:bib}
-En principio no se eligió ningún paquete para crear la bibliografía del documento, pero el que nos parece recomendable es \texttt{biblatex}. Hay otros paquetes para formar la bibliografía de un texto, por ejemplo
-\texttt{natbib} o \texttt{cite}.
+En principio no se cargo por defecto ningún paquete para crear la
+bibliografía del documento, pero el que nos parece recomendable es
+\texttt{biblatex}. Hay otros paquetes para formar la bibliografía de un
+texto, por ejemplo \texttt{natbib} o \texttt{cite}.
 
 Mientras que \texttt{natbib} y \texttt{cite} son muy parecidos, sólo cambian
 algunas capacidades y \texttt{natbib} puede hacer técnicamente todo lo que
 hace \texttt{cite} más algunas cuantas cosas; \texttt{biblatex} es muy
 diferente a estos dos paquetes.
 
-Como este es un texto \enquote{local} en el sentido que su código fuente no debe
-cumplir los requerimientos de ningún \textit{journal} o editorial, entonces
-es posible usar los paquetes que cada quien considere necesario. La
+Como este es un texto \enquote{local} en el sentido que su código fuente no
+debe cumplir los requerimientos de ningún \textit{journal} o editorial,
+entonces es posible usar los paquetes que cada quien considere necesario. La
 motivación principal para hacer este ejemplo con \texttt{biblatex} está
-en el siguiente link \url{https://tex.stackexchange.com/a/25702/140456},
+en la siguente liga \url{https://tex.stackexchange.com/a/25702/140456},
 donde se explican las ventajas de biber sobre bibtex.
 
 La construcción de la base de datos de referencias es básicamente la misma
@@ -290,11 +322,11 @@ También tiene una lista grade de formas de citación, las más comunes son
 \verb|\cite{...}|, \verb|\parencite{...}|, \verb|\textcite{...}| y
 \verb|\footcite{...}|. El estilo de las entradas bibliográficas y de la
 citación se hacen mediante opciones del paquete. Como la lista de opciones
-también es amplia haré referencia a la siguiente liga
+también es amplia haremos referencia a la siguiente liga
 \url{http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf}
 para tener una guía rápida de \texttt{biblatex}.
 
-En este ejemplo hice un archivo \texttt{refs.bib} como base de datos de la
+En este ejemplo hicimos un archivo \texttt{refs.bib} como base de datos de la
 bibliografía. Para \enquote{cargarlo} hay que usar el comando
 \verb|\addbibresource{refs.bib}|. Este comando sólo acepta un archivo, pero
 se pueden cargar más escribiendo todo el comando con cada archivo
@@ -332,16 +364,16 @@ Como puse el ejemplo con muchos tipos de bibliografía y al final pondré toda
 la bibliografía usaré el estilo bibliográfico \texttt{alphabetic}.
 Otros estilos son \texttt{authoryear-icomp}, \texttt{numeric} (este es común
 en matemáticas) \texttt{author-title}, etc. Además de estos y las variantes
-ya definidas para apa, chicago, mla, etc. Es mucho más fácil definir o
-modificar un estilo usando \texttt{biblatex} (ya que se hace con comandos de
-\LaTeX{} comunes, al estilo \verb|\renewcommand|) que usando \texttt{natbib}
-o \texttt{cite} donde se requiere editar/crear un archivo \texttt{.bst} con
-un lenguaje, en principio, muy diferente a \LaTeX.
+ya definidas para apa, chicago, mla, entre otras. Es mucho más fácil definir
+o modificar un estilo usando \texttt{biblatex} (ya que se hace con comandos
+de \LaTeX{} comunes, al estilo \verb|\renewcommand|) que usando
+\texttt{natbib} o \texttt{cite} donde se requiere editar/crear un archivo
+\texttt{.bst} con un lenguaje, en principio, muy diferente a \LaTeX.
 
 En el ejemplo de bibliografías múltiples con el estilo \texttt{numeric}
 sería ideal usar la opción \texttt{resetnumbers} para que cada bibliografía
 empiece en [1], pero esto creará inconsistencias en la numeración de la
-bibliografía que pondré al final del documento.
+bibliografía que pondremos al final del documento.
 
 Una nota final es que el proceso de compilación ahora debe ser el siguiente
 \begin{flushleft}

@@ -5,8 +5,7 @@
 % arara: --> || found ('log', 'Please \\(re\\)run Biber')
 % arara: makeindex: { files: [ ejemplo.idx, names.idx ] }
 % arara: --> if changed ('idx') || missing ('ind')
-% arara: lualatex until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
-% arara: --> { synctex: yes }
+% arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
 
 \documentclass{tesisFC}
 
@@ -52,7 +51,7 @@
 
 
 %NUEVOS OPERADORES Y DELIMITADORES
-\DeclareMathOperator{\id}{Idem}
+\DeclareMathOperator{\idem}{Idem}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \providecommand\given{}%por si no está definido
 \newcommand\SetSymbol[1][]{%
@@ -71,8 +70,8 @@
 {\itshape}% fuente del cuerpo
 {0pt}% sangrado
 {\bfseries}% fuente del nombre del teorema
-{\par\vspace{\baselineskip}}% puntuación después del nombre
-{0pt}% espacio después del nombre
+{.}% puntuación después del nombre
+{1 ex}% espacio después del nombre
 {\thmname{#1}\thmnote{ #3}}%
 
 \theoremstyle{axioma}

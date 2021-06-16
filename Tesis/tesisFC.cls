@@ -39,10 +39,8 @@
 \ifluatex
   \RequirePackage{fontspec}
   \RequirePackage{unicode-math}
+  \RequirePackage[spanish,mexico,es-noshorthands,es-noindentfirst]{babel}
   \RequirePackage[tracking=true,protrusion=true]{microtype}
-  \RequirePackage{polyglossia}
-  \setdefaultlanguage[spanishoperators=all]{spanish}
-  \PolyglossiaSetup{spanish}{indentfirst=false}
   \setmainfont{STIX Two Text}
   \setmathfont{STIX Two Math}
 \fi
@@ -157,4 +155,5 @@
 \newtheorem{observación}[teorema]{Observación}
 
 %Ambiente de demostración
-\renewenvironment{proof}[1][\proofname] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\renewenvironment{proof}[1][Demostración]% debería ser \proofname
+{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}

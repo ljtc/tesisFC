@@ -1,0 +1,7 @@
+This is makeindex, version 2.15 [TeX Live 2021] (kpathsea + Thai support).
+Scanning style file /usr/local/texlive/2021/texmf-dist/makeindex/memoir/basic.gst.......done (7 attributes redefined, 0 ignored).
+Scanning input file simb.glo....done (1 entries accepted, 0 rejected).
+Sorting entries...done (0 comparisons).
+Generating output file simb.gls....done (4 lines written, 0 warnings).
+Output written in simb.gls.
+Transcript written in simb.ilg.

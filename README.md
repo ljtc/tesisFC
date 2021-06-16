@@ -4,6 +4,8 @@ Una clase para las tesis de la facultad de ciencias de la UNAM
 ## Introducción
 Muchas universidades tienen un diseño de tesis para obtener un estándar de este tipo de publicación. Nuestra universidad y en particular la facultad de ciencias no tienen tal cosa. Esta clase se escribió con el propósito de empezar a hacer un diseño común para nuestras tesis, al menos para las tesis en LaTeX. He tomado muchas desiciones respecto al diseño, las más notorias son la tipografía y la caja de texto. Todas ellas están a discusión para lograr un buen diseño de tesis.
 
+Además la clase se escribió modificando la clase `memoir` así que todos los aspectos están escritos en "nivel alto" y son fáciles de modificar.
+
 ## Portada
 En la clase se definen los siguientes comandos que deben escribirse en el
 preámbulo del documento:
@@ -33,7 +35,7 @@ Esta clase provee de algunas opciones que facilitan el trabajo de escribir una t
 
 Empezaremos con la segunda. La tesis puede estar en tres versiones, una para verla en una pantalla. En este formato no hace falta poner cada capítulo nuevo en una página impar, podría estar en una página par y de hecho agiliza la lectura en un dispositivo así. Para obtener esta versión basta usar la opcion `openany` esto se hace escribiendo `\documentclass[openany]{tesisFC}`. Otra versión, la cual es la salida por defecto, es para una impersión en hojas tamaño carta. La intensión es que haya una versión "grande" e imprimible para la revisión de los sinodales. Finalmente, con la opción `imp` se obtiene una versión para la impresión en forma de libro —más chico que tamaño carta—. Lo ideal sería usar esta opción junto con `showtrims` para que ponga marcas de corte. Las marcas de corte facilitaran el trabajo de la imprenta y nos aseguraremos que no quiten completamente los márgenes de la tesis.
 
-Para facilitar la escritura la clase carga por defecto algunos paquetes que son necesarios en casi cualquier posible tesis. Además detecta el tipo de compilación `pdfLaTeX` o `luaLaTeX` (se descartó `XeLaTeX` por no tener compatibilidad con `microtype` y porque su busqueda de fuentes no es tan buena como la de `luaLaTeX`. En este sentido podemos pensar a `luaLaTeX` como un supraconjunto de `XeLaTeX`) para cargar paquetes adecuados para cada tipo. La lista de paquetes para cada caso es:
+Para facilitar la escritura la clase carga por defecto algunos paquetes que son necesarios en casi cualquier posible tesis. Además detecta el tipo de compilación `pdfLaTeX` o `LuaLaTeX` (se descartó `XeLaTeX` por no tener compatibilidad con `microtype` y porque su busqueda de fuentes no es tan buena como la de `LuaLaTeX`. En este sentido podemos pensar a `LuaLaTeX` como un supraconjunto de `XeLaTeX`) para cargar paquetes adecuados para cada tipo. La lista de paquetes para cada caso es:
 
 
 | **pdfLaTeX**   | **luaLaTeX**   |
@@ -43,7 +45,7 @@ Para facilitar la escritura la clase carga por defecto algunos paquetes que son 
 |                | `unicode-math` |
 |`fontenc[T1]`   | `fontspec`     |
 |`inputenc[utf8]`|                |
-|`babel[mexico]` | `polyglossia`  |
+|`babel[mexico]` | `babel[mexico]`|
 |`microtype`     | `microtype`    |
 |`siunitx`       | `siunitx`      |
 
@@ -51,7 +53,7 @@ En el ejemplo adjunto con la clase se encuentra una breve descripción de la uti
 
 ## Posibles pendientes
 - [ ] Poner ejemplos de enlaces y moléculas con `chemfig`
-- [ ] Escribir código y pseudocódigo con `listings`
+- [ ] Escribir código y pseudocódigo con `tcolorbox`
 - [ ] Dibujar diagramas de Feynman con `tikz-feynman`
 - [ ] ¿Máquinas de Turing y circuitos eléctricos?
 - [ ] Animaciones con `animate` (aunque se requiere un visor de pdf específico)

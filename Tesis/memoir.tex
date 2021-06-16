@@ -26,7 +26,7 @@ paridad.
 definidos muchos más estilos de salida por defecto, estos pueden verse en
 \url{http://www.ebookation.com/wp-content/uploads/2010/03/memoirchapstyles.pdf}
 
-Modifique el tamaño y la posición de la caja de texto para obtener una linea de texto suficientemente grande como evitar tantos cortes de palabra, pero no tan grande como para que sea difícil pasar de una linea a otra.
+Modificamos el tamaño y la posición de la caja de texto para obtener una linea de texto suficientemente grande como evitar tantos cortes de palabra, pero no tan grande como para que sea difícil pasar de una linea a otra.
 
 Si notan como está formado un libro, el bloque de texto no está centrado
 en la página. Comúnmente el margen de la espina (donde se juntan las
@@ -35,15 +35,15 @@ la espina). Lo mismo sucede con los margenes superior e inferior, donde el
 superior es más chico que el inferior. Tomamos en cuenta estos detalles en
 la formación de este documento.
 
-También cambié cabeceras y pies, esta vez fue mínimo pero aún así es
+También cambiamos cabeceras y pies, esta vez fue mínimo pero aún así es
 suficiente para ver cómo cambiar cabeceras y pies (ver archivo \texttt{.cls}).
 
-Menciono de nuevo que \textit{memoir} es una clase configurable y tiene de
+Mencionamos de nuevo que \textit{memoir} es una clase configurable y tiene de
 manera nativa capacidades mayores o iguales a
 las de los siguientes paquetes
 \begin{center}
-  \autocols{c}{6}{l}{abstract, appendix, booktabs, ccaption, chngcntr, chngpage, enumerate, epigraph, framed, ifmtarg, index, makeidx, moreverb, needspace, newfile, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, titleref, titling, tocbibind, tocloft, verbatim, verse}
-\end{center}
+  \autocols{c}{6}{l}{abstract, appendix, booktabs, ccaption, chngcntr, chngpage, enumerate, epigraph, framed, ifmtarg, index, makeidx, moreverb, needspace, newfile, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, titleref, titling, tocbibind, tocloft, verbatim, verse}%
+\end{center}%
 También tiene las capacidades, aunque con comandos diferentes, de los siguientes paquetes
 \begin{center}
   crop, fancyhdr, geometry, sidecap, subfigure, titlesec
@@ -197,11 +197,17 @@ los archivos de este proyecto y con esto la cadena de compilación que se usa pa
 como no estoy seguro como llamar un archivo de configuración externo en
 \texttt{arara} tuve que correr los dos \texttt{makeindex} en la terminal.
 
+Para ver un ejemplo haremos una lista de acónimos que tendrá como única
+entrada HTML\glossary[acro]{HTML}{HyperText Markup Language} y una lista de
+símbolos que tenga a \(c\)\glossary[simb]{\(c\)}{Una constante importante}.
+
 En overleaf (que usa \texttt{latemk}, pueden ver el archivo que usa para
 compilar en \url{https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F}) tampoco funciona por defecto la
 compilación de glosarios con el método de \textit{memoir}, aunque debería
 ser posible configurarlo (me hace falta saber más de los archivos
-\texttt{latexmkrc}). Por lo tanto sugeriré el paquete \texttt{glossaries} o
+\texttt{latexmkrc}).
+
+Por lo tanto sugeriré el paquete \texttt{glossaries} o
 su versión extendida \texttt{glossaries-extra}. La versión extendida tiene
 muchas capacidades con el método \texttt{bib2gls} pero tampoco es soportado
 por overleaf, en este caso no será soportado por ningún método ya que usa

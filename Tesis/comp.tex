@@ -1,11 +1,11 @@
 % !TEX root = ejemplo.tex
 
 \chapter{Compilación y arara}
-Como este documento puede ser compilado con Lua\LaTeX{} o pdf\LaTeX{} y, por
-los ejemplos, el pdf de salida depende de qué tipo de compilación se usó,
+Como este documento puede ser compilado con Lua\LaTeX{} o pdf\LaTeX{}, el
+pdf de salida depende de qué tipo de compilación se usó,
 entonces lo recomendable es que se si compila con un método y luego el otro
-sea una compilación \enquote{nueva}, es decir, que antes de cambiar de método se
-eliminen los archivos auxiliares para evitar posibles conflictos.
+sea una compilación \enquote{nueva}, es decir, que antes de cambiar de
+método se eliminen los archivos auxiliares para evitar posibles conflictos.
 
 En este momento la compilación se ha vuelto algo complicada y por tanto puede
 que tome algo de tiempo. Por ejemplo para generar la tabla de contenidos es
@@ -29,7 +29,7 @@ se haya creado. En nuestro documento debería ser en el documento principal,
 como arriba, para formar al índice alfabético y en \texttt{names.idx} para
 formar el índice de nombres.
 
-Si ponemos todos los pasos necesarios para obtener un pdf a partir de nuestros archivos tex, entonces obtenemos algo así:
+Si juntamos todos los pasos necesarios para obtener un pdf a partir de nuestros archivos, entonces obtenemos algo así:
 \begin{flushleft}
   \verb|lualatex MiDocumento.tex|\\
   \verb|biber MiDocumento|\\
@@ -67,7 +67,7 @@ Ahora se compila con el comando
   \verb|arara MiDocumento|
 \end{flushleft}
 Para mostrar cómo mejoró el tiempo de compilación la segunda
-vez pongo capturas de pantalla de la compilación de este documento.
+vez ponemos capturas de pantalla de la compilación de este documento, ver figuras.
 Además muchos editores de \LaTeX{} pueden configurarse para compilar con
 \texttt{arara}.  Por ejemplo, en Atom (el editor que uso) con el paquete atom-
 latex se configura como \textit{custom toolchain} y el toolchain es:
