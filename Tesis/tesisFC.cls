@@ -47,7 +47,6 @@
 
 \ifpdftex
   \RequirePackage[T1]{fontenc}
-  \RequirePackage[utf8]{inputenc}
   \RequirePackage[spanish,mexico,es-noshorthands,es-noindentfirst]{babel}
   \RequirePackage{stix2}
   \RequirePackage[tracking=true,spacing=true,kerning=true,protrusion=true]{microtype}
@@ -57,12 +56,12 @@
 \RequirePackage{graphicx}
 \RequirePackage{xstring}
 
-\newtoks\facultad
+%\newtoks\facultad%los quité, no hace falta especificar
 \newtoks\grado
 \newtoks\tipo
 \newtoks\tutor
-\newtoks\logouni
-\newtoks\logofac
+%\newtoks\logouni%los quité, no hace falta especificar
+%\newtoks\logofac%los quité, no hace falta especificar
 
 %Modificación del código proporcionado por la facultad hace algunos años
 \newcommand*{\portadatesis}{%
@@ -71,7 +70,7 @@
 \begin{minipage}[c][0.99\textheight][c]{0.2\textwidth}%
 	\noindent\begin{minipage}[t][0.15\textheight][c]{\textwidth}
 		\begin{center}
-		\includegraphics[height=2.718cm]{\the\logouni}
+		\includegraphics[height=2.718cm]{unam}
 		\end{center}
 	\end{minipage}%
 	\\
@@ -87,8 +86,8 @@
 	\\[3mm]
 	\noindent\begin{minipage}[b][0.15\textheight][c]{\textwidth}
 		\begin{center}
-		\includegraphics[height=2.718cm]{\the\logofac}\par
-		{\tiny\scshape Facultad de \the\facultad} \par
+		\includegraphics[height=2.718cm]{fc}\par
+		{\tiny\scshape Facultad de Ciencias} \par
 		\vspace{-2mm}
 		{\tiny\scshape unam}
 		\end{center}
@@ -104,7 +103,7 @@
 	    \vspace{.3cm}
 	    \hrule height1pt
 	    \vspace{0.75cm}
-	    {\large\scshape Facultad de \the\facultad\unskip\strut\par}
+	    {\large\scshape Facultad de Ciencias\unskip\strut\par}
 	    \vspace{2.5cm}
 	    {\large\scshape\thetitle\par}
 	    \vspace{2.5cm}
@@ -155,5 +154,5 @@
 \newtheorem{observacion}[teorema]{Observación}
 
 %Ambiente de demostración
-\renewenvironment{proof}[1][Demostración]% debería ser \proofname
+\renewenvironment{proof}[1][\proofname]
 {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}

@@ -1,5 +1,5 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {spanish}{}
+\babel@toc {spanish}{}\relax 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Índice de figuras}{\es@scroman {iii}}{section*.2}%
 \defcounter {refsection}{0}\relax 
