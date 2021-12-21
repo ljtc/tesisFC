@@ -152,7 +152,7 @@
 
 \theoremstyle{definition}
 \newtheorem{definicion}[teorema]{Definición}
-\newtheorem{observación}[teorema]{Observación}
+\newtheorem{observacion}[teorema]{Observación}
 
 %Ambiente de demostración
 \renewenvironment{proof}[1][Demostración]% debería ser \proofname
