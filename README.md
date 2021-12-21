@@ -13,11 +13,8 @@ preámbulo del documento:
 * `\title{}`
 * `\date{}`
 * `\tipo{}`
-* `\facultad{}`
 * `\grado{}`
 * `\tutor{}`
-* `\logouni{}`
-* `\logofac{}`
 
 En realidad los primeros tres están definidos por LaTeX y se usó su "valor" en la portada.
 
