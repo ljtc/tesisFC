@@ -12,9 +12,9 @@
 \ifisimp
 \setstocksize{279mm}{216mm}
 \settrimmedsize{224mm}{170mm}{*}
-\settypeblocksize{*}{130mm}{1.3}
-\setulmargins{30mm}{*}{*}
-\setlrmargins{*}{*}{2}
+\settypeblocksize{142mm}{125mm}{*}
+\setulmargins{44mm}{*}{*}
+\setlrmargins{*}{*}{1.8}
 \setmarginnotes{17pt}{86pt}{\onelineskip}
 \setheadfoot{\onelineskip}{2\onelineskip}
 \setheaderspaces{*}{2\onelineskip}{*}
@@ -64,69 +64,73 @@
 %\newtoks\logofac%los quité, no hace falta especificar
 
 %Modificación del código proporcionado por la facultad hace algunos años
-\newcommand*{\portadatesis}{%
-\begin{titlingpage}
-\noindent
-\begin{minipage}[c][0.99\textheight][c]{0.2\textwidth}%
-	\noindent\begin{minipage}[t][0.15\textheight][c]{\textwidth}
-		\begin{center}
-		\includegraphics[height=2.718cm]{unam}
-		\end{center}
-	\end{minipage}%
-	\\
-	\noindent\begin{minipage}[c][0.66\textheight][c]{\textwidth}
-		\begin{center}
-		\vrule width1pt height0.632\textheight
-		\hskip3mm
-		\vrule width2pt height0.632\textheight
-		\hskip3mm
-		\vrule width1pt height0.632\textheight
-		\end{center}
-	\end{minipage}%
-	\\[3mm]
-	\noindent\begin{minipage}[b][0.15\textheight][c]{\textwidth}
-		\begin{center}
-		\includegraphics[height=2.718cm]{fc}\par
-		{\tiny\scshape Facultad de Ciencias} \par
-		\vspace{-2mm}
-		{\tiny\scshape unam}
-		\end{center}
-	\end{minipage}%
-\end{minipage}
-\hfill%
-\begin{minipage}[c][0.99\textheight][t]{0.744\textwidth}
-	\begin{center}
-	    \vspace{0.7cm}
-	    {\large\scshape Universidad Nacional Aut\'onoma de M\'exico\par}
-	    \vspace{0.75cm}
-	    \hrule height2pt
-	    \vspace{.3cm}
-	    \hrule height1pt
-	    \vspace{0.75cm}
-	    {\large\scshape Facultad de Ciencias\unskip\strut\par}
-	    \vspace{2.5cm}
-	    {\large\scshape\thetitle\par}
-	    \vspace{2.5cm}
-	    \begin{minipage}{8cm}
-	    \centering
-	    \IfSubStr{\the\tipo}{esis}{\makebox[8cm][s]{\huge T E S I S}}{\huge\MakeTextUppercase{\the\tipo}}
-	    \end{minipage}\\[1.3cm]
-	    \makebox[7cm][c]{QUE PARA OBTENER EL T\'ITULO DE:}\\[0.8cm]
-	    {\scshape\the\grado}\\[1.3cm]
-	    \makebox[7cm][s]{P R E S E N T A :}\\[0.8cm]
-	    {\scshape\theauthor}\par
-	    \vspace{1.2cm}
-	    { TUTOR\\[0.8cm]
-	    {\scshape\the\tutor}}
-	    \vfill
 
-	    {\scshape\thedate}
-	    \vspace{.1cm}
+  \newcommand*{\portadatesis}{%
+  \begin{titlingpage}
+  \noindent
+  \begin{minipage}[c][0.99\textheight][c]{0.2\textwidth}%
+  	\noindent\begin{minipage}[t][0.15\textheight][c]{\textwidth}
+  		\begin{center}
+  		\includegraphics[height=2.718cm]{unam}
+  		\end{center}
+  	\end{minipage}%
+  	\\
+  	\noindent\begin{minipage}[c][0.66\textheight][c]{\textwidth}
+  		\begin{center}
+  		\vrule width1pt height0.632\textheight
+  		\hskip3mm
+  		\vrule width2pt height0.632\textheight
+  		\hskip3mm
+  		\vrule width1pt height0.632\textheight
+  		\end{center}
+  	\end{minipage}%
+  	\\[3mm]
+  	\noindent\begin{minipage}[b][0.15\textheight][c]{\textwidth}
+  		\begin{center}
+  		\includegraphics[height=2.718cm]{fc}\par
+  		{\tiny\scshape Facultad de Ciencias} \par
+  		\vspace{-2mm}
+  		{\tiny\scshape unam}
+  		\end{center}
+  	\end{minipage}%
+  \end{minipage}
+  \hfill%
+  \begin{minipage}[c][0.99\textheight][t]{0.744\textwidth}
+  	\begin{center}
+  	    \vspace{0.7cm}
+  	    {\large\scshape Universidad Nacional Aut\'onoma de M\'exico\par}
+  	    \vspace{0.75cm}
+  	    \hrule height2pt
+  	    \vspace{.3cm}
+  	    \hrule height1pt
+  	    \vspace{0.75cm}
+  	    {\large\scshape Facultad de Ciencias\unskip\strut\par}
+  	    \ifisimp\vspace{1cm}\else\vspace{2.5cm}\fi
+  	    {\large\scshape\thetitle\par}
+  	    \ifisimp\vspace{1cm}\else\vspace{2.5cm}\fi
+  	    \begin{minipage}{8cm}
+  	    \centering
+  	    \IfSubStr{\the\tipo}{esis}{\makebox[8cm][s]{\huge T E S I   S}}{\huge\MakeTextUppercase{\the\tipo}}
+  	    \end{minipage}\\[1cm]
+  	    \makebox[7cm][c]{QUE PARA OBTENER EL T\'ITULO DE:}\\[0.8cm]
+  	    {\scshape\the\grado}\\[1cm]
+  	    \makebox[7cm][s]{P R E S E N T A :}\\[0.8cm]
+  	    {\scshape\theauthor}\par
+  	    \vspace{1cm}
+  	    { TUTOR\\[0.5cm]
+  	    {\scshape\the\tutor}}
+  	    \vfill
 
-	\end{center}
-\end{minipage}
-\end{titlingpage}
-}
+  	    {\scshape\thedate}
+  	\end{center}
+  \end{minipage}
+  \end{titlingpage}
+  }
+
+%Sin figuras en el margen con la oción para imprimir
+\ifisimp
+\renewenvironment{marginfigure}{\begin{figure}}{\end{figure}}
+\fi
 
 
 %Estilo de capítulos

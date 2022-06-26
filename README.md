@@ -54,3 +54,6 @@ En el ejemplo adjunto con la clase se encuentra una breve descripción de la uti
 - [ ] Dibujar diagramas de Feynman con `tikz-feynman`
 - [ ] ¿Máquinas de Turing y circuitos eléctricos?
 - [ ] Animaciones con `animate` (aunque se requiere un visor de pdf específico)
+
+
+Puedes enviar bugs y sugerencias a `ljtc@ciencias.unam.mx`
