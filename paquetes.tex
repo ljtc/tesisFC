@@ -176,7 +176,7 @@ hace podemos mencionar que cambia el nombre \enquote{cuadro} por \enquote{tabla}
 prioriza comillas y usa el punto decimal en lugar de la coma como puede
 verse en la compilación con \(\pi=3.141592\ldots \) Además se
 cargó la opción \texttt{es-noindentfirst} para evitar el sangrado en el
-primer párrafo después de un título, como se hace en textos en español. Por
+primer párrafo después de un título. Por
 último se deshabilitaron los \texttt{shorthands} o taquigrafías para evitar
 algunos conflictos con la sintaxis de otros paquetes, por ejemplo las
 comillas en \texttt{xy-pic} o en \texttt{tikzcd}.
@@ -225,9 +225,9 @@ sobre el otro. Aún así elegimos usar \texttt{babel} por ser más conocido y te
 Este paquete habilita los aspectos micro-tipográficos del documento. Algunos
 de ellos ya son hechos por \TeX{} como justificación y la separación
 silábica (cortes de palabra). En general las opciones que se le pasaron a
-este paquete sirven para calcular la expansión de letras, palabras y
-permitir que algunos caracteres, como el guión de un corte de palabra,
-salgan del margen. Algunas de estas mejoras se pueden hacer con
+\texttt{microtype} sirven para calcular la expansión de letras, palabras y
+permitir que algunos caracteres cortos, como el guión de un corte de palabra o
+el punto, salgan del margen. Algunas de estas mejoras se pueden hacer con
 \texttt{fontspec}, por ejemplo poniendo la opción \texttt{LetterSpacing} al
 cargar una fuente, pero hay que calcular las cosas manualmente. En cambio
 \texttt{microtype} toma todas estas decisiones por nosotros y lo hace
@@ -244,12 +244,12 @@ físicas de acuerdo con las reglas del sistema internacional de medidas.\footnot
     Comando & Resultado \\
     \midrule
     \verb|\ang{1;2;3}| & \ang{1;2;3}\\
-    \verb|\si{\gram\per\cubic\centi\metre}| & \si{\gram\per\cubic\centi\metre}\\
-    \verb|\si{kg.m/s^2}| & \si{kg.m/s^2}\\
-    \verb|\SI{.23e7}{\candela}| & \SI{.23e7}{\candela} \\
-    \verb|\SI[mode=text]{1.23}{J.mol^{-1}.K^{-1}}| & \SI[mode=text]{1.23}{J.mol^{-1}.K^{-1}} \\
-    \verb|\SI[per-mode=symbol]{1.99}[\$]{\per\kilogram}| & \SI[per-mode=symbol]{1.99}[\$]{\per\kilogram} \\
-    \verb|\SI[per-mode=fraction]{1,345}{\coulomb\per\mole}| & \SI[per-mode=fraction]{1,345}{\coulomb\per\mole}\\
+    \verb|\unit{\gram\per\cubic\centi\metre}| & \unit{\gram\per\cubic\centi\metre}\\
+    \verb|\unit{kg.m/s^2}| & \unit{kg.m/s^2}\\
+    \verb|\qty{.23e7}{\candela}| & \qty{.23e7}{\candela} \\
+    \verb|\qty[mode=text]{1.23}{J.mol^{-1}.K^{-1}}| & \qty[mode=text]{1.23}{J.mol^{-1}.K^{-1}} \\
+    \verb|\qty[per-mode = symbol]{1.99}{\per\kilogram}| & \qty[per-mode = symbol]{1.99}{\per\kilogram} \\
+    \verb|\qty[per-mode=fraction]{1,345}{\coulomb\per\mole}| & \qty[per-mode=fraction]{1,345}{\coulomb\per\mole}\\
     \bottomrule
   \end{tabular}
 \end{center}

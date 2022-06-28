@@ -7,7 +7,7 @@
 % arara: --> if changed ('idx') || missing ('ind')
 % arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
 
-\documentclass{tesisFC}
+\documentclass[imp,showtrims]{tesisFC}
 
 %PAQUETES para los ejemplos
 \usepackage{lipsum}%texto de demostración
@@ -26,11 +26,23 @@
 \usepackage[colorlinks]{hyperref}
 %para quitar el color de los links sustituir colorlinks por hidelinks
 
-
 %BIBLIOGRAFÍA
 \addbibresource{refs.bib}
 
+%Información para la portada
+\title{Título del trabajo}
+\author{Nombre del alumno}
+\date{2021}
+\grado{Grado a obtener}
+\tipo{tesis}
+\tutorW{tutora}
+\tutor{Grado y nombre}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%A partir de aquí se usa para los ejemplos%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %ÍNDICES Y GLOSARIOS
 \makeindex
 \makeindex[names]
@@ -103,22 +115,8 @@
   \noindent\ignorespacesafterend%
 }
 \fi
-
-
-
-
-
-
-%Información para la portada
-\title{Título del trabajo}
-\author{Nombre del alumno}
-\date{2021}
-%\facultad{Ciencias}%lo quité, si es de ciencias no hace falta especificar
-\grado{Grado a obtener}
-\tipo{tesis}
-\tutor{Grado y nombre}
-%\logouni{unam}%lo quité, no hace falta especificar
-%\logofac{fc}%lo quité, si es de ciencias no hace falta especificar
+%este es el final del código para los ejemplos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}

@@ -2,7 +2,7 @@
 Una clase para las tesis de la facultad de ciencias de la UNAM
 
 ## Introducción
-Muchas universidades tienen un diseño de tesis para obtener un estándar de este tipo de publicación. Nuestra universidad y en particular la facultad de ciencias no tienen tal cosa. Esta clase se escribió con el propósito de empezar a hacer un diseño común para nuestras tesis, al menos para las tesis en LaTeX. He tomado muchas desiciones respecto al diseño, las más notorias son la tipografía y la caja de texto. Todas ellas están a discusión para lograr un buen diseño de tesis.
+Muchas universidades tienen un diseño de tesis para obtener un estándar de este tipo de publicación. Nuestra universidad y en particular la facultad de ciencias no tienen tal cosa. Esta clase se escribió con el propósito de empezar a hacer un diseño común para nuestras tesis, al menos para las tesis en LaTeX. He tomado muchas decisiones respecto al diseño, las más notorias son la tipografía y la caja de texto. Todas ellas están a discusión para lograr un buen diseño de tesis y podrían cambiarse.
 
 Además la clase se escribió modificando la clase `memoir` así que todos los aspectos están escritos en "nivel alto" y son fáciles de modificar.
 
@@ -14,25 +14,25 @@ preámbulo del documento:
 * `\date{}`
 * `\tipo{}`
 * `\grado{}`
+* `\tutorW{}`
 * `\tutor{}`
 
 En realidad los primeros tres están definidos por LaTeX y se usó su "valor" en la portada.
 
+El tipo puede ser `tesis`, `reporte de investigación`, `reporte de actividad docente`, `reporte de trabajo profesional`, `reporte de servicio social` o `reporte de divulgación`. Estos son todos los posibles métodos de titulación que requieren un trabajo escrito. No es necesario escribir en mayúsculas, en el diseño se usa `\MakeTextUppercase` para forzar una salida en mayúsculas. El comando `\tutorW{}` sirve para escribir la palabra "TUTOR" o "TUTORA", así que el valor que se le pasa debería ser `tutor` o `tutora`. De nuevo, no importa si se pasa en mayúsculas o minúsculas, la clase lo pondrá en mayúsculas.
 
-El diseño es una modificación del código que proporcionaba la facultad hace algunos años con la adaptación necesaria para funcionar en la clase base de esta, `memoir`. Además es el mismo diseño que ofrece hoy el departamento  de computo, es decir, tiene el nombre de la facultad abajo el escudo.
+El diseño de la portada es una modificación del código que proporcionaba la facultad hace algunos años con la adaptación necesaria para funcionar en la clase base de esta, `memoir`. Además es el mismo diseño que ofrece hoy el ![departamento  de computo](https://www.fciencias.unam.mx/sites/default/files/2020-08/caratulas.pdf), es decir, tiene el nombre de la facultad abajo del escudo. Además, en la misma página se puede ver que cuando se trata de una tesis la palabra "tesis" aparece diferente al resto de tipos de trabajo. La clase también puede ver el tipo de trabajo para escribirlo de acuerdo al diseño del departamento de computo.
 
 Para la creación de la portada de usaron los paquetes `graphicx` y `xstring`, así que no hay necesidad de volver a cargarlos en el preámbulo de la tesis.
-
-En cada uno de los comandos proporcionados para la creación de la portada se debe escribir la información como se espera que se imprima, es decir, la inicial de un nombre en mayúscula y las siguientes en minúsculas. La única exepción es `\tipo{}` donde se espera una entrada en minúsculas. Esto se debe a que la clase revisará los caracteres que hay en ese campo para imprimirlos según el diseño de la facultad. Esto es, en el caso de ser una tesis se esparcen las letras de manera uniforme para cubrir cierto espacio horizontal. En otro caso no se esparcen las letras y se genran dos renglones. En la página de [computo de la facultad de ciencias](https://pagina.fciencias.unam.mx/servicios-y-tramites/titulacion/formatos/portadas) se encuentran los ejemplos de donde se configuró esta opción.
 
 Por último, la impresión de la portada en el documento se obtiene con el comando `\portadatesis`.
 
 ## La clase
 Esta clase provee de algunas opciones que facilitan el trabajo de escribir una tesis y algunas variantes para los diferentes usos que pueda tener un archivo de tesis.
 
-Empezaremos con la segunda. La tesis puede estar en tres versiones, una para verla en una pantalla. En este formato no hace falta poner cada capítulo nuevo en una página impar, podría estar en una página par y de hecho agiliza la lectura en un dispositivo así. Para obtener esta versión basta usar la opcion `openany` esto se hace escribiendo `\documentclass[openany]{tesisFC}`. Otra versión, la cual es la salida por defecto, es para una impersión en hojas tamaño carta. La intensión es que haya una versión "grande" e imprimible para la revisión de los sinodales. Finalmente, con la opción `imp` se obtiene una versión para la impresión en forma de libro —más chico que tamaño carta—. Lo ideal sería usar esta opción junto con `showtrims` para que ponga marcas de corte. Las marcas de corte facilitaran el trabajo de la imprenta y nos aseguraremos que no quiten completamente los márgenes de la tesis.
+Empezaremos con la segunda. La tesis puede estar en tres versiones, una para verla en una pantalla. En este formato no hace falta poner cada capítulo nuevo en una página impar, podría estar en una página par y de hecho agiliza la lectura en un dispositivo así. Para obtener esta versión basta usar la opcion `openany` esto se hace escribiendo `\documentclass[openany]{tesisFC}`. Otra versión, la cual es la salida por defecto, es para una impresión en hojas tamaño carta. La intensión es que haya una versión "grande" e imprimible para la revisión de los sinodales. Finalmente, con la opción `imp` se obtiene una versión para la impresión en forma de libro —más chico que tamaño carta—. Lo ideal sería usar esta opción junto con `showtrims` para que ponga marcas de corte. Las marcas de corte facilitaran el trabajo de la imprenta y nos aseguraremos que no quiten completamente los márgenes de la tesis. Finalmente, en la opción `ci` queda muy poco margen por lo que las imágenes que se hayan escrito en el margen del documento son trasladadas al cuerpo del documento de manera automática.
 
-Para facilitar la escritura la clase carga por defecto algunos paquetes que son necesarios en casi cualquier posible tesis. Además detecta el tipo de compilación `pdfLaTeX` o `LuaLaTeX` (se descartó `XeLaTeX` por no tener compatibilidad con `microtype` y porque su busqueda de fuentes no es tan buena como la de `LuaLaTeX`. En este sentido podemos pensar a `LuaLaTeX` como un supraconjunto de `XeLaTeX`) para cargar paquetes adecuados para cada tipo. La lista de paquetes para cada caso es:
+Para facilitar la escritura la clase carga por defecto algunos paquetes que son necesarios en casi cualquier posible tesis. Además detecta el tipo de compilación `pdfLaTeX` o `LuaLaTeX` (se descartó `XeLaTeX` por no tener compatibilidad con `microtype` y porque su búsqueda de fuentes no es tan buena como la de `LuaLaTeX`. En este sentido podemos pensar a `LuaLaTeX` como un supraconjunto de `XeLaTeX`) para cargar paquetes adecuados para cada tipo. La lista de paquetes para cada caso es:
 
 
 | **pdfLaTeX**   | **luaLaTeX**   |
@@ -50,7 +50,7 @@ En el ejemplo adjunto con la clase se encuentra una breve descripción de la uti
 
 ## Posibles pendientes
 - [ ] Poner ejemplos de enlaces y moléculas con `chemfig`
-- [ ] Escribir código y pseudocódigo con `tcolorbox`
+- [ ] Escribir código con `tcolorbox`
 - [ ] Dibujar diagramas de Feynman con `tikz-feynman`
 - [ ] ¿Máquinas de Turing y circuitos eléctricos?
 - [ ] Animaciones con `animate` (aunque se requiere un visor de pdf específico)
