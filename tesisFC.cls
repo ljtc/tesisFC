@@ -52,11 +52,46 @@
   \RequirePackage[tracking=true,spacing=true,kerning=true,protrusion=true]{microtype}
 \fi
 
+%Sin figuras en el margen con la oción para imprimir
+\ifisimp
+\renewenvironment{marginfigure}{\begin{figure}}{\end{figure}}
+\fi
+
+
+%Estilo de capítulos
+\chapterstyle{madsen}
+
+%Cabeceras y pies
+\nouppercaseheads%
+\makepagestyle{tesisFC}
+\makeevenhead{tesisFC}{}{}{\leftmark}
+\makeoddhead{tesisFC}{\rightmark}{}{}
+\makeevenfoot{tesisFC}{}{}{\thepage}
+\makeoddfoot{tesisFC}{\thepage}{}{}
+\makeheadrule{tesisFC}{\linewidth}{0.4pt}
+\pagestyle{tesisFC}
+
+%Definiciones, teoremas,...
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{corolario}[teorema]{Corolario}
+
+\theoremstyle{definition}
+\newtheorem{definicion}[teorema]{Definición}
+\newtheorem{observacion}[teorema]{Observación}
+
+%Ambiente de demostración
+\renewenvironment{proof}[1][\proofname]
+{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
+
+
 %Portada
 \RequirePackage{graphicx}
 \RequirePackage{xstring}
 
-%\newtoks
+%newtoks
 \newtoks\grado
 \newtoks\tipo
 \newtoks\tutor
@@ -190,37 +225,3 @@
 \end{titlingpage}
 }
 \fi
-
-%Sin figuras en el margen con la oción para imprimir
-\ifisimp
-\renewenvironment{marginfigure}{\begin{figure}}{\end{figure}}
-\fi
-
-
-%Estilo de capítulos
-\chapterstyle{madsen}
-
-%Cabeceras y pies
-\nouppercaseheads%
-\makepagestyle{tesisFC}
-\makeevenhead{tesisFC}{}{}{\leftmark}
-\makeoddhead{tesisFC}{\rightmark}{}{}
-\makeevenfoot{tesisFC}{}{}{\thepage}
-\makeoddfoot{tesisFC}{\thepage}{}{}
-\makeheadrule{tesisFC}{\linewidth}{0.4pt}
-\pagestyle{tesisFC}
-
-%Definiciones, teoremas,...
-\theoremstyle{plain}
-\newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{proposicion}[teorema]{Proposición}
-\newtheorem{lema}[teorema]{Lema}
-\newtheorem{corolario}[teorema]{Corolario}
-
-\theoremstyle{definition}
-\newtheorem{definicion}[teorema]{Definición}
-\newtheorem{observacion}[teorema]{Observación}
-
-%Ambiente de demostración
-\renewenvironment{proof}[1][\proofname]
-{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
