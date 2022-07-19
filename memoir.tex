@@ -30,7 +30,7 @@ Modificamos el tamaño y la posición de la caja de texto para obtener una linea
 
 Si notan como está formado un libro, el bloque de texto no está centrado
 en la página. Comúnmente el margen de la espina (donde se juntan las
-páginas de un libro) es la mitad que el margen de la orilla (el opuesto a
+páginas de un libro) es la mitad del margen de la orilla (el opuesto a
 la espina). Lo mismo sucede con los margenes superior e inferior, donde el
 superior es más chico que el inferior. Tomamos en cuenta estos detalles en
 la formación de este documento.
@@ -40,13 +40,13 @@ suficiente para ver cómo cambiar cabeceras y pies (ver archivo \texttt{.cls}).
 
 Mencionamos de nuevo que \textit{memoir} es una clase configurable y tiene de
 manera nativa capacidades mayores o iguales a
-las de los siguientes paquetes
+las de los siguientes paquetes:
 \begin{center}
   \autocols{c}{6}{l}{abstract, appendix, booktabs, ccaption, chngcntr, chngpage, enumerate, epigraph, framed, ifmtarg, index, makeidx, moreverb, needspace, newfile, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, titleref, titling, tocbibind, tocloft, verbatim, verse}%
 \end{center}%
 También tiene las capacidades, aunque con comandos diferentes, de los siguientes paquetes
 \begin{center}
-  crop, fancyhdr, geometry, sidecap, subfigure, titlesec
+  crop, fancyhdr, geometry, sidecap, subfigure, titlesec.
 \end{center}
 Por último, la clase carga los siguientes paquetes
 \begin{center}
@@ -54,27 +54,6 @@ Por último, la clase carga los siguientes paquetes
 \end{center}
 Así que no hace falta cargar ninguno de estos, de esta manera es más fácil
 tener compatibilidad de paquetes.
-
-\textit{Memoir} puede crear índices de manera relativamente sencilla, en este ejemplo
-haremos uno de términos o alfabético y uno de nombres. Para esto se escribió
-en el preámbulo
-\begin{flushleft}
-  \verb|\makeindex|\\
-  \verb|\makeindex[names]|
-\end{flushleft}
-luego una entrada en el índice de términos se crea con el comando
-\verb|\index{término}| término\index{término}. Este índice puede crear
-subtérminos de la siguiente manera subtérmino\index{término!subtérmino} y
-uno más subsubtérmino\index{término!subtérmino!subsubtérmino} (ver código
-fuente).
-
-Ahora una entrada para el índice de nombres
-Grothendieck\index[names]{Grothendieck}. Nota que en este índice se
-específico que pertenece al índice de nombres con el parámetro opcional
-\texttt{[names]}.
-
-Al final del archivo principal se puede ver cómo se imprimieron.
-
 
 \section{Un poco más}
 Primero veamos cómo hacer subfiguras con memoir, es decir, sin usar el paquete
@@ -113,7 +92,7 @@ las siguientes.
 \end{description}
 La sintaxis para especificar la posición es \verb|\begin{figure}[...]|.
 
-También es posible crear nuevo flotantes, nosotros hemos hecho un flotante
+También es posible crear nuevos flotantes, nosotros hemos hecho un flotante
 para diagramas en el preámbulo. Así podemos poner diagramas en una versión
 similar a la de figura.
 \begin{diagram}
@@ -144,7 +123,7 @@ También es posible aprovechar el espacio del margen como apoyo para las figuras
 \begin{nota}
 En la versión para imprimir la tesis como un libro el margen se
 reduce para permitir una caja de texto más grande, así las cosas que estén
-en el margen podrían verse muy \enquote{apretadas}.
+en el margen podrían verse muy \enquote{apretadas}. Por esta razón se quitaron automáticamente todas las figuras del margen.
 \end{nota}
 
 Por último en el código de este documento se puede ver que todas las
@@ -158,59 +137,3 @@ comando
 \end{flushleft}
 que también se puede usar en tablas, figuras al margen y los flotantes que
 se hayan creado.
-
-
-\section{Me falta desarrollar mejor}
-Memoir puede crear glosarios de una forma muy similar a los índices. Se puede crear, por ejemplo, una lista de acrónimos y una de símbolos. Para
-ejemplificar cómo se hacen en el preámbulo se escribe
-\begin{flushleft}
-  \verb|\makeglossary[acro]|\\
-  \verb|\makeglossary[simb]|
-\end{flushleft}
-Luego un acrónimo \verb|\glossary[acro]{HTML}{⟨HyperText Markup Language}| y un símbolo \verb|\glossary[simb]{\(c\)}{Una constante importante}| en el texto. Por último, en el lugar del documento donde vayan a ir los glosarios se escribe
-\begin{flushleft}
-  \verb|\clearpage %para crear una página nueva|\\
-  \verb|\printglossary[acro]|\\
-  \verb|\clearpage|\\
-  \verb|\printglossary[simb]|
-\end{flushleft}
-Para cambiar el nombre del glosario, de la misma manera que en los índices, se usa
-\begin{flushleft}
-  \verb|\renewcommand{\glossaryname}{Un glosario}|
-\end{flushleft}
-
-La dificultad que encuentro en la creación de glosarios es la compilación.
-Para esto también se usará \textit{makeindex}, pero si se intenta correr
-este programa en alguno de los archivos para crear glosarios, por ejemplo
-\begin{flushleft}
-  \verb|makeindex acro.glo|
-\end{flushleft}
-se generaran muchos errores. Entonces, para lograr hacer estos glosarios se
-necesita un archivo de configuración \texttt{basic.gst} que encontrarás en
-los archivos de este proyecto y con esto la cadena de compilación que se usa para los glosarios es
-\begin{flushleft}
-  \verb|...|\\
-  \verb|makeindex -s basic.gst -o acro.gls acro.glo|\\
-  \verb|makeindex -s basic.gst -o simb.gls simb.glo|\\
-  \verb|lualatex MiDocumento.tex|
-\end{flushleft}
-como no estoy seguro como llamar un archivo de configuración externo en
-\texttt{arara} tuve que correr los dos \texttt{makeindex} en la terminal.
-
-Para ver un ejemplo haremos una lista de acónimos que tendrá como única
-entrada HTML\glossary[acro]{HTML}{HyperText Markup Language} y una lista de
-símbolos que tenga a \(c\)\glossary[simb]{\(c\)}{Una constante importante}.
-
-En overleaf (que usa \texttt{latemk}, pueden ver el archivo que usa para
-compilar en \url{https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F}) tampoco funciona por defecto la
-compilación de glosarios con el método de \textit{memoir}, aunque debería
-ser posible configurarlo (me hace falta saber más de los archivos
-\texttt{latexmkrc}).
-
-Por lo tanto sugeriré el paquete \texttt{glossaries} o
-su versión extendida \texttt{glossaries-extra}. La versión extendida tiene
-muchas capacidades con el método \texttt{bib2gls} pero tampoco es soportado
-por overleaf, en este caso no será soportado por ningún método ya que usa
-java y overleaf no soporta java (¿una implementación antigua de \LaTeX?).
-Por lo que para hacer glosarios en overleaf hay que usar la versión simple
-de \texttt{glossaries} que debería ser suficiente para una tesis.

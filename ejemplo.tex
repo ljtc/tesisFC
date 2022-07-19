@@ -1,10 +1,10 @@
 % !TEX root = ejemplo.tex
 
-% arara: lualatex: { draft: yes }
-% arara: biber if changed (toFile('refs.bib'))
+% arara: lualatex: { draft: yes } unless exists(toFile('ejemplo.aux'))
+% arara: biber if changed (toFile('refs.bib')) || found('log', 'Citation')
 % arara: --> || found ('log', 'Please \\(re\\)run Biber')
-% arara: makeindex: { files: [ ejemplo.idx, names.idx ] }
-% arara: --> if changed ('idx') || missing ('ind')
+% arara: makeglossaries if missing('gls')
+% arara: --> || changed('glo') || changed(toFile('gloss.tex'))
 % arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
 
 \documentclass{tesisFC}
@@ -13,14 +13,9 @@
 \usepackage{lipsum}%texto de demostración
 \usepackage{xcolor}
 \usepackage{tikz}
-\usepackage{pgfplots}
 \usepackage[style=mexican]{csquotes}%recomendado para usar junto con biblatex
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}%debe estar después del paquete de idiomas
 
-%este no es recomendado sólo se carga para un ejemplo que muestra porqué
-\ifpdftex%
-\usepackage[all,cmtip]{xy}
-\fi
 
 %este sí es recomendado, pero debe ser el último en casi todos los casos
 \usepackage[colorlinks]{hyperref}
@@ -29,7 +24,14 @@
 %BIBLIOGRAFÍA
 \addbibresource{refs.bib}
 
-%Información para la portada
+%GLOSARIOS
+\let\printindex\relax
+\usepackage[symbols,index,abbreviations,automake]{glossaries-extra}
+\newglossary*{nom}{Lista de Nombres}
+\makeglossaries
+\loadglsentries{gloss}
+
+%INFORMACIÓN PARA LA PORTADA
 \title{Título del trabajo}
 \author{Nombre del alumno}
 \grado{Grado a obtener}
@@ -43,17 +45,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %A partir de aquí se usa para los ejemplos%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%ÍNDICES Y GLOSARIOS
-\makeindex
-\makeindex[names]
-\makeglossary[acro]
-\makeglossary[simb]
-
 
 %FLOTANTES
 %subfloats en ambiente figura
 \newsubfloat{figure}
-%un nuevo flotante para diagramas
+%un nuevo flotante para diagramas con subflotantes
 \newcommand{\diagramname}{Diagrama}
 \newcommand{\listdiagramname}{Índice de Diagramas}
 \newlistof{listofdiagrams}{dgm}{\listdiagramname}
@@ -72,10 +68,10 @@
   \nonscript\:
   \mathopen{}}
 \DeclarePairedDelimiterX\Set[1]\{\}{%
-  \renewcommand\given{\SetSymbol[\delimsize]}#1}
+\renewcommand\given{\SetSymbol[\delimsize]}#1}
 
 
-%NUEVO ESTILO PARA ''TEOREMAS''
+%NUEVO ESTILO PARA "TEOREMAS"
 \newtheoremstyle{axioma}% nombre del estilo
 {3pt}% espacio arriba
 {3pt}% espacio abajo
@@ -84,16 +80,16 @@
 {\bfseries}% fuente del nombre del teorema
 {.}% puntuación después del nombre
 {1 ex}% espacio después del nombre
-{\thmname{#1}\thmnote{ #3}}%
+{\thmname{#1}\thmnote{ #3}}% orden en el que se imprime
 
 \theoremstyle{axioma}
 \newtheorem{axioma}{Axioma}
 \newtheorem{nota}{Nota}
 
 
-%LIBRERIAS Y CONFIGURACIÓN DE TIKZ Y PGF
-\usetikzlibrary{cd,calc,shadings,decorations.fractals,lindenmayersystems,math,datavisualization,datavisualization.formats.functions}
-\pgfplotsset{width=6cm,compat=1.17}
+%LIBRERIAS Y CONFIGURACIÓN DE TIKZ
+\usetikzlibrary{cd}
+\tikzcdset{arrow style=tikz, diagrams={>={Classical TikZ Rightarrow[]}}}
 
 
 \ifluatex%
@@ -104,13 +100,14 @@
 
 %Ambientes nuevos
 \newcounter{sans}% contador para el ambiente
-\newenvironment{sans}[1][]% nombre del ambiente
-{% código de inicio
+\NewDocumentEnvironment { sans }% nombre del ambiente
+{ O{Este texto está en sans} }% título que imprime con un valor por defecto
+{% código al inicio del ambiente
   \par\vspace{\baselineskip}\sffamily\mathversion{sansmath}\noindent
   \refstepcounter{sans}%
-  \textbf{Este texto está en sans \thesans\ #1}\ignorespaces%
-}%
-{% código de final
+  \textbf{#1\space\thesans\space}\ignorespaces%
+}
+{%código al final
   \par\vspace{\baselineskip}%
   \noindent\ignorespacesafterend%
 }
@@ -126,9 +123,9 @@
 
 %Tablas de contenidos
 \tableofcontents*
-\clearpage
+\clearpage% \cleardoublepage para que empieze en página impar
 \listoffigures%
-\clearpage
+\clearpage% \cleardoublepage para que empieze en página impar
 \listofdiagrams%
 
 
@@ -136,36 +133,20 @@
 \include{memoir}
 \include{fuentes}
 \include{paquetes}
-\include{tikz}
+\include{glosarios}
 \include{comp}
 
+%\appendix %aquí van los apéndices, pero en este ejemplo no hay
 
 \backmatter% parte posterior del texto
-%Bibliografía
+%Impresión de glosarios
+\printindex[title=Índice de términos]
+\printsymbols[title=Lista de símbolos]
+\printabbreviations[title=Acrónimos]
+\printglossary[type=nom]
+
+%Impresión de bibliografía
 \nocite{*}
 \printbibliography%
-
-%GLOSARIOS
-%índice de términos
-\clearpage
-\renewcommand{\preindexhook}{Se puede escribir algo antes de las entradas del índice}
-\printindex%
-
-%índice de nombres
-\clearpage
-\renewcommand{\indexname}{Índice de nombres}
-\renewcommand{\preindexhook}{}%Para que no ponga lo mismo que en el anterior
-\printindex[names]%
-
-%acrónimos
-\clearpage
-\renewcommand{\glossaryname}{Acrónimos}
-\printglossary[acro]
-
-%lista de símbolos
-\clearpage
-\renewcommand{\glossaryname}{Lista de símbolos}
-\printglossary[simb]
-
 
 \end{document}

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tesisFC}[2021/02/23 v0]
+\ProvidesClass{tesisFC}[2021/02/23 v1]
 
 \LoadClassWithOptions{memoir}
 

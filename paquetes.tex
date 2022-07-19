@@ -52,6 +52,15 @@ puede apreciar con su versión con estrella y con el código
   \verb|\abs*{\sum_{i=1}^{n}a_1}| & \(\abs*{\sum\limits_{i=1}^{n}a_1}\)
 \end{tabular}
 
+Más aún, no se debe usar las barras comúnes para el valor absoluto como en \verb¡|x|¡ ya que no tienen el contexto adecuado. Cuando se definen como delimitadores, \texttt{mathtools} les agrega un \verb|\mathopen{}| y \verb|\mathclose{}| como corresponde. La función de los dos comandos anteriores se puede apreciaren el siguiente ejemplo
+
+\begin{tabular}{llll}
+  \verb¡|x|¡ & \(|x|\) & \verb¡|-x|¡ & \(|-x|\)\\
+  \verb¡\abs{x}¡ & \(\abs{x}\) & \verb¡\abs{-x}¡ & \(\abs{-x}\),
+\end{tabular}
+
+\noindent donde claramente el espaciado en \verb¡|-x|¡ es pésimo. El mal espaciado se debe a que \LaTeX{} reconoce a \verb|-| como un operador binario y da un poco de espacio entre los símbolos a su derecha e izquierda. En cambio, cuando se le ha agregado \verb|\mathopen{}| al delimitador, como sucede en nuestra definición de \verb|\abs|, \LaTeX{} ahora toma a \verb|-| como operador unario y no agrega espacio a la izquierda.
+
 \verb|\DeclarePairedDelimiter| tiene una versión extendida para que pueda
 tomar argumentos, como \verb|\newcommand{}[]{}|. Esta versión extendida se
 escribe \verb|\DeclarePairedDelimiterX| y con ella podemos hacer, por
@@ -123,11 +132,11 @@ opcional \texttt{[teorema]} en la definición de \texttt{definicion}. Esta
 cuenta de teoremas sirve para hacer referencia a resultados o definiciones
 en el futuro. Al teorema le pusimos una etiqueta con el comando
 \verb|\label{teo:fermat}| que luego se puede hacer referencia con
-\verb|\ref{{teo:fermat}}|. Una buena práctica es separar la referencia de la
+\verb|\ref{teo:fermat}|. Una buena práctica es separar la referencia de la
 palabra anterior con un espacio irrompible \verb|~|, de esta forma cuando
 escribimos \enquote{por el teorema~\ref{teo:fermat}} \LaTeX{} no podrá romper un
-renglón dejando la palabra \enquote{teorema} en un renglón y el número \enquote{4.2} en
-otro.
+renglón dejando la palabra \enquote{teorema} en un renglón y el número
+\enquote{\ref{teo:fermat}} en otro.
 
 Nota que el estilo \texttt{plain} pone el cuerpo del teorema en itálicas
 mientras que el estilo \texttt{definition} no, como puede verse en el

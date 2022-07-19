@@ -1,0 +1,48 @@
+% !TEX root = ejemplo.tex
+
+\chapter{Glosarios}
+\label{cap:glos}
+Algo que no es tan común en las tesis, pero podría ser útil para facilitar la
+lectura y encontrar rápidamente qué significan ciertos términos, es la creación
+de glosarios. Hay muchas formas y muchos paquetes para hacer glosarios en
+\LaTeX. En este ejemplo hemos elegido el paquete \texttt{glossaries-extra} para
+la formación de glosarios. Las razones son que tiene opciones para hacer
+multiples glosarios y de todo tipo de manera fácil, se puede extender a cosas
+más complejas como glosarios conjuntos de libros de dos o más volúmenes (esto
+requiere \texttt{glossaries-extra} con \texttt{bib2gls}) y se puede hacer una
+versión más simple de glosarios (con \texttt{glossaries}).
+
+El paquete \texttt{glossaries-extra} es uno de los que se debe cargar después de \texttt{hyperref}. Así que debería usarse en el orden el que aparece en el archivo \texttt{ejemplo.tex}. Además, puede causar conflictos con los comandos internos de \textit{memoir} por lo que se deben cargar de la siguiente manera:
+\begin{verbatim}
+  \let\printindex\relax%para evitar conflictos con memoir
+  \usepackage[symbols,index,abbreviations,automake]{glossaries-extra}
+\end{verbatim}
+Las opciones son para tener índices de símbolos, terminos, de acrónimos (o abreviaturas) de manera simple y algo técnico en la construcción. En este ejemplo, además de los tres anteriores, haremos una \enquote{lista de nombres}. Primero debemos crear un nuevo glosario con el siguiente comando
+\begin{verbatim}
+  \newglossary*{nom}{Lista de Nombres}
+\end{verbatim}
+que consta de un tipo, \texttt{nom} en nuestro caso, y un título. Luego debemos dar una instrucción para crear los archivos necesarios para los glosarios
+\begin{verbatim}
+  \makeglossaries
+\end{verbatim}
+Finalmente, cargamos las entradas definidas en el archivo \texttt{gloss.tex} (donde podrás ver ejemplos de cómo crear entradas para un glosario) con el siguiente comando
+\begin{verbatim}
+  \loadglsentries{gloss}
+\end{verbatim}
+
+Ahora podemos usar las entradas del glosario con el comando \verb|\gls{...}| o alguna de sus variantes. Una común es \verb|\Gls{...}| donde pone la primer letra de la palabra que sustituye al comando en mayúscula. Otra común es \verb|\glspl{...}| en donde la sutitución se pone en plural. En general el plural sólo pone una \enquote{s} al final, pero esto se puede cambiar con la opción \texttt{plural=...} de cada entrada.
+
+Para completar este ejemplo escribimos algunos símbolos que pueden estar en modo texto \gls{F}, \gls{t}, \gls{x} o en modo matemático \(\gls{v}\), \(\gls{a}\).
+
+Los acrónimos cambian cuando se escribe la primera vez \gls{svm} que cuando se escribe después \gls{svm}. Como es posible que uno quiera imprimir la versión completa más adelante en el texto existe el comando \verb|\glsxtrfull{...}| que al usarlo con nuestro acrónimo aparece así: \glsxtrfull{svm}.
+
+No hay mucho que decir en los nombres así que sólo lo usamos \gls{gauss} y ya.
+
+Por último algunas entradas para el índice de términos \gls{cardinal} y se puede revisar el archivo \texttt{gloss.tex} para ver cómo fue definido el plural para que lo podamos usar con \verb|\glspl{...}| y su salida sea \glspl{cardinal}.
+
+El último comentario respecto a los glosarios es que requieren un paso extra para la compilación. Éstos requieren la siguiente cadena
+\begin{verbatim}
+  lualatex ejemplo.tex
+  makeglossaries ejemplo
+  lualatex ejemplo.tex
+\end{verbatim}

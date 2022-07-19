@@ -111,6 +111,15 @@ acs-*.bib
 *.gls
 *.glsdefs
 *.glstex
+*.glg-abr
+*.glo-abr
+*.gls-abr
+*.nom-glg
+*.nom-glo
+*.nom-gls
+*.slg
+*.slo
+*.sls
 
 # gnuplottex
 *-gnuplottex-*
