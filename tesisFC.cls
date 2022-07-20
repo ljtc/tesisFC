@@ -60,6 +60,7 @@
 
 %Estilo de capítulos
 \chapterstyle{madsen}
+\setlength\beforechapskip{-\baselineskip}
 
 %Cabeceras y pies
 \nouppercaseheads%

@@ -50,7 +50,7 @@ En el archivo \texttt{ejemplo.tex} se pueden ver los \textit{magic comments} al 
 \begin{verbatim}
 % !TEX root = ejemplo.tex
 
-% arara: lualatex: { draft: yes } unless exists(toFile('ejemplo.aux'))
+% arara: lualatex: { draft: yes } unless changed(toFile('ejemplo.aux'))
 % arara: biber if changed (toFile('refs.bib')) || found('log', 'Citation')
 % arara: --> || found ('log', 'Please \\(re\\)run Biber')
 % arara: makeglossaries if missing('gls')
