@@ -89,7 +89,9 @@
 
 %LIBRERIAS Y CONFIGURACIÓN DE TIKZ
 \usetikzlibrary{cd}
+%la punta de las flechas me parece muy grande, las modifique así:
 \tikzcdset{arrow style=tikz, diagrams={>={Classical TikZ Rightarrow[]}}}
+\usepackage{tkz-euclide}
 
 
 \ifluatex%
@@ -97,6 +99,7 @@
 \setmathfont{GFS Neohellenic Math}[version=sansmath]
 \setsansfont{GFS Neohellenic}
 \setmathfont{XITS Math}[range=scr]
+\setmathfont{Erewhon Math}[range=\mscrS]
 
 %Ambientes nuevos
 \newcounter{sans}% contador para el ambiente
@@ -115,18 +118,19 @@
 %este es el final del código para los ejemplos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\includeonly{geo}
 
 \begin{document}
 
 \frontmatter% parte frontal del texto, numeración en romanos
-\portadatesis%
+%\portadatesis%
 
 %Tablas de contenidos
-\tableofcontents*
-\clearpage% \cleardoublepage para que empieze en página impar
-\listoffigures%
-\clearpage% \cleardoublepage para que empieze en página impar
-\listofdiagrams%
+%\tableofcontents*
+%\clearpage% \cleardoublepage para que empieze en página impar
+%\listoffigures%
+%\clearpage% \cleardoublepage para que empieze en página impar
+%\listofdiagrams%
 
 
 \mainmatter% parte principal del texto, numeración en arábicos
@@ -135,18 +139,19 @@
 \include{paquetes}
 \include{glosarios}
 \include{comp}
+\include{geo}
 
 %\appendix %aquí van los apéndices, pero en este ejemplo no hay
 
 \backmatter% parte posterior del texto
 %Impresión de glosarios
-\printindex[title=Índice de términos]
-\printsymbols[title=Lista de símbolos]
-\printabbreviations[title=Acrónimos]
-\printglossary[type=nom]
-
-%Impresión de bibliografía
-\nocite{*}
-\printbibliography%
+%\printindex[title=Índice de términos]
+%\printsymbols[title=Lista de símbolos]
+%\printabbreviations[title=Acrónimos]
+%\printglossary[type=nom]
+%
+%%Impresión de bibliografía
+%\nocite{*}
+%\printbibliography%
 
 \end{document}

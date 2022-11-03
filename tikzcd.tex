@@ -1,0 +1,110 @@
+% !TEX root = ejemplo.tex
+
+\chapter{Tikz-cd}
+Los diagramas conmutativos son una herramienta cada vez más común en matemáticas. Estos permiten sintetizar conocimiento de una forma bastante eficiente. Por lo tanto, puede ser buena idea saber cómo hacerlos en \LaTeX.
+
+Hoy en día hay escencialmente dos formas de hacer diagramas conmutativos en \LaTeX, una de ellas es con el paquete \texttt{xy-pic} y la otra es con
+\texttt{tikz}. La desventaja de \texttt{xy-pic} es que es un paquete viejo que no ha tenido mantenimiento en muchos años y tiene algunas cosas mal medidas,
+así que la salida no será tan buena. Por otro lado, \texttt{tikz} es un paquete con muchas posibilidades que ha ido creciendo muy rápido. Parte de este
+crecimiento es una libreria para crear diagramas conmutativos. Para usar esta libreria en nuestro documento es necesario escribir en el preámbulo
+\begin{verbatim}
+  \usepackage{tikz}
+  \usetikzlibrary{cd}
+\end{verbatim}
+o de forma equivalete
+\begin{verbatim}
+  \usepackage{tikz-cd}
+\end{verbatim}
+
+Con esto tendremos disponoble el ambiente \texttt{tikcd} que en principio en una matriz de \texttt{tikz} donde sus entradas están en modo matemático, así
+que, en principio, no es necesario escribir este ambiente en modo matemático. De cualquier forma, lo ideal es tratar un diagrama conmutativo como una entidad
+matemática, así que lo pondremos dentro de un ambiente de ecuación. La sintaxis básica es la siguiente
+
+\begin{minipage}{0.4\linewidth}
+\begin{verbatim}
+  \[
+    \begin{tikzcd}
+      A\ar{r}{f} & B
+    \end{tikzcd}
+  \]
+\end{verbatim}
+\end{minipage}%
+\begin{minipage}{0.5\linewidth}
+  \[
+    \begin{tikzcd}
+      A\ar{r}{f} & B
+    \end{tikzcd}
+  \]
+\end{minipage}
+
+Hay una sintaxis equivalente para las flechas \verb|\ar[r,"f"]| pero esta usa taquigrafías (\textit{shorthands}) del idioma español y puede causar conflictos. Por lo tanto, decidimos usar la sintaxis del ejemplo. Además, \verb|\ar| es sinónimo de \verb|\arrow|, por lo que podría usarse cualquiera de las dos.
+
+Cada flecha puede tener más de un nombre (o ninguno), cambial la posición del nombre, cambiar la forma de la flecha, etc. Un ejemplo de esto es el siguiente
+
+\begin{minipage}{0.4\linewidth}
+\begin{verbatim}
+  \[
+    \begin{tikzcd}
+      A\ar[shift left=2,bend left=20]{r}
+      [near start]{f}[near end]{g}
+      \ar{r}{h}[swap]{k} & B
+    \end{tikzcd}
+  \]
+\end{verbatim}
+\end{minipage}%
+\begin{minipage}{0.5\linewidth}
+\[
+  \begin{tikzcd}
+    A\ar[shift left=2,bend left=20]{r}[near start]{f}[near end]{g}
+    \ar[red]{r}[blue]{h}[swap,violet]{k} & B
+  \end{tikzcd}
+\]
+\end{minipage}
+
+Las transformaciones a flechas y sus etiquetas son una lista bastante grande, técnicamente son todas las transformaciones que se pueden hacer a \texttt{path} en \texttt{tikz}. Un ejemplo simple es un producto fibrado
+\[
+  \begin{tikzcd}
+    X\ar[bend left=20]{rrd}{x}\ar[dashed]{rd}{h}
+     \ar[bend right=20]{rdd}[swap]{y}\\[-1ex]
+    &[-1ex] P\ar{r}{p_B}\ar{d}[swap]{p_A} & B\ar{d}{g}\\
+    & A\ar{r}[swap]{f} & C
+  \end{tikzcd}
+\]
+en el cual también reducimos manualmente el espacio entre las primeras
+columnas, notar el \verb|&[-1ex]| en el código, y renglones, con
+\verb|\\[-1ex]|.
+
+Un ejemplo un poco más ilustrativo de \texttt{shift} y de cómo cambiar el espacio entre renglones en todo el diagrama es una situación cohesiva
+\[
+  \begin{tikzcd}[row sep=large]
+    \symscr{E}\ar[xshift=-4ex]{d}[swap]{p_!}
+    \ar[xshift=1.35ex]{d}[description]{p_*}\\
+    \symscr{S}\ar[xshift=4ex]{u}[swap]{p^!}
+    \ar[xshift=-1.35ex]{u}[description]{p^*}
+  \end{tikzcd}
+\]
+
+También es posible nombrar flechas y objetos para escribir transformaciones naturales y eventualmente celdas de dimensión alta. Además, la opción \texttt{shorten} es útil en estas construcciones.
+\[
+  \begin{tikzcd}
+    \mathbf{C}\ar[shift left=2,bend left=20]{r}[name=f]{F}
+    \ar[shift right=2,bend right=20]{r}[swap,name=g]{G}
+    & \mathbf{D}
+    %aqui va la transformación natural
+    \ar[Rightarrow,from=f,to=g,shorten=1ex]{}{\tau}
+  \end{tikzcd}
+\]
+
+También es posible nombrar objetos en un diagrama con la sintaxis \verb¡|[alias=a]A|¡ en el objeto \(A\), no es tan común pero ppodría ser útil.
+
+Finalmente, es posible modificar la forma de la flecha, como en el ejemplo de transformación natular, o su punta. A continuación escribimos algunos ejemplos comúnes.
+\[
+  \begin{tikzcd}
+    A_1\ar[hook]{r} & A_2\ar[tail]{r} & A_3\ar[two heads]{r}
+    & A_4\ar[dashed]{r} & A_5\ar[dotted]{r} & A_6\ar[equal]{r} & A_7
+  \end{tikzcd}
+\]
+
+Esta libreria tiene muchas otras cosas interesantes para la creación de
+diagramas pero dejaremos aquí los ejemplos. Recomendamos revisar la
+documentación del paquete ya que es muy entendible y tiene muchos ejemplos más.
