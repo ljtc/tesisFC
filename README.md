@@ -6,6 +6,13 @@ Muchas universidades tienen un diseño de tesis para obtener un estándar de est
 
 Además la clase se escribió modificando la clase `memoir` así que todos los aspectos están escritos en "nivel alto" y son fáciles de modificar.
 
+## Advertencia
+Una de las desiciones más importantes respecto al diseño del documento es la fuente. Para este documento se eligió usar [Stix Two](https://www.stixfonts.org/) (Scientific and Technical Information Exchange). En la página del proyecto de fuente podrás encontrar algunas buenas razones para usar esta fuente. Otra razón por la cual se eligió esta fuente es porque es una fuente tipo Times, así es peada y compacta. Estas dos cualidades de la fuente hacen que se vea bien en impresiones de baja calidad y no usa tanto espacio por lo que reduce el número de páginas (como fue la intención del periódico *Times* al desarrollar su fuente Times New Roman). 
+
+El problema de la fuente es que en algunas instalaciones de MikTeX no instala esta por defecto esta fuente. Así, si se compila con LuaLeTeX se generarán errores diciendo que no se encontró la fuente. En este caso habrá que instalarla manualmente siguiendo las instrucciones de la [página oficial](https://www.stixfonts.org/).
+
+Gracias a Bryan por usar y compartir retroalimentación.
+
 ## Portada
 En la clase se definen los siguientes comandos que deben escribirse en el
 preámbulo del documento:
@@ -59,4 +66,6 @@ En el ejemplo adjunto con la clase se encuentra una breve descripción de la uti
 - [ ] Animaciones con `animate` (aunque se requiere un visor de pdf específico)
 
 
-Puedes enviar bugs y sugerencias a `ljtc@ciencias.unam.mx`
+---
+
+La clase se puso a prueba en Linux con TeXLive y en MacOS con MacTeX (de nuevo TeXLive). Como no tengo acceso a ninguna computadora con Windows y MikTeX, es posible que haya algún problema. En este caso, o para cualquier otro problema puedes contactarme en `ljtc@ciencias.unam.mx` o por Telegram al usuario https://t.me/ljtc108
