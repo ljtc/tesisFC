@@ -118,40 +118,38 @@
 %este es el final del código para los ejemplos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\includeonly{geo}
 
 \begin{document}
 
 \frontmatter% parte frontal del texto, numeración en romanos
-%\portadatesis%
+\portadatesis%
 
 %Tablas de contenidos
-%\tableofcontents*
-%\clearpage% \cleardoublepage para que empieze en página impar
+\tableofcontents*
+%\clearpage% \cleardoublepage para que empiece en página impar
 %\listoffigures%
-%\clearpage% \cleardoublepage para que empieze en página impar
+%\clearpage% \cleardoublepage para que empiece en página impar
 %\listofdiagrams%
 
 
-\mainmatter% parte principal del texto, numeración en arábicos
+\mainmatter% parte principal del texto, numeración en arábigos
 \include{memoir}
 \include{fuentes}
 \include{paquetes}
 \include{glosarios}
 \include{comp}
-\include{geo}
 
 %\appendix %aquí van los apéndices, pero en este ejemplo no hay
 
 \backmatter% parte posterior del texto
 %Impresión de glosarios
-%\printindex[title=Índice de términos]
-%\printsymbols[title=Lista de símbolos]
-%\printabbreviations[title=Acrónimos]
-%\printglossary[type=nom]
+\printindex[title=Índice de términos]
+\printsymbols[title=Lista de símbolos]
+\printabbreviations[title=Acrónimos]
+\printglossary[type=nom]
 %
 %%Impresión de bibliografía
-%\nocite{*}
-%\printbibliography%
+\nocite{*}
+\printbibliography%
 
 \end{document}
