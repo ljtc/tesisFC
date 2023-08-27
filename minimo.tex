@@ -1,0 +1,93 @@
+% !TEX root = guia.tex
+
+\chapter{Lo mínimo necesario}
+Para usar la clase \texttt{tesisFC} sólo se necesitan los archivos:
+\begin{itemize}
+    \item \texttt{tesisFC.cls},
+    \item \texttt{fc.pdf},
+    \item \texttt{unam.pdf},
+    \item \texttt{hojaS.tex}
+\end{itemize}
+
+El resto de los archivos en este repositorio son para hacer ejemplos, tanto de 
+la estructura de un documento \enquote{grande} como el uso de algunos paquetes. 
+Además, se incluye un archivo, \texttt{plantilla.tex}, que puede servir para 
+usarse en la creación de una tesis.
+
+
+\section{Estructura}
+No escribir toda la tesis en un sólo archivo ya que editar y encontrar cosas 
+puede ser complicado. Para hacer una tesis se recomienda una estructura similar 
+a la siguiente:
+
+\begin{forest}
+    for tree={%
+      folder,
+      grow'=0,
+      fit=band,
+    }
+    [carpetaTesis
+      [\texttt{tesisFC.cls}]
+      [\texttt{fc.pdf}]
+      [\texttt{unam.pdf}]
+      [\texttt{hojaS.tex}]
+      [\texttt{plantilla.tex}]
+      [\texttt{archivoCap1.tex}]
+      [\texttt{archivoCapn.tex}]
+      [\texttt{archivoAp1.tex}]
+      [\texttt{archivoApn.tex}]
+      [\texttt{archivoRef.bib}]
+      [posiblemente algunos más para glosarios]
+    ]
+\end{forest}
+
+
+\section{El archivo principal}
+En este repositorio hay un archivo llamado \texttt{guia.tex} que funciona como 
+el archivo principal de una tesis. También hay un archivo 
+\texttt{plantilla.tex} el cual se puede usar como archivo principal y tiene la 
+cualidad de \enquote{estar vacío}. Así, será más fácil de usar que 
+\texttt{guia.tex}.
+
+En el archivo \texttt{plantilla.tex} se ha dividido el preámbulo. Este tiene 
+una sección para paquetes, otra para lo necesario para hacer una bibliografía 
+con \texttt{biblatex}, una para la información que irá en la portada y una más 
+para la definición de comandos, funciones y demás cosas útiles.
+
+Luego el cuerpo del documento en el archivo \texttt{plantilla.tex} incluye lo 
+necesario para crear la portada, la hoja de sinodales, la tabla de contenidos y 
+la bibliografía.
+
+Se recomienda escribir el contenido de cada capítulo en un archivo diferente y 
+luego incluirlo en \texttt{plantilla.tex} usando el comando \texttt{include}, 
+siguiendo la estructura lógica del documento. Por ejemplo,
+\begin{verbatim}
+...
+\begin{document}
+...
+\mainmatter
+\include{introduccion.tex}
+\include{loprincipal.tex}
+...
+\appendix
+\include{algosecundario.tex}
+...
+\end{document}
+\end{verbatim}
+
+Finalmente este archivo tiene dos comandos para crear una bibliografía, que se 
+complementan con lo que están en el preámbulo. El primero de ellos es
+\begin{verbatim}
+\printbibliography[title={Referencias},category=cited]
+\end{verbatim}
+Su función es imprimir todas aquellas referencias que sí fueron citadas en el 
+texto, bajo el nombre de \enquote{Referencias}. Luego el comando
+\begin{verbatim}
+\printbibliography[title={Bibliografía},notcategory=cited]
+\end{verbatim}
+imprime las referencias que no fueron citadas bajo el nombre de 
+\enquote{Bibliografía}.
+
+La parte de la bibliografía se hizo de esa manera ya que en el instructivo de 
+tesis digital de la facultad de ciencias se específica esta división de las 
+referencias.

@@ -1,0 +1,60 @@
+\documentclass{tesisFC}
+
+%UN ESPACIO EN EL PREÁMBULO PARA PAQUETES
+%_______________________________________________________________________________
+%Ya se cargaron los paquetes mathtools (incluye amsmath), amsthm, siunitx, multicol, graphicx y xstring. Se recomienda fuertemente no volver a cargarlos.
+
+%Estos son recomendados
+\usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}
+\usepackage[style=mexican]{csquotes}
+
+%este debe ser el último en casi todos los casos
+\usepackage[colorlinks]{hyperref}
+
+%_______________________________________________________________________________
+
+
+%BIBLIOGRAFÍA CON BIBLATEX
+%_______________________________________________________________________________
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+\addbibresource{refs.bib}%cambiar por el nombre correcto
+\nocite{*}
+%_______________________________________________________________________________
+
+
+%INFORMACIÓN PARA LA PORTADA
+%_______________________________________________________________________________
+\title{Título del trabajo}
+\author{Nombre del alumno}
+\grado{Grado a obtener}
+\date{2021}
+\tipo{tesis}
+\tutorW{tutora}
+\tutor{Grado y nombre}
+%_______________________________________________________________________________
+
+
+%AQUÍ PUEDEN IR LAS DEFINICIONES DE COMANDOS Y FUNCIONES
+%_______________________________________________________________________________
+%...
+%_______________________________________________________________________________
+
+
+\begin{document}
+\frontmatter
+\portadatesis
+\include{hojaS}
+\setcounter{page}{1}
+\tableofcontents*
+
+\mainmatter
+%poner aquí el contenido principal de la tesis
+
+\appendix
+%aquí van lo apéndices
+
+\backmatter
+\printbibliography[title={Referencias},category=cited]
+\printbibliography[title={Bibliografía},notcategory=cited]
+\end{document}

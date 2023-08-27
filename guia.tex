@@ -1,11 +1,11 @@
-% !TEX root = ejemplo.tex
-
-% arara: lualatex: { draft: yes } unless exists(toFile('ejemplo.aux'))
-% arara: biber if changed (toFile('refs.bib')) || found('log', 'Citation')
-% arara: --> || found ('log', 'Please \\(re\\)run Biber')
-% arara: makeglossaries if missing('gls')
-% arara: --> || changed('glo') || changed(toFile('gloss.tex'))
-% arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
+%% !TEX root = guia.tex
+%
+%% arara: lualatex: { draft: yes } unless exists(toFile('ejemplo.aux'))
+%% arara: biber if changed (toFile('refs.bib')) || found('log', 'Citation')
+%% arara: --> || found ('log', 'Please \\(re\\)run Biber')
+%% arara: makeglossaries if missing('gls')
+%% arara: --> || changed('glo') || changed(toFile('gloss.tex'))
+%% arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
 
 \documentclass{tesisFC}
 
@@ -13,16 +13,19 @@
 \usepackage{lipsum}%texto de demostración
 \usepackage{xcolor}
 \usepackage{tikz}
-\usepackage[style=mexican]{csquotes}%recomendado para usar junto con biblatex
+\usepackage[edges]{forest}
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}%debe estar después del paquete de idiomas
-
+\usepackage[style=mexican]{csquotes}%recomendado para usar junto con biblatex
 
 %este sí es recomendado, pero debe ser el último en casi todos los casos
 \usepackage[colorlinks]{hyperref}
 %para quitar el color de los links sustituir colorlinks por hidelinks
 
 %BIBLIOGRAFÍA
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
 \addbibresource{refs.bib}
+\nocite{*}
 
 %GLOSARIOS
 \let\printindex\relax
@@ -87,10 +90,10 @@
 \newtheorem{nota}{Nota}
 
 
-%LIBRERIAS Y CONFIGURACIÓN DE TIKZ
+%LIBRERÍAS Y CONFIGURACIÓN DE TIKZ
 \usetikzlibrary{cd}
 %la punta de las flechas me parece muy grande, las modifique así:
-\tikzcdset{arrow style=tikz, diagrams={>={Classical TikZ Rightarrow[]}}}
+\tikzcdset{arrow style=math font}
 \usepackage{tkz-euclide}
 
 
@@ -123,8 +126,11 @@
 
 \frontmatter% parte frontal del texto, numeración en romanos
 \portadatesis%
+\include{hojaS}
+
 
 %Tablas de contenidos
+\setcounter{page}{1}
 \tableofcontents*
 %\clearpage% \cleardoublepage para que empiece en página impar
 %\listoffigures%
@@ -133,6 +139,7 @@
 
 
 \mainmatter% parte principal del texto, numeración en arábigos
+\include{minimo}
 \include{memoir}
 \include{fuentes}
 \include{paquetes}
@@ -149,7 +156,7 @@
 \printglossary[type=nom]
 %
 %%Impresión de bibliografía
-\nocite{*}
-\printbibliography%
+\printbibliography[title={Referencias},category=cited]
+\printbibliography[title={Bibliografía},notcategory=cited]
 
 \end{document}

@@ -33,6 +33,8 @@
 \RequirePackage{mathtools}
 \RequirePackage{amsthm}
 \RequirePackage{siunitx}
+\RequirePackage{multicol}
+
 
 
 %Revisar el tipo de compilación para cargar paquetes y fuentes
@@ -226,3 +228,4 @@
 \end{titlingpage}
 }
 \fi
+

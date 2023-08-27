@@ -1,4 +1,4 @@
-% !TEX root = ejemplo.tex
+% !TEX root = guia.tex
 
 \chapter{Paquetes en la clase}
 
@@ -347,42 +347,37 @@ ejemplo se puede imprimir una bibliografía por capitulo, por tipo
 En principio sólo imprime las entradas que fueron citadas en el texto, si se
 quiere imprimir una entrada que no fue citada se usa el comando
 \verb|\nocite{label1,label2,...}| o si se quiere imprimir todas las entradas
-del archivo \texttt{.bib} se usa \verb|\nocite{*}|.
+del archivo \texttt{.bib} se usa \verb|\nocite{*}|. 
 
-Ahora algunos ejemplos de bibliografía. Primero todas las entradas donde
-Lawvere es autor, en el archivo \texttt{.bib} use el campo \texttt{keywords}
-y para imprimirlas se usó el comando
-\begin{flushleft}
-  \verb|\printbibliography[keyword=Lawvere,heading=subbibliography,title=Lawvere]|
-\end{flushleft}
-\printbibliography[keyword=Lawvere,heading=subbibliography,title=Lawvere]
+Como en el instructivo de tesis digital de la facultad de ciencias se pide 
+hacer dos \enquote{bibliografías}, entonces se ha incluido \verb|\nocite{*}| en 
+el preámbulo.
 
-Usamos \texttt{heading=subbibliography} para que el título de la bibliografía
-aparezca un nivel más bajo que \enquote{el nivel principal} en este caso el nivel
-principal es capítulo, así que el título será impreso como una sección sin
-número.
+El paquete \texttt{biblatex} tiene muchas capacidades para hacer e imprimir 
+bibliografías. Por ejemplo podría imprimir sólo los libros en una bibliografía 
+y los artículos en otra. También es posible hacer una bibliografía por capítulo 
+y muchas otras cosas más.
 
-Para imprimir una bibliografía con todos los libros que están en
-\texttt{refs.bib} hacemos lo siguiente
-\begin{flushleft}
-  \verb|\printbibliography[type=book,heading=subbibliography,title=Libros]|
-\end{flushleft}
-\printbibliography[type=book,heading=subbibliography,title=Libros]
+La facultad requiere una \enquote{bibliografia} donde estén todas las 
+referencias que sí fueron citadas en el texto, que vaya con el título 
+\enquote{Referencias}, y otra con todas aquellas que no fueron citadas, bajo el 
+nombre \enquote{Bibliografía}. Como este es el requerimiento de la facultad, 
+sólo incluimos un ejemplo de cómo hacer eso y nada más.
 
-Como puse el ejemplo con muchos tipos de bibliografía y al final pondré toda
-la bibliografía usaré el estilo bibliográfico \texttt{alphabetic}.
-Otros estilos son \texttt{authoryear-icomp}, \texttt{numeric} (este es común
-en matemáticas) \texttt{author-title}, etc. Además de estos y las variantes
-ya definidas para apa, chicago, mla, entre otras. Es mucho más fácil definir
-o modificar un estilo usando \texttt{biblatex} (ya que se hace con comandos
-de \LaTeX{} comunes, al estilo \verb|\renewcommand|) que usando
-\texttt{natbib} o \texttt{cite} donde se requiere editar/crear un archivo
-\texttt{.bst} con un lenguaje, en principio, muy diferente a \LaTeX.
+Primero se hizo una categoría para \texttt{biblatex} y se incluyeron en ella todos las referencias citadas. Para que la bibliografía con las referencias no citadas no aparezca vacía se necesita usar \verb|\nocite{*}|. Así, en el preámbulo del documento aparecen los comandos
+\begin{verbatim}
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+\addbibresource{refs.bib}
+\nocite{*}
+\end{verbatim}
+Luego, al final del documento se incluyen los comandos para imprimir las dos bibliografías. Estos son
+\begin{verbatim}
+\printbibliography[title={Referencias},category=cited]
+\printbibliography[title={Bibliografía},notcategory=cited]
+\end{verbatim}
 
-En el ejemplo de bibliografías múltiples con el estilo \texttt{numeric}
-sería ideal usar la opción \texttt{resetnumbers} para que cada bibliografía
-empiece en [1], pero esto creará inconsistencias en la numeración de la
-bibliografía que pondremos al final del documento.
+Para ver cómo funciona todo esto en el pdf llamado \texttt{guia.pdf} citamos algunas referencias,~\cite{ACohesion,Homotopy,ToposT,CWM}.
 
 Una nota final es que el proceso de compilación ahora debe ser el siguiente
 \begin{flushleft}
