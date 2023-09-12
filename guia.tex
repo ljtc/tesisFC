@@ -92,8 +92,16 @@
 
 %LIBRERÍAS Y CONFIGURACIÓN DE TIKZ
 \usetikzlibrary{cd}
-%la punta de las flechas me parece muy grande, las modifique así:
+%lo ideal es que las flechas en los diagramas se vean igual
+%a las del texto, tikz-cd puede hacer esto
 \tikzcdset{arrow style=math font}
+%lo malo es que en muchas fuentes hace que se "rompan" las flechas
+%para que no se vean "rotas" hay que ajustar el ancho y línea de base
+\tikzcdset{every arrow/.append style={line width=0.068em}}%ancho
+\pgfmathdeclarefunction*{axis_height}{0}{%
+    \begingroup%      
+      \pgfmathreturn0.259em % línea de base
+    \endgroup}% 
 \usepackage{tkz-euclide}
 
 
