@@ -100,6 +100,19 @@
 \newtoks\tutor
 \newtoks\tutorW
 
+%tamaño de fuentes para la portada
+\ifisimp
+  \newcommand{\escudos}[1]{\fontsize{4pt}{6pt}\fontshape{sc}\selectfont #1}
+  \newcommand{\unamfc}[1]{\fontsize{10}{12}\fontshape{sc}\selectfont #1}
+  \newcommand{\titulos}[1]{\fontsize{20}{22}\fontshape{sc}\selectfont #1}
+  \newcommand{\trabajo}[1]{\fontsize{9}{11}\fontshape{sc}\selectfont #1}
+\else
+  \newcommand{\escudos}[1]{\fontsize{5pt}{7pt}\fontshape{sc}\selectfont #1}
+  \newcommand{\unamfc}[1]{\fontsize{12}{14}\fontshape{sc}\selectfont #1}
+  \newcommand{\titulos}[1]{\fontsize{25}{27}\fontshape{sc}\selectfont #1}
+  \newcommand{\trabajo}[1]{\fontsize{10}{12}\fontshape{sc}\selectfont #1}
+\fi
+
 %Modificación del código proporcionado por la facultad hace algunos años
 \ifisimp
 \newcommand*{\portadatesis}{%
@@ -114,20 +127,20 @@
   \\
   \noindent\begin{minipage}[c][0.66\textheight][c]{\textwidth}
     \begin{center}
-    \vrule width1pt height0.632\textheight
+    \vrule width1pt height0.63\textheight
     \hskip3mm
-    \vrule width2pt height0.632\textheight
+    \vrule width2pt height0.63\textheight
     \hskip3mm
-    \vrule width1pt height0.632\textheight
+    \vrule width1pt height0.63\textheight
     \end{center}
   \end{minipage}%
   \\[3mm]
   \noindent\begin{minipage}[b][0.15\textheight][c]{\textwidth}
     \begin{center}
     \includegraphics[height=2.2cm]{fc}\par
-    {\tiny\scshape Facultad de Ciencias} \par
+    {\escudos Facultad de Ciencias} \par
     \vspace{-2mm}
-    {\tiny\scshape unam}
+    {\escudos unam}
     \end{center}
   \end{minipage}%
 \end{minipage}
@@ -135,28 +148,28 @@
 \begin{minipage}[c][0.99\textheight][t]{0.744\textwidth}
   \begin{center}
   \vspace{2mm}
-  {\scshape Universidad Nacional Aut\'onoma de M\'exico\par}
+  {\unamfc Universidad Nacional Aut\'onoma de M\'exico\par}
   \vspace{5mm}
   \hrule height2pt
   \vspace{3mm}
   \hrule height1pt
   \vspace{5mm}
-  {\scshape Facultad de Ciencias\unskip\strut\par}
+  {\unamfc Facultad de Ciencias\unskip\strut\par}
   \vspace{12mm}
-  {\scshape\thetitle\par}
+  {\unamfc\thetitle\par}
   \vspace{12mm}
   \begin{minipage}{8cm}
     \centering
-    \IfSubStr{\the\tipo}{esis}{\makebox[8cm][s]{\huge T E S I S}}%
-    {\huge\MakeTextUppercase{\the\tipo}}
+    \IfSubStr{\the\tipo}{esis}{\makebox[8cm][s]{\titulos T E S I S}}%
+    {\titulos\MakeTextUppercase{\the\tipo}}
   \end{minipage}\\[1cm]
-  \makebox[7cm][c]{QUE PARA OBTENER EL T\'ITULO DE:}\\[7.5mm]
-  {\scshape\the\grado}\\[9.5mm]
-  \makebox[7cm][s]{P R E S E N T A :}\\[7.5mm]
-  {\scshape\theauthor}\par
+  \makebox[7cm][c]{\trabajo{QUE PARA OBTENER EL T\'ITULO DE:}}\\[7.5mm]
+  {\trabajo{\the\grado}}\\[9.5mm]
+  \makebox[7cm][s]{\trabajo{P R E S E N T A :}}\\[7.5mm]
+  {\trabajo{\theauthor}}\par
   \vspace{9.5mm}
-  {\MakeTextUppercase{\the\tutorW}\\[4.5mm]
-  {\scshape\the\tutor}}
+  {\trabajo{\MakeTextUppercase{\the\tutorW}}\\[4.5mm]
+  {\trabajo{\the\tutor}}}
 
   \vfill
 
@@ -189,9 +202,9 @@
   \noindent\begin{minipage}[b][0.15\textheight][c]{\textwidth}
     \begin{center}
     \includegraphics[height=2.718cm]{fc}\par
-    {\tiny\scshape Facultad de Ciencias} \par
+    {\escudos{Facultad de Ciencias}} \par
     \vspace{-2mm}
-    {\tiny\scshape unam}
+    {\escudos{unam}}
     \end{center}
   \end{minipage}%
 \end{minipage}
@@ -199,20 +212,20 @@
 \begin{minipage}[c][0.99\textheight][t]{0.744\textwidth}
   \begin{center}
   \vspace{0.7cm}
-  {\large\scshape Universidad Nacional Aut\'onoma de M\'exico\par}
+  {\unamfc{Universidad Nacional Aut\'onoma de M\'exico\par}}
   \vspace{0.75cm}
   \hrule height2pt
   \vspace{.3cm}
   \hrule height1pt
   \vspace{0.75cm}
-  {\large\scshape Facultad de Ciencias\unskip\strut\par}
+  {\unamfc{Facultad de Ciencias\unskip\strut\par}}
   \vspace{2.5cm}
-  {\large\scshape\thetitle\par}
+  {\unamfc{\thetitle\par}}
   \vspace{2.5cm}
   \begin{minipage}{8cm}
     \centering
-    \IfSubStr{\the\tipo}{esis}{\makebox[8cm][s]{\Huge T E S I S}}%
-    {\Huge\MakeTextUppercase{\the\tipo}}
+    \IfSubStr{\the\tipo}{esis}{\makebox[8cm][s]{\titulos{T E S I S}}}%
+    {\titulos{\MakeTextUppercase{\the\tipo}}}
   \end{minipage}\\[1cm]
   \makebox[7cm][c]{QUE PARA OBTENER EL T\'ITULO DE:}\\[0.8cm]
   {\scshape\the\grado}\\[1cm]
