@@ -75,22 +75,6 @@
 \renewcommand\given{\SetSymbol[\delimsize]}#1}
 
 
-%NUEVO ESTILO PARA "TEOREMAS"
-\newtheoremstyle{axioma}% nombre del estilo
-{3pt}% espacio arriba
-{3pt}% espacio abajo
-{\itshape}% fuente del cuerpo
-{0pt}% sangrado
-{\bfseries}% fuente del nombre del teorema
-{.}% puntuación después del nombre
-{1 ex}% espacio después del nombre
-{\thmname{#1}\thmnote{ #3}}% orden en el que se imprime
-
-\theoremstyle{axioma}
-\newtheorem{axioma}{Axioma}
-\newtheorem{nota}{Nota}
-
-
 %LIBRERÍAS Y CONFIGURACIÓN DE TIKZ
 \usetikzlibrary{cd}
 %lo ideal es que las flechas en los diagramas se vean igual
@@ -104,6 +88,15 @@
       \pgfmathreturn0.259em % línea de base
     \endgroup}% 
 \usepackage{tkz-euclide}
+
+%TEOREMAS Y REFERENCIAS A ELLOS
+\newkeytheoremstyle{axiom}{
+  headfont=\bfseries,
+  bodyfont=\normalfont,
+  headpunct={:},
+  headformat={\NUMBER~\NAME~\NOTE}
+}
+\newkeytheorem{ax}[name=Axioma,parent=chapter,style=axiom]
 
 
 \ifluatex%

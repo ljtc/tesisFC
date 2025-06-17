@@ -35,14 +35,16 @@ algunas opciones, por ejemplo en los ambientes de matriz se puede
 especificar la alineación de las columnas de la misma manera que en
 \texttt{array}.
 
-Una función de \texttt{mathtools} que no tiene \texttt{amsmath} es la creación de delimitadores que se pueden ajustar al tamaño del contenido, por ejemplo para hacer un delimitador para el valor absoluto se escribe
-\verb|\DeclarePairedDelimiter\abs{\lvert}{\rvert}| este
-tiene un argumento más que el operador ya que hay que decir qué símbolo
-\enquote{abre} y que símbolo \enquote{cierra}. No es necesario que concuerde
-un símbolo que abre con su pareja de cierre, como los paréntesis. Por
-ejemplo se podría definir un delimitador para intervalos abiertos por la
-izquierda y cerrados por la derecha. La deferencia de estos delimitadores se
-puede apreciar con su versión con estrella y con el código
+Una función de \texttt{mathtools} que no tiene \texttt{amsmath} es la creación
+de delimitadores que se pueden ajustar al tamaño del contenido, por ejemplo para
+hacer un delimitador para el valor absoluto se escribe
+\verb|\DeclarePairedDelimiter\abs{\lvert}{\rvert}| este tiene un argumento más
+que el operador ya que hay que decir qué símbolo \enquote{abre} y que símbolo
+\enquote{cierra}. No es necesario que concuerde un símbolo que abre con su
+pareja de cierre, como los paréntesis. Por ejemplo se podría definir un
+delimitador para intervalos abiertos por la izquierda y cerrados por la derecha.
+La deferencia de estos delimitadores se puede apreciar con su versión con
+estrella y con el código
 
 \begin{tabular}{llll}
   \verb+|\sum_{i=1}^{n}a_1|+ & \(|\sum\limits_{i=1}^{n}a_1|\), &
@@ -52,14 +54,23 @@ puede apreciar con su versión con estrella y con el código
   \verb|\abs*{\sum_{i=1}^{n}a_1}| & \(\abs*{\sum\limits_{i=1}^{n}a_1}\)
 \end{tabular}
 
-Más aún, no se debe usar las barras comunes para el valor absoluto como en \verb+|x|+ ya que no tienen el contexto adecuado. Cuando se definen como delimitadores, \texttt{mathtools} les agrega un \verb|\mathopen{}| y \verb|\mathclose{}| como corresponde. La función de los dos comandos anteriores se puede apreciaren el siguiente ejemplo
+Más aún, no se debe usar las barras comunes para el valor absoluto como en
+\verb+|x|+ ya que no tienen el contexto adecuado. Cuando se definen como
+delimitadores, \texttt{mathtools} les agrega un \verb|\mathopen{}| y
+\verb|\mathclose{}| como corresponde. La función de los dos comandos anteriores
+se puede apreciaren el siguiente ejemplo
 
 \begin{tabular}{llll}
   \verb+|x|+ & \(|x|\) & \verb¡|-x|¡ & \(|-x|\)\\
   \verb+\abs{x}+ & \(\abs{x}\) & \verb+\abs{-x}+ & \(\abs{-x}\),
 \end{tabular}
 
-\noindent donde claramente el espaciado en \verb¡|-x|¡ es pésimo. El mal espaciado se debe a que \LaTeX{} reconoce a \verb|-| como un operador binario y da un poco de espacio entre los símbolos a su derecha e izquierda. En cambio, cuando se le ha agregado \verb|\mathopen{}| al delimitador, como sucede en nuestra definición de \verb|\abs|, \LaTeX{} ahora toma a \verb|-| como operador unario y no agrega espacio a la izquierda.
+\noindent donde claramente el espaciado en \verb¡|-x|¡ es pésimo. El mal
+espaciado se debe a que \LaTeX{} reconoce a \verb|-| como un operador binario y
+da un poco de espacio entre los símbolos a su derecha e izquierda. En cambio,
+cuando se le ha agregado \verb|\mathopen{}| al delimitador, como sucede en
+nuestra definición de \verb|\abs|, \LaTeX{} ahora toma a \verb|-| como operador
+unario y no agrega espacio a la izquierda.
 
 \verb|\DeclarePairedDelimiter| tiene una versión extendida para que pueda
 tomar argumentos, como \verb|\newcommand{}[]{}|. Esta versión extendida se
@@ -71,107 +82,66 @@ crezcan correctamente (ver su definición en \texttt{ejemplo.tex})
 \]
 
 
-\section{amsthm}
-Este paquete provee mejoras útiles para las definiciones de teoremas
-(\LaTeX{} puede crear teoremas sin necesidad de paquetes) y
-define un ambiente de demostración (esto no lo hace \LaTeX{}). Con este
-paquete se pueden usar y definir estilos de teoremas de forma fácil. En la clase se definieron los siguientes ambientes:
-\begin{center}
-  \autocols{c}{3}{l}{\texttt{definicion}, \texttt{lema}, \texttt{teorema}, \texttt{proposicion}, \texttt{corolario}, \texttt{observacion}}
-\end{center}
-Con la salida esperada del nombre del ambiente. Por ejemplo:
+\section{keytheorems}
+El paquete \texttt{keytheorems} es una extensión del paquete \texttt{amsthm} que
+permite definir teoremas, lemas, proposiciones, etc. de una manera más sencilla.
+Además, también extiende y corrige errores del paquete \texttt{thmtools}. Se
+eligió este paquete por ser sencillo y tener mayor soporte que dos paquetes
+juntos.
 
-\begin{definicion}
-  Una función \(f\colon X\to Y\) es continua si para cualquier abierto
-  \(V\subseteq Y\) se tiene que \(f^{-1}(V)\subseteq X\) es abierto.
-\end{definicion}
+En la clase se definieron los ambientes más usuales de \enquote{teoremas}. Se
+definieron usando su mismo nombre en español, incluyendo acentos, para evitar
+posibles conflictos con otros paquetes. Por ejemplo, podemos usar definiciones.
 
-\begin{teorema}[Fermat]%
-\label{teo:fermat}
-  La ecuación \(x^n + y^n = z^n\) con \(n\geq 3\) no tiene soluciones no triviales en \(\mathbb{Z}\).
+\begin{definición}[label=test]
+  Esta es una definición de ejemplo.  
+\end{definición}
+
+Luego, se puede hacer referencia a ella. Por ejemplo, en la
+definición~\ref{test} vimos un ejemplo. Luego tenemos algunos otros ejemplos:
+
+\begin{lema}
+  \lipsum[1][1]
+\end{lema}
+
+\begin{teorema}[store=teo]
+  \lipsum[1][2]
 \end{teorema}
-\begin{proof}
-  He descubierto una demostración maravillosa de esto, que este margen es
-  demasiado estrecho para contener.
-\end{proof}
 
-Se modificó el estilo del ambiente demostración para que su salida sea
-similar a la de los resultados, una demostración es tan importante como el
-enunciado. Nuestra redefinición del ambiente de demostración se basa en la
-definición de \texttt{amsthm} así tiene lo necesario para comportarse bien
-con el símbolo \(\qed \). Es decir, cuando se termina una demostración con
-una ecuación u otro tipo de ambiente habrá un espacio vertical no deseado
-entre el final del texto y el símbolo de fin de la demostración. Este
-espacio se evita con el comando \verb|\qedhere|, pero si el ambiente no
-cuenta con la definición correcta seguirá apareciendo este espacio vertical.
-Un ejemplo de cómo funciona \verb|\qedhere|, para mostrar la diferencia se
-han hecho dos demostraciones iguales
+\begin{corolario}
+  \lipsum[1][3]
+\end{corolario}
 
-\begin{teorema}
-  Un resultado importante.
-\end{teorema}
-\begin{proof}
-  Se sigue de la siguiente ecuación (sin usar \verb|\qedhere|)
-  \[
-    \sum_{n\geq 1}\frac{1}{n}=-\frac{1}{12}.
-  \]
-\end{proof}
-\begin{proof}[¿Es otra demostración?]
-  Se sigue de la siguiente ecuación (usando \verb|\qedhere|)
-  \[
-    \sum_{n\geq 1}\frac{1}{n}=-\frac{1}{12}. \qedhere
-  \]
-\end{proof}
+\begin{proposición}
+  \lipsum[1][4]
+\end{proposición}
 
-Cada \enquote{teorema} nuevo crea un contador. En este ejemplo la cuenta de
-teoremas se reiniciará al iniciar un nuevo capítulo, este es el efecto del
-comando opcional \texttt{[chapter]} en la definición de \texttt{teorema}.
-Además, el contador de las definiciones será el mismo que el de los teoremas
-(notar que aparece definición 4.1, teorema 4.2), esto lo hace el parámetro
-opcional \texttt{[teorema]} en la definición de \texttt{definicion}. Esta
-cuenta de teoremas sirve para hacer referencia a resultados o definiciones
-en el futuro. Al teorema le pusimos una etiqueta con el comando
-\verb|\label{teo:fermat}| que luego se puede hacer referencia con
-\verb|\ref{teo:fermat}|. Una buena práctica es separar la referencia de la
-palabra anterior con un espacio irrompible \verb|~|, de esta forma cuando
-escribimos \enquote{por el teorema~\ref{teo:fermat}} \LaTeX{} no podrá romper un
-renglón dejando la palabra \enquote{teorema} en un renglón y el número
-\enquote{\ref{teo:fermat}} en otro.
+\begin{observación}[store=obs]
+  \IfRestatingT{Volvamos a notar que:} \lipsum[1][5]
+\end{observación}
 
-Nota que el estilo \texttt{plain} pone el cuerpo del teorema en itálicas
-mientras que el estilo \texttt{definition} no, como puede verse en el
-enunciado de la definición y de los teoremas.
+En el último de los ejemplos definimos un \enquote{teorema} nuevo para escribir
+axiomas. Revisar el preámbulo de esta guía para ver cómo se definió.
 
-En el preámbulo de \texttt{ejemplo.tex} está un ejemplo de cómo crear un
-estilo nuevo de \enquote{teorema}. En este se creó un ambiente para los axiomas
-usando un estilo diferente que llevará una cuenta independiente de las
-definiciones anteriores, pues no aparece la opción \texttt{[teorema]} en su
-definición.
+\begin{ax}[note=Peano]
+  \(0\in\mathbb{N}\).
+\end{ax}
 
-\begin{axioma}
-  Para toda \(f\colon D\to R\) existe una y sólo una \(b\in R\) tal que para
-  cualquier \(d\in D\)
-  \[
-    f(d)=f(0)+d\cdot b.
-  \]
-\end{axioma}
+Luego, el paquete tiene facilidades para volver a enunciar teoremas.
 
-Adicionalmente, se podría hacer las definiciones de estos ambientes de
-teorema y demostración como un nuevo ambiente. El ejemplo, compilando con
-Lua\LaTeX, con tipo de letra sans en~\ref{textosans} tiene lo necesario para
-crear un ambiente y contador con las características como las de los
-ambientes de \texttt{amsthm}.
+\getkeytheorem{teo}
 
-Además, junto con \texttt{amsthm} se podría usar el paquete
-\texttt{thmtools} que permite hacer estilos de teoremas, repetirlos, hacer
-una lista de teoremas, entre otros. La documentación de \texttt{thmtools} es
-fácil de leer ya que consta de ejemplos, así es posible ver la salida de los
-comandos que define.
+También tiene booleanos para escribir algo diferente en la versión que se volvió
+a enunciar.
 
-Finalmente, otro paquete común para el manejo de teoremas y demostraciones
-es \texttt{ntheorem}. Cada uno tiene sus ventajas y desventajas y no es
-fácil elegir uno sobre otro. En este documento se eligió \texttt{amsthm}
-porque es (posiblemente) el más común.
+\getkeytheorem{obs}
+
+Además, se puede hacer una lista de teoremas.
+
+\listofkeytheorems
+
+Sólo se ha mostrado lo más básico del paquete. Se recomienda ver la
+documentación para ver todas las posibilidades que tiene.
 
 
 \section{babel y polygossia}%

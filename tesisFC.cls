@@ -31,7 +31,7 @@
 
 
 \RequirePackage{mathtools}
-\RequirePackage{amsthm}
+\RequirePackage{keytheorems}
 \RequirePackage{siunitx}
 \RequirePackage{multicol}
 
@@ -41,7 +41,7 @@
 \ifluatex
   \RequirePackage{fontspec}
   \RequirePackage{unicode-math}
-  \RequirePackage[spanish,mexico,es-noshorthands,es-noindentfirst]{babel}
+  \RequirePackage[spanish,mexico,es-noindentfirst]{babel}
   \RequirePackage[tracking=true,protrusion=true]{microtype}
   \setmainfont{STIX Two Text}
   \setmathfont{STIX Two Math}
@@ -49,7 +49,7 @@
 
 \ifpdftex
   \RequirePackage[T1]{fontenc}
-  \RequirePackage[spanish,mexico,es-noshorthands,es-noindentfirst]{babel}
+  \RequirePackage[spanish,mexico,es-noindentfirst]{babel}
   \RequirePackage{stix2}
   \RequirePackage[tracking=true,spacing=true,kerning=true,protrusion=true]{microtype}
 \fi
@@ -75,19 +75,16 @@
 \pagestyle{tesisFC}
 
 %Definiciones, teoremas,...
-\theoremstyle{plain}
-\newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{proposicion}[teorema]{Proposición}
-\newtheorem{lema}[teorema]{Lema}
-\newtheorem{corolario}[teorema]{Corolario}
+\newkeytheorem{teorema}[parent=chapter]
+\newkeytheorem{lema,proposición,corolario}[sibling=teorema]
 
-\theoremstyle{definition}
-\newtheorem{definicion}[teorema]{Definición}
-\newtheorem{observacion}[teorema]{Observación}
+\newkeytheorem{definición}[sibling=teorema,style=definition]
+
+\newkeytheorem{observación}[sibling=teorema,style=remark]
 
 %Ambiente de demostración
-\renewenvironment{proof}[1][\proofname]
-{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
+%\renewenvironment{proof}[1][\proofname]
+%{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
 
 
 %Portada
