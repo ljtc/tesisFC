@@ -31,7 +31,7 @@
 
 
 \RequirePackage{mathtools}
-\RequirePackage{keytheorems}
+\RequirePackage[predefined={parent=chapter}]{keytheorems}
 \RequirePackage{siunitx}
 \RequirePackage{multicol}
 
@@ -73,19 +73,6 @@
 \makeoddfoot{tesisFC}{\thepage}{}{}
 \makeheadrule{tesisFC}{\linewidth}{0.4pt}
 \pagestyle{tesisFC}
-
-%Definiciones, teoremas,...
-\newkeytheorem{teorema}[parent=chapter]
-\newkeytheorem{lema,proposición,corolario}[sibling=teorema]
-
-\newkeytheorem{definición}[sibling=teorema,style=definition]
-
-\newkeytheorem{observación}[sibling=teorema,style=remark]
-
-%Ambiente de demostración
-%\renewenvironment{proof}[1][\proofname]
-%{\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\bfseries#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
-
 
 %Portada
 \RequirePackage{graphicx}

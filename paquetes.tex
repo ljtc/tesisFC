@@ -89,43 +89,47 @@ Además, también extiende y corrige errores del paquete \texttt{thmtools}. Se
 eligió este paquete por ser sencillo y tener mayor soporte que dos paquetes
 juntos.
 
-En la clase se definieron los ambientes más usuales de \enquote{teoremas}. Se
-definieron usando su mismo nombre en español, incluyendo acentos, para evitar
-posibles conflictos con otros paquetes. Por ejemplo, podemos usar definiciones.
+Se cargo el paquete con una opción que incluye algunos ambientes comunes, abajo
+se puede ver cuáles son.
 
-\begin{definición}[label=test]
+\begin{definition}[label=test]
   Esta es una definición de ejemplo.  
-\end{definición}
+\end{definition}
 
 Luego, se puede hacer referencia a ella. Por ejemplo, en la
 definición~\ref{test} vimos un ejemplo. Luego tenemos algunos otros ejemplos:
 
-\begin{lema}
+\begin{lemma}
   \lipsum[1][1]
-\end{lema}
+\end{lemma}
 
-\begin{teorema}[store=teo]
+\begin{theorem}[store=teo]
   \lipsum[1][2]
-\end{teorema}
+\end{theorem}
 
-\begin{corolario}
+\begin{corollary}
   \lipsum[1][3]
-\end{corolario}
+\end{corollary}
 
-\begin{proposición}
+\begin{proposition}
   \lipsum[1][4]
-\end{proposición}
+\end{proposition}
 
-\begin{observación}[store=obs]
+\begin{remark}[store=obs]
   \IfRestatingT{Volvamos a notar que:} \lipsum[1][5]
-\end{observación}
+\end{remark}
 
-En el último de los ejemplos definimos un \enquote{teorema} nuevo para escribir
-axiomas. Revisar el preámbulo de esta guía para ver cómo se definió.
-
-\begin{ax}[note=Peano]
+\begin{axiom}[note=Peano]
   \(0\in\mathbb{N}\).
-\end{ax}
+\end{axiom}
+
+\begin{conjecture}
+  \lipsum[1][6]
+\end{conjecture}
+
+\begin{example}
+  \lipsum[1][7]
+\end{example}
 
 Luego, el paquete tiene facilidades para volver a enunciar teoremas.
 
@@ -136,12 +140,35 @@ a enunciar.
 
 \getkeytheorem{obs}
 
-Además, se puede hacer una lista de teoremas.
+El paquete \texttt{keytheorems} puede usar \texttt{tcolorbox} para
+personalizar los teoremas. Por ejemplo, podemos hacer un teorema con fondo de color.
 
-\listofkeytheorems
+\begin{teo}[note=Teorema con fondo, short-note=morado]
+  Nota que en el código se escribió \verb|short-note=morado|. El efecto de esto
+  se puede ver en la lista de teoremas de abajo.
+\end{teo}
+
+Algo importante que se debe notar es que si se usan diagramas conmutativos
+con \texttt{tikzcd} dentro de los teoremas, entonces se debe usar la opción
+\texttt{ampersand replacement}. Por ejemplo,
+
+\begin{theorem}[note=Lema del producto fibrado]
+  Consideramos el siguiente diagrama conmutativo
+  \begin{equation*}
+    \begin{tikzcd}[ampersand replacement=\&]
+      \bullet\ar[r]\ar[d] \& \bullet\ar[r]\ar[d] \& \bullet\ar[d]\\
+      \bullet\ar[r] \& \bullet\ar[r] \& \bullet\mathrlap{.}
+    \end{tikzcd}
+  \end{equation*}
+  Si los dos cuadrados son productos fibrados, entonces el rectángulo también lo
+  es. Además, si el rectángulo y el cuadrado de la derecha son productos fibrados,
+  entonces el cuadrado de la izquierda también lo es.
+\end{theorem}
 
 Sólo se ha mostrado lo más básico del paquete. Se recomienda ver la
 documentación para ver todas las posibilidades que tiene.
+
+\listofkeytheorems 
 
 
 \section{babel y polygossia}%

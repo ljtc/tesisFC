@@ -1,8 +1,12 @@
 \KeyThmsAddvspace {\keythms@listof@chaptervspace@dim }
-\KeyThmsSavedTheorem {definición}{4.1}{definición.4.1}{10}{}{label=test}{}
-\KeyThmsSavedTheorem {lema}{4.2}{lema.4.2}{10}{}{}{}
-\KeyThmsSavedTheorem {teorema}{4.3}{teorema.4.3}{10}{ {equation}= {0}}{store=teo}{\lipsum [1][2]}
-\KeyThmsSavedTheorem {corolario}{4.4}{corolario.4.4}{10}{}{}{}
-\KeyThmsSavedTheorem {proposición}{4.5}{proposición.4.5}{10}{}{}{}
-\KeyThmsSavedTheorem {observación}{4.6}{observación.4.6}{10}{ {equation}= {0}}{store=obs}{\IfRestatingT {Volvamos a notar que:} \lipsum [1][5]}
-\KeyThmsSavedTheorem {ax}{4.1}{ax.4.1}{10}{}{note=Peano}{}
+\KeyThmsSavedTheorem {definition}{4.1}{definition.4.1}{10}{}{label=test}{}
+\KeyThmsSavedTheorem {lemma}{4.2}{lemma.4.2}{10}{}{}{}
+\KeyThmsSavedTheorem {theorem}{4.3}{theorem.4.3}{10}{ {equation}= {0}}{store=teo}{\lipsum [1][2]}
+\KeyThmsSavedTheorem {corollary}{4.4}{corollary.4.4}{10}{}{}{}
+\KeyThmsSavedTheorem {proposition}{4.5}{proposition.4.5}{10}{}{}{}
+\KeyThmsSavedTheorem {remark}{4.6}{remark.4.6}{10}{ {equation}= {0}}{store=obs}{\IfRestatingT {Volvamos a notar que:} \lipsum [1][5]}
+\KeyThmsSavedTheorem {axiom}{4.7}{axiom.4.7}{10}{}{note=Peano}{}
+\KeyThmsSavedTheorem {conjecture}{4.8}{conjecture.4.8}{10}{}{}{}
+\KeyThmsSavedTheorem {example}{4.9}{example.4.9}{10}{}{}{}
+\KeyThmsSavedTheorem {teo}{1}{teo.1}{10}{}{note=Teorema con fondo, short-note=morado}{}
+\KeyThmsSavedTheorem {theorem}{4.10}{theorem.4.10}{11}{}{note=Lema del producto fibrado}{}

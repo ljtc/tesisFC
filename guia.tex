@@ -89,14 +89,15 @@
     \endgroup}% 
 \usepackage{tkz-euclide}
 
-%TEOREMAS Y REFERENCIAS A ELLOS
-\newkeytheoremstyle{axiom}{
-  headfont=\bfseries,
-  bodyfont=\normalfont,
-  headpunct={:},
-  headformat={\NUMBER~\NAME~\NOTE}
-}
-\newkeytheorem{ax}[name=Axioma,parent=chapter,style=axiom]
+%UN EJEMPLO DE TEOREMA CON FONDO DE COLOR
+\definecolor{morado}{RGB}{101, 43, 145}
+\newkeytheorem{teo}[
+  name=Teorema,
+  tcolorbox-no-titlebar={
+    colback=morado!10, colframe=morado!10,
+    left=5pt, right=5pt, top=2pt, bottom=2pt
+  }
+]
 
 
 \ifluatex%
