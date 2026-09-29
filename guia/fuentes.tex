@@ -1,0 +1,94 @@
+% !TEX root = guia.tex
+
+\chapter{Fuentes}
+Para las fuentes del documento he escogido los paquetes \texttt{fontspec} y
+\texttt{lua-unicode-math} en el caso de compilar con Lua\LaTeX. Si la
+compilación es con pdf\LaTeX{} se usará el paquete \texttt{fontenc}.
+
+La ventaja de \texttt{fontspec} y \texttt{lua-unicode-math} es que posible
+cambiar fuentes de manera fácil en partes del documento, pero deberá ser
+compilado con Xe\LaTeX{} o con Lua\LaTeX, el último siendo el método
+recomendado. Con esto se podrán usar caracteres unicode en cualquier parte
+de texto, por ejemplo en una ecuación centrada (para que aparezcan las
+ecuaciones compila con Lua\LaTeX.)
+\ifluatex%
+\[
+  ∀ε>0∃δ>0(|x-y|<δ ⇒ |f(x)-f(y)|<ε)
+\]
+\else
+\ifpdftex%
+\begin{center}
+\textcolor{red}{La compilación con pdf\LaTeX{} no permite mostrar este
+ejemplo.}
+\end{center}
+\fi
+\fi
+o en una línea de texto%
+\ifluatex%
+\(∀ε>0∃δ>0(|x-y|<δ ⇒ |f(x)-f(y)|<ε)\).
+\else
+\ifpdftex%
+\textcolor{red}{La compilación con pdf\LaTeX{} no permite mostrar este
+ejemplo.}
+\fi
+\fi
+Las letras griegas, por ejemplo, no necesitan estar en modo matemático para
+funcionar
+\ifluatex%
+αβγδφψ
+\else
+\ifpdftex%
+\textcolor{red}{La compilación con pdf\LaTeX{} no permite mostrar este
+ejemplo.}
+\fi
+\fi
+(ver código fuente ignorando los condicionales para cada tipo de
+compilación).
+
+La fuente que fue escogida para este texto es \textit{Stix Two}. Esta fuente
+tiene como objetivo servir como un estándar para la preparación, publicación
+e impresión de textos científicos. Es impulsada y usada por la \textit{AMS}
+(matemáticas), \textit{ACS} (química), \textit{AIP} y \textit{APS} (física),
+\textit{IEEE} (ingeniería) y Elsevier. Por lo tanto, tiene un conjunto de
+símbolos sumamente extenso.
+
+Otra ventaja del manejo de fuentes de Lua\LaTeX{} es que las
+fuentes instaladas en nuestro sistema estarán disponibles para su uso en
+documentos de \LaTeX{}. Por ejemplo si quisiéramos que nuestro documento
+estuviera escrito en Arial simplemente hay que escribir
+\begin{flushleft}
+  \verb|\setmainfont{Arial}|
+\end{flushleft}
+contrario a la forma en la que hace pdf\LaTeX{} donde habría que usar el
+código de la fuente y en muchos casos es difícil encontrar dicho código.
+Además que las fuentes disponibles de esa forma son relativamente pocas.
+Para dar una idea de la disponibilidad de fuentes con Xe\LaTeX{} y
+Lua\LaTeX{} basta ver las fuentes disponibles en overleaf \url{https://www.overleaf.com/latex/examples/fontspec-all-the-fonts/hjrpnxhrrtxc}.
+Seguramente en tu sistema habrá un conjunto de fuentes disponibles grande.
+
+\ifluatex%
+Un comentario acerca de \texttt{lua-unicode-math} es que permite usar una
+fuente específica para cada alfabeto. El ejemplo en este texto es cambiar la
+fuente script, que tanto en \textit{Stix two} como muchas otras fuentes es
+igual a la caligráfica. Con \texttt{lua-unicode-math} es suficiente cargar una
+fuente con el alfabeto que nos guste, sólo para el rango que la queremos.
+Aún cuando en un principio no es necesario tener tantos alfabetos matemáticos
+diferentes, en teoría de categorías he visto una notación que aunque no es
+estándar (creo que aún no hay ningún estándar) parece dar coherencia. Las
+categorías pequeñas y localmente pequeñas se denotan con letras en negritas
+\(\mbfA \), \(\symbf{Con}\),\ldots categorías más grandes se denotan con
+letras caligráficas \(\mathcal{X}\), \(\symcal{Y}\), etc. y categorías
+especiales como topos se denotan con letras script como \(\symscr{E}\).
+
+En el código se puede notar que se han usado diferentes sintaxis para los
+alfabetos, que \texttt{lua-unicode-math} se encargará de mapear al símbolo
+correcto. Por ejemplo, las formas de obtener la letra \enquote{A} en negritas es
+como símbolo definido por un alfabeto \verb|\mbfA|, como comando de
+\texttt{lua-unicode-math} (es la forma recomendada) \verb|\symbf{A}| o como en
+la forma \enquote{tradicional} \verb|\mathbf{A}|.
+\ifpdftex%
+\begin{center}
+  \textcolor{red}{Este párrafo usa comandos específicos de \texttt{lua-unicode-math} y mandará errores si se compila con pdf\LaTeX.}
+\end{center}
+\fi
+\fi

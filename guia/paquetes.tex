@@ -165,6 +165,18 @@ con \texttt{tikzcd} dentro de los teoremas, entonces se debe usar la opción
   entonces el cuadrado de la izquierda también lo es.
 \end{theorem}
 
+Además, se está usando la opción \texttt{auto-qed} de este paquete. Con ella no
+es necesario escribir \verb|\qedhere| cuando una demostración termina en una
+ecuación aislada, una lista, entre otros. Damos un ejemplo para ver que el
+símbolo de final de la demostración no está una línea abajo de la ecuación.
+
+\begin{proof}
+  Una demostración maravillosa,
+  \begin{equation*}
+    a=b.
+  \end{equation*}
+\end{proof}
+
 Sólo se ha mostrado lo más básico del paquete. Se recomienda ver la
 documentación para ver todas las posibilidades que tiene.
 

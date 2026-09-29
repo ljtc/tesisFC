@@ -1,12 +1,12 @@
-%% !TEX root = guia.tex
-%
-%
-%% arara: lualatex: { draft: yes } unless exists(toFile('ejemplo.aux'))
-%% arara: biber if changed (toFile('refs.bib')) || found('log', 'Citation')
-%% arara: --> || found ('log', 'Please \\(re\\)run Biber')
-%% arara: makeglossaries if missing('gls')
-%% arara: --> || changed('glo') || changed(toFile('gloss.tex'))
-%% arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
+% !TEX root = guia.tex
+
+
+% arara: lualatex: { draft: yes } unless exists(toFile('ejemplo.aux'))
+% arara: biber if changed (toFile('refs.bib')) || found('log', 'Citation')
+% arara: --> || found ('log', 'Please \\(re\\)run Biber')
+% arara: makeglossaries if missing('gls')
+% arara: --> || changed('glo') || changed(toFile('gloss.tex'))
+% arara: lualatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
 
 \documentclass{tesisFC}
 
@@ -99,28 +99,6 @@
   }
 ]
 
-
-\ifluatex%
-%Cargar fuentes adicionales con LuaLaTeX
-\setmathfont{GFS Neohellenic Math}[version=sansmath]
-\setsansfont{GFS Neohellenic}
-\setmathfont{XITS Math}[range=scr]
-\setmathfont{Erewhon Math}[range=\mscrS]
-
-%Ambientes nuevos
-\newcounter{sans}% contador para el ambiente
-\NewDocumentEnvironment { sans }% nombre del ambiente
-{ O{Este texto está en sans} }% título que imprime con un valor por defecto
-{% código al inicio del ambiente
-  \par\vspace{\baselineskip}\sffamily\mathversion{sansmath}\noindent
-  \refstepcounter{sans}%
-  \textbf{#1\space\thesans\space}\ignorespaces%
-}
-{%código al final
-  \par\vspace{\baselineskip}%
-  \noindent\ignorespacesafterend%
-}
-\fi
 %este es el final del código para los ejemplos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -129,7 +107,7 @@
 
 \frontmatter% parte frontal del texto, numeración en romanos
 \portadatesis%
-\include{hojaS}
+\include{hojaS} 
 
 
 %Tablas de contenidos

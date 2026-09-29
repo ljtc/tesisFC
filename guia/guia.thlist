@@ -1,4 +1,3 @@
-\KeyThmsAddvspace {\keythms@listof@chaptervspace@dim }
 \KeyThmsSavedTheorem {definition}{4.1}{definition.4.1}{10}{}{label=test}{}
 \KeyThmsSavedTheorem {lemma}{4.2}{lemma.4.2}{10}{}{}{}
 \KeyThmsSavedTheorem {theorem}{4.3}{theorem.4.3}{10}{ {equation}= {0}}{store=teo}{\lipsum [1][2]}

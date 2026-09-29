@@ -89,14 +89,32 @@ Ahora nuestro archivo se compila con el comando
 \begin{verbatim}
   arara ejemplo
 \end{verbatim}
-Para mostrar cómo mejoró el tiempo de compilación la segunda
-vez ponemos capturas de pantalla de la compilación de este documento, ver figuras.
+A partir de la segunda compilación mejora el tiempo, ver figuras.
 Además muchos editores de \LaTeX{} pueden configurarse para compilar con
-\texttt{arara}.  Por ejemplo, en Atom (el editor que uso) con el paquete atom-
-latex se configura como \textit{custom toolchain} y el toolchain es:
+\texttt{arara}. En VSCode hay que editar el archivo \texttt{settings.json} de la
+configuración del proyecto o del usuario. En la parte que tiene
+\texttt{latex-workshop.latex.tools} se agregar
 \begin{verbatim}
-  arara %DOC -v
+  {
+      "name" : "arara",
+      "command" : "arara",
+      "args" : [
+          "-v",
+          "%DOC%.tex"
+      ]
+  },
 \end{verbatim}
+Luego en la parte que tiene \texttt{latex-workshop.latex.recipes} se debe
+agregar
+\begin{verbatim}
+  {
+      "name": "arara",
+      "tools": [
+          "arara"
+      ]
+  },
+\end{verbatim}
+Con esto aparecerá la opción de compilación con \texttt{arara}.
 
 \begin{figure}[h]
 \centering
@@ -111,18 +129,3 @@ latex se configura como \textit{custom toolchain} y el toolchain es:
   \caption{Segunda compilación}
   \label{fig:segunda}
 \end{figure}
-
-Para configurarlo en TeXMaker hay que seguir las instrucciones en
-\url{https://tex.stackexchange.com/a/107995}.
-
-En TeXWorks: \url{https://tex.stackexchange.com/a/98795}.
-
-En TeXShop: \url{https://tex.stackexchange.com/a/175673}.
-
-Un último comentario acerca del tiempo de compilación es que en el proceso
-de revisión y correcciones de la tesis, por ejemplo al revisar un capítulo
-específico donde no se requiera estar viendo los otros, se puede escribir en
-el preámbulo \verb|\includeonly{CapituloEnRevision}|. Una vez que ya haya
-sido compilado el documento completo el comando anterior hará que sólo se
-compile el capítulo en revisión con la paginación y las referencias a otros
-capítulos correctas. Esto podría mejorar mucho el tiempo de compilación.
